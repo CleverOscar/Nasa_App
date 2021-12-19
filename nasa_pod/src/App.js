@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
+import env from 'react-dotenv';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
     { 
       headers: 
       {  
-        "Authorization": process.env.REACT_APP_NASA_API 
+        "Authorization": env.REACT_APP_NASA_API 
       } 
     })
     .then((res) => {
@@ -25,7 +26,7 @@ function App() {
   
   }, []);
 
-  console.log("Api: ", process.env.REACT_APP_NASA_API)
+  console.log("api", window.env.REACT_APP_NASA_API)
 
   return (
     <div className="container mx-auto">
