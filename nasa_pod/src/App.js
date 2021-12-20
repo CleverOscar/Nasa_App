@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
-
 import Navbar from './components/Navbar';
-
+import LandingPage from './components/LandingPage';
 import NasaPhoto from './components/NasaPhoto';
-
+import {Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -30,7 +29,10 @@ function App() {
 
       <Navbar />
 
-      <NasaPhoto data={nasaData}/>
+      <Routes>
+        <Route path="/"  element={<LandingPage />}/>
+        <Route path="/apod" element={<NasaPhoto data={nasaData}/>} />
+      </Routes>
     </div>
   );
 }
