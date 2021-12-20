@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 
+import Navbar from './components/Navbar';
+
 import NasaPhoto from './components/NasaPhoto';
 
 
@@ -25,9 +27,13 @@ function App() {
 
   return (
     <div className="container mx-auto">
+
+      <Navbar />
+
       <NasaPhoto data={nasaData}/>
     </div>
   );
 }
 
 export default App;
+ 
