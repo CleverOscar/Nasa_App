@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
-import env from 'react-dotenv';
+
+import NasaPhoto from './components/NasaPhoto';
+
+
 
 function App() {
 
@@ -9,16 +12,10 @@ function App() {
   const [nasaData, setNasaData] = useState([]);
 
   // fetch nasa api 
-  const nasaApi = useEffect(() => {
-    axios.get("https://api.nasa.gov/planetary/apod?", 
-    { 
-      headers: 
-      {  
-        "Authorization": env.REACT_APP_NASA_API 
-      } 
-    })
+   useEffect(() => {
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j")
     .then((res) => {
-      console.log(res.data)
+      setNasaData(res.data)
     })
     .catch((error) => {
       console.log(error.message)
@@ -26,13 +23,9 @@ function App() {
   
   }, []);
 
-  console.log("api", window.env.REACT_APP_NASA_API)
-
   return (
     <div className="container mx-auto">
-      <header >
-        <h1>Nasa Photo Of The Day</h1>
-      </header>
+      <NasaPhoto data={nasaData}/>
     </div>
   );
 }
