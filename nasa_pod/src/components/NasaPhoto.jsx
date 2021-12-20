@@ -7,7 +7,7 @@ export default function NasaPhoto(props){
                 {props.data.title}
             </h1>
 
-            <img className="mx-auto" src={props.data.url} alt={props.data.media_type} />
+            <img className="mx-auto rounded-xl border-8 border-slate-500 drop-shadow-2xl" src={props.data.url} alt={props.data.media_type} />
 
             <p className='w-1/2 mx-auto my-10'>{props.data.explanation}</p>
         </div>
