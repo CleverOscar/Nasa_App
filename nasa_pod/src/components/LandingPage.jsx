@@ -4,12 +4,12 @@ import React from 'react';
 export default function LandingPage(){
 
     return(
-        <div className='border-4 rounded-lg w-1/2 mx-auto my-10'>
-            <h2 className='text-5xl text-center pt-4'>
-                Nasa API Application
+        <div className='border-4 border-black mx-4 my-8 bg-gray-200'>
+            <h2 className='my-6 text-center text-3xl underline'>
+                Nasa API Portal Application
             </h2>
 
-            <p className='text-2xl px-10 my-6'>
+            <p className='px-6 pb-6 text-2xl'>
             A React App that fetches data from NASA's API portal. Displaying photos and videos from Earth, Mars, Stars, Galaxies, and more!
             </p>
         </div>
