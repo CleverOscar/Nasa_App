@@ -19,7 +19,7 @@ export default function NasaPhoto(props){
   }, []);
 
     return(
-        <div className="mx-2">
+        <div className="mx-6">
             <h1 className="text-center text-2xl my-4 underline">
                 Astronomy Photo Of The Day
             </h1>
@@ -27,11 +27,11 @@ export default function NasaPhoto(props){
             <img className="border-4 border-black rounded-xl" src={nasaData.url} alt={nasaData.media_type} />
 
             <div className="p-4">
-              <p className='text-lg mb-2 italic text-cyan-500'> 
+              <p className='text-lg italic text-cyan-500'> 
                 Name: {nasaData.title}
               </p>
-              <p className=''>Taken By: {nasaData.copyright}</p>
-              <p className=''>{nasaData.explanation}</p>
+              <p className='mb-4 text-gray-500'>Taken By: {nasaData.copyright}</p>
+              <p className='text-lg border border-black p-6'>{nasaData.explanation}</p>
             </div>
         </div>
     )
