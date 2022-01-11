@@ -9,7 +9,7 @@ import {Routes, Route} from 'react-router-dom';
 function App() {
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
 
       <Navbar />
 

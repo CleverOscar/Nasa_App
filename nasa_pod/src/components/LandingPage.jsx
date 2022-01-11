@@ -4,16 +4,13 @@ import React from 'react';
 export default function LandingPage(){
 
     return(
-        <div className='border-4 w-1/2 mx-auto'>
-            <h2 className='text-2xl text-center'>
+        <div className='border-4 w-1/2 mx-auto my-10'>
+            <h2 className='text-2xl text-center pt-10'>
                 Nasa API Application
             </h2>
 
-            <p className='text-lg mx-4 mx-auto my-8'>
-            Here we have a ReactJS application access Nasa's API 
-            database of free images to the public. It allows curious 
-            developers into Astronomy to get a feel of what photos Nasa's 
-            satellites or rovers are taking in current time. 
+            <p className='text-3xl p-8'>
+            A React App that fetches data from NASA's API portal. Displaying photos and videos from Earth, Mars, Stars, Galaxies, and more!
             </p>
         </div>
     )
