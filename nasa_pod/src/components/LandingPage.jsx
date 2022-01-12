@@ -1,7 +1,19 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 export default function LandingPage(){
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+         axios.get("https://api.nasa.gov/planetary/apod?api_key=JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j")
+        .then((res) => {
+        setData(res.data)
+        })
+        .catch((error) => {
+        console.log(error.message)
+        })
+    })
 
     return(
         <div className='border-4 border-black mx-4 my-8 bg-gray-200'>
@@ -15,9 +27,3 @@ export default function LandingPage(){
         </div>
     )
 }
-
-
-// photos organized by sol 
-// 25 photos per  call
-// can filtered by camera
-// add a page param to the query for more than 25 photos
