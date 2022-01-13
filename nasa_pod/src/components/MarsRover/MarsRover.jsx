@@ -49,7 +49,7 @@ export default function MarsRover(){
 
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=${api}`;
+    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=${api}`;
 
     useEffect(()=>{
         axios.get(url)
@@ -65,20 +65,20 @@ export default function MarsRover(){
 
     const cameraOption = cameras.map(camera => <option className="" key={camera.id} value={camera.camera_name}>{camera.camera_name}</option>)
 
-    function handleName(event){
-        event.preventDefault();
-        console.log(setSerachParams(event.target.value));
-    }
-
-    function handleChange(event){
-        event.preventDefault();
-        console.log(setSerachParams(event.target.value));
-    }
-
     function handleSubmit(event){
         event.preventDefault();
         console.log(searchParams);
     }
+    
+    function getValue(event){
+        event.preventDefault();
+        console.log(event.target.value)
+
+        return url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${event.target.value}&api_key=${api}`;
+
+        
+    }
+
 
     return(
         <div className="w-10/12 mx-auto">
@@ -87,7 +87,7 @@ export default function MarsRover(){
                     <label className="border-2 px-10 mr-6">
                         Camera Angle
                     </label>
-                    <select className="border w-auto text-center" id="cameras">
+                    <select onChange={getValue} className="border w-auto text-center" id="cameras">
 \                       {cameraOption}
                     </select>
                 </div>
