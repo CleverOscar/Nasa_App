@@ -4,17 +4,44 @@ import axios from 'axios';
 
 export default function MarsRover(){
 
-    const cameras = [{
-        front_camera: "fhaz",
-        back_camera: "rhaz",
-        mast_camera: "mast",
-        chemestry: "chemcam",
-        mars_hand: "mahli",
-        mars_descent: "mardi",
-        nav_camera: "navcam",
-        pano_camera: "pancam",
-        theremal_camera: "minites"
-    }]
+    const cameras = [
+        {
+            id: 1,
+            camera: "fhaz"
+        },
+        {
+            id: 2,
+            camera: "rhaz"
+        },
+        {
+            id: 3,
+            camera: "mast"
+        },
+        {
+            id: 4,
+            camera: "chemcam"
+        },
+        {
+            id: 5,
+            camera: "mahli"
+        },
+        {
+            id: 6,
+            camera: "mardi"
+        },
+        {
+            id: 7,
+            camera: "navcam"
+        },
+        {
+            id: 8,
+            camera: "pancam"
+        },
+        {
+            id: 9,
+            camera: "minites"
+        },
+    ];
 
     let [searchParams, setSerachParams ] = useState("");
     
@@ -22,19 +49,13 @@ export default function MarsRover(){
 
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${front_camera}&api_key=${api}`;
+    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=${api}`;
 
     useEffect(()=>{
         axios.get(url)
              .then((response) => {setRoverImages(response.data.photos)})
              .catch((error) => {console.log(error)})
     }, []);
-
-    const images = roverImages.map(item => <div>
-        <p>{item.id}</p>
-        <img src={item.img_src} />
-
-    </div>)
 
     function handleName(event){
         event.preventDefault();
@@ -51,21 +72,31 @@ export default function MarsRover(){
         console.log(searchParams);
     }
 
-    return(
-        <div>
-            {images}
+    const images = roverImages.map(item => 
+    <div className="border-4 my-10" key={item.id}>
+        <p>{item.id}</p>
+        <img src={item.img_src} />
+    </div>)
 
-            <form onSubmit={handleSubmit} className=" my-10">
+    const cameraOption = cameras.map(camera => console.log(camera))
+
+    return(
+        <div className="w-10/12 mx-auto">
+            <form onSubmit={handleSubmit} className=" my-6">
                 <input className="border-2" onChange={handleChange} type="text" placeholder="search"/>
                 <input className="border-2" onChange={handleChange} type="text" placeholder="date" />
+                <div>
+                    <label>
+                        Camera
+                    </label>
+                    <select id="cameras">
+\                       
+                    </select>
+                </div>
             </form>
+            
+            {images}
+          
         </div>
     )
 }
-
-
-// ids
-// sol = day
-// image src
-// camera name
-// rover landing date
