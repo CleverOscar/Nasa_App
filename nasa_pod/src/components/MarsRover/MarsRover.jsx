@@ -7,39 +7,39 @@ export default function MarsRover(){
     const cameras = [
         {
             id: 1,
-            camera: "fhaz"
+            camera_name: "fhaz"
         },
         {
             id: 2,
-            camera: "rhaz"
+            camera_name: "rhaz"
         },
         {
             id: 3,
-            camera: "mast"
+            camera_name: "mast"
         },
         {
             id: 4,
-            camera: "chemcam"
+            camera_name: "chemcam"
         },
         {
             id: 5,
-            camera: "mahli"
+            camera_name: "mahli"
         },
         {
             id: 6,
-            camera: "mardi"
+            camera_name: "mardi"
         },
         {
             id: 7,
-            camera: "navcam"
+            camera_name: "navcam"
         },
         {
             id: 8,
-            camera: "pancam"
+            camera_name: "pancam"
         },
         {
             id: 9,
-            camera: "minites"
+            camera_name: "minites"
         },
     ];
 
@@ -78,7 +78,7 @@ export default function MarsRover(){
         <img src={item.img_src} />
     </div>)
 
-    const cameraOption = cameras.map(camera => console.log(camera))
+    const cameraOption = cameras.map(camera => <option>{camera.camera_name}</option>)
 
     return(
         <div className="w-10/12 mx-auto">
@@ -90,7 +90,7 @@ export default function MarsRover(){
                         Camera
                     </label>
                     <select id="cameras">
-\                       
+\                       {cameraOption}
                     </select>
                 </div>
             </form>
