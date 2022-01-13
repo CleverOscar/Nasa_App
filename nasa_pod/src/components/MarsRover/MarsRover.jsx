@@ -4,15 +4,23 @@ import axios from 'axios';
 
 export default function MarsRover(){
 
+    const cameras = [{
+        front_camera: "fhaz",
+        back_camera: "rhaz",
+        mast_camera: "mast",
+        chemestry: "chemcam",
+        mars_hand: "mahli",
+        mars_descent: "mardi",
+        nav_camera: "navcam",
+        pano_camera: "pancam",
+        theremal_camera: "minites"
+    }]
+
     let [searchParams, setSerachParams ] = useState("");
     
     const [roverImages, setRoverImages] = useState([]);
 
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
-
-    const front_camera  = 'fhaz';
-    const back_camera = 'rhaz';
-    const mast_camera = 'mast';
 
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${front_camera}&api_key=${api}`;
 
