@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import NasaPhoto from './components/Photo_Of_The_Day/NasaPhoto';
-import MarsRover from './components/MarsRover';
+import MarsRover from './components/MarsRover/MarsRover';
 import Footer from './components/Footer/Footer';
 
 import {Routes, Route} from 'react-router-dom';
