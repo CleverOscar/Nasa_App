@@ -57,6 +57,14 @@ export default function MarsRover(){
              .catch((error) => {console.log(error)})
     }, []);
 
+    const images = roverImages.map(item => 
+    <div className="border-4 my-10" key={item.id}>
+        <p>{item.id}</p>
+        <img alt={item.name} src={item.img_src} />
+    </div>)
+
+    const cameraOption = cameras.map(camera => <option className="" key={camera.id} value={camera.camera_name}>{camera.camera_name}</option>)
+
     function handleName(event){
         event.preventDefault();
         console.log(setSerachParams(event.target.value));
@@ -72,24 +80,14 @@ export default function MarsRover(){
         console.log(searchParams);
     }
 
-    const images = roverImages.map(item => 
-    <div className="border-4 my-10" key={item.id}>
-        <p>{item.id}</p>
-        <img src={item.img_src} />
-    </div>)
-
-    const cameraOption = cameras.map(camera => <option>{camera.camera_name}</option>)
-
     return(
         <div className="w-10/12 mx-auto">
             <form onSubmit={handleSubmit} className=" my-6">
-                <input className="border-2" onChange={handleChange} type="text" placeholder="search"/>
-                <input className="border-2" onChange={handleChange} type="text" placeholder="date" />
-                <div>
-                    <label>
-                        Camera
+                <div className="w-auto flex flex-row">
+                    <label className="border-2 px-10 mr-6">
+                        Camera Angle
                     </label>
-                    <select id="cameras">
+                    <select className="border w-auto text-center" id="cameras">
 \                       {cameraOption}
                     </select>
                 </div>
