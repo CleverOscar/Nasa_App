@@ -10,6 +10,8 @@ export default function MarsRover(){
     // camera state
     let [searchParams, setSerachParams ] = useState('');
 
+    let [earthDate, setEarthDate] = useState('');
+
     // camera names
     const cameras = [
         {
@@ -59,7 +61,7 @@ export default function MarsRover(){
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
     // url 
-    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${searchParams}&api_key=${api}`;
+    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2020-6-4&camera=${searchParams}&api_key=${api}`;
 
     function getData(){
         axios.get(url)
