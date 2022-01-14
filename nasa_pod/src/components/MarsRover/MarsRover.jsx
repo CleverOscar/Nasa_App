@@ -7,11 +7,6 @@ export default function MarsRover(){
     // Images State
     const [roverImages, setRoverImages] = useState([]);
 
-    // camera state
-    let [searchParams, setSerachParams ] = useState('');
-
-    let [earthDate, setEarthDate] = useState('');
-
     // camera names
     const cameras = [
         {
@@ -52,31 +47,36 @@ export default function MarsRover(){
         },
     ];
 
-    // Data fetched
-    useEffect(()=>{
-        
-    }, []);
+    // camera state
+    let [cameraState, setCameraState ] = useState(null);
+
+    const [pageNumebr, setPageNumber] = useState(1);
 
     // Key
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
     // url 
-    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2020-6-4&camera=${searchParams}&api_key=${api}`;
+    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2020-6-4&page=${pageNumebr}&api_key=${api}`;
 
-    function getData(){
-        axios.get(url)
-             .then((response) => {setRoverImages(response.data.photos)})
-             .catch((error) => {console.log(error)})
-    }
+    // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2020-6-4&page=${pageNumebr}&camera=${cameraState}&api_key=${api}
+
+
+    console.log(url)
+
+    useEffect(() => {
+        
+    },[])
     
     function handleSubmit(event){
         event.preventDefault();
         
     }
+
+
     
     function getValue(event){
         event.preventDefault();
-        setSerachParams(event.target.value)
+        setCameraState(event.target.value)
         
         axios.get(url)
              .then((response) => {setRoverImages(response.data.photos)})
@@ -87,29 +87,33 @@ export default function MarsRover(){
     }
 
        const images = roverImages.map(item => 
-    <div className="border-4 my-10" key={item.id}>
-        <p>{item.id}</p>
-        <img alt={item.name} src={item.img_src} />
-    </div>)
+            <div className="border-4 my-10" key={item.id}>
+                <p>Rover: {item.rover.name}</p>
+                <p>Camera Name: {item.camera.full_name}</p>
+                <p>Solar Day: {item.sol}</p>
+                <p>Earth Day: {item.earth_date}</p>
+                <img alt={item.name} src={item.img_src} />
+            </div>
+        )
 
     const cameraOption = cameras.map(camera => 
-        <option className="" key={camera.id} value={camera.camera_name}>
+        <option className="" key={camera.id} selected={camera.camera_name}>
             {camera.camera_name}
         </option>)
 
 
     return(
         <div className="w-10/12 mx-auto">
-            <form className=" my-6">
+            <form className=" my-6" onSubmit={handleSubmit}>
                 <div className="w-auto flex flex-row">
                     <label className="border-2 px-10 mr-6">
-                        Camera Angle
+                        Camera Viewing
                     </label>
-                    <select onChange={getValue} className="border w-auto text-center" id="cameras">
+                    <select name={getValue} onChange={getValue} className="border w-auto text-center" id="cameras">
                        {cameraOption}
                     </select>
                 </div>
-                <button type="submit" onClick={getValue}>Search</button>
+                <button type="button" onClick={getValue}>Search</button>
             </form>
             
             {images}
