@@ -4,6 +4,13 @@ import axios from 'axios';
 
 export default function MarsRover(){
 
+    // Images State
+    const [roverImages, setRoverImages] = useState([]);
+
+    // camera state
+    let [searchParams, setSerachParams ] = useState('');
+
+    // camera names
     const cameras = [
         {
             id: 1,
@@ -43,58 +50,68 @@ export default function MarsRover(){
         },
     ];
 
-    let [searchParams, setSerachParams ] = useState("");
-    
-    const [roverImages, setRoverImages] = useState([]);
+    // Data fetched
+    useEffect(()=>{
+        
+    }, []);
 
+    // Key
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
-    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=${api}`;
+    // url 
+    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${searchParams}&api_key=${api}`;
 
-    useEffect(()=>{
+    function getData(){
         axios.get(url)
              .then((response) => {setRoverImages(response.data.photos)})
              .catch((error) => {console.log(error)})
-    }, []);
+    }
+    
+    function handleSubmit(event){
+        event.preventDefault();
+        
+    }
+    
+    function getValue(event){
+        event.preventDefault();
+        setSerachParams(event.target.value)
+        
+        axios.get(url)
+             .then((response) => {setRoverImages(response.data.photos)})
+             .catch((error) => {console.log(error)})
+        console.log(roverImages);
 
-    const images = roverImages.map(item => 
+        return console.log(setRoverImages)
+    }
+
+       const images = roverImages.map(item => 
     <div className="border-4 my-10" key={item.id}>
         <p>{item.id}</p>
         <img alt={item.name} src={item.img_src} />
     </div>)
 
-    const cameraOption = cameras.map(camera => <option className="" key={camera.id} value={camera.camera_name}>{camera.camera_name}</option>)
-
-    function handleSubmit(event){
-        event.preventDefault();
-        console.log(searchParams);
-    }
-    
-    function getValue(event){
-        event.preventDefault();
-        console.log(event.target.value)
-
-        return url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${event.target.value}&api_key=${api}`;
-
-        
-    }
+    const cameraOption = cameras.map(camera => 
+        <option className="" key={camera.id} value={camera.camera_name}>
+            {camera.camera_name}
+        </option>)
 
 
     return(
         <div className="w-10/12 mx-auto">
-            <form onSubmit={handleSubmit} className=" my-6">
+            <form className=" my-6">
                 <div className="w-auto flex flex-row">
                     <label className="border-2 px-10 mr-6">
                         Camera Angle
                     </label>
                     <select onChange={getValue} className="border w-auto text-center" id="cameras">
-\                       {cameraOption}
+                       {cameraOption}
                     </select>
                 </div>
+                <button type="submit" onClick={getValue}>Search</button>
             </form>
             
             {images}
-          
+            
         </div>
     )
 }
