@@ -28,11 +28,11 @@ export default function NasaPhoto(props){
               <p className='text-lg  italic text-cyan-500 md:text-center md:text-2xl lg:text-3xl py-8'> 
                 Name : {nasaData.title}
               </p>
-              <img className="shadow-2xl shadow-blue-700/100 border-4 border-black rounded-xl md:mx-auto md:w-8/12 " src={nasaData.url} alt={nasaData.media_type} />
+              <img className="shadow-2xl shadow-blue-700/100 border-4 border-black rounded-xl md:mx-auto md:w-8/12 lg:w-full" src={nasaData.url} alt={nasaData.media_type} />
             </div>
             <div className="p-4 ">
               <p className='mb-4 text-gray-500 md:text-center md:text-xl lg:text-2xl'>Taken By: {nasaData.copyright}</p>
-              <p className='text-lg border-double border-8 border-black p-6 rounded-lg shadow-2xl shadow-blue-700/100'>{nasaData.explanation}</p>
+              <p className='text-base border-double border-8 border-black p-6 rounded-lg shadow-2xl shadow-blue-700/100 lg:text-xl'>{nasaData.explanation}</p>
             </div>
         </div>
 
