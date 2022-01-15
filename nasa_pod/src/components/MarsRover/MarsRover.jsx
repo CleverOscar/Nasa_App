@@ -61,10 +61,6 @@ export default function MarsRover(){
     // url 
     let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumebr}&api_key=${api}`;
 
-    // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2020-6-4&page=${pageNumebr}&camera=${cameraState}&api_key=${api}
-
-
-    console.log(url)
     // sets up data when loaading page up
 
     useEffect(() => {
@@ -98,6 +94,27 @@ export default function MarsRover(){
         <input id='myDate' type="date" onChange={getDate}/>
     </div>
     
+    const cameraUpdate = <div>
+                            <label className="px-10 mr-6">
+                                    Camera
+                                </label>
+                                <select className="border w-auto text-center text-red-800" id="cameras" onChange={getCameraName}>
+                                {cameraOption}
+                                </select>
+                        </div>
+
+    const manual = <ol>
+                        <li>
+                            Step 1: Pick a date either present day or earlier.     
+                        </li>
+                        <li>
+                            Step 2: Pick a camera to view
+                        </li>
+                        <li>
+                            Step 3: Hit the submit button to search database
+                        </li>
+                    </ol>
+
     function getDate(){
         return setYourDate(document.getElementById("myDate").value);
     }
@@ -114,31 +131,23 @@ export default function MarsRover(){
         return console.log("Submitted")
     }
     
-    function getValue(event){
-        setCameraState(event.target.value)
+    function getCameraName(){
+        setCameraState(document.getElementById("cameras").value);
         return(console.log(cameraState));
     }
 
 
     return(
         <div className=" mt-8 w-10/12 mx-auto">
+            {manual}
             <form className="w-auto flex flex-row my-6" onSubmit={handleSubmit}>
                 <div className="mx-auto">
-                   <div>
-                    <label className="border-2 px-10 mr-6">
-                            Camera Viewing
-                        </label>
-                        <select className="border w-auto text-center text-red-800" id="cameras" onChange={getValue}>
-                        {cameraOption}
-                        </select>
-                   </div>
                     {updateDate}
+                    {cameraUpdate}
                 </div>
                 <button className="mx-auto border-2 border-blue-500 px-4" type="sumbit">Search</button>
             </form>
-            
             {images}
-            
         </div>
     )
 }
