@@ -22,8 +22,22 @@ const smallScreenNav = <div className='flex flex-row block border-2 border-red-5
                             <p className="w-full">Nasa Portal</p>
                             <ul className='text-base  items-center text-center border '>
                                 Nav
+                                <Link className="w-1/4"  to="/">
+                                Home
+                                </Link>
+                                <Link className="w-1/4" to='/apod'>
+                                Photo Of The Day
+                                </Link>
+                                <Link className="w-1/4" to='/mars'>
+                                Mars Rover Photos
+                                </Link>
+                                <Link className="w-1/4" to="/earth">
+                                Earth
+                                </Link>
                             </ul>
                         </div>
+
+
 
 
 export default function Navbar() {
