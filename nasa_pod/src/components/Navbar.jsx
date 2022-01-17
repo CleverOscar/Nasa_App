@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 export default function Navbar() {
 
-    const [navbarOpen, setNavbarOpen] = useState(true);
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
     return(
         <>
@@ -13,7 +13,7 @@ export default function Navbar() {
                 
                 <div className="p-4 flex flex-wrap items-center">
 
-                    <div className="text-lg w-full relative flex justify-between lg:w-auto lg:static lg:block">
+                    <div className="text-lg w-full items-center relative flex justify-between lg:w-auto lg:static lg:block">
                         <Link className="uppercase font-bold italic" to='/'>Nasa Portal</Link>
 
                         <button className="cursor-pointer text-lg border-2 px-3 py-2 rounded lg:hidden" type="button" onClick={()=>{setNavbarOpen(!navbarOpen)}}>
@@ -34,9 +34,6 @@ export default function Navbar() {
                             <Link className="py-3 z-10 lg:px-4 hover:underline" to='/mars'>
                                 Mars Rover Photos
                             </Link>
-                            <Link className="py-3 z-10 lg:px-4 hover:underline" to="/earth">
-                                Earth
-                            </Link>
                         </ul>
                     </div>
 
@@ -45,20 +42,3 @@ export default function Navbar() {
         </>
     )
 }
-
-
-// <div className='bg-white border-b-2 flex flex-row items-center p-4 uppercase sticky top-0 shadow-xl'>
-// <p className="mr-auto">Nasa Portal</p>
-{/* <Link className="mr-4 hover:underline"  to="/">
-Home
-</Link>
-<Link className="mr-4 hover:underline" to='/apod'>
-Photo Of The Day
-</Link>
-<Link className="mr-4 hover:underline" to='/mars'>
-Mars Rover Photos
-</Link>
-<Link className=" hover:underline" to="/earth">
-Earth
-</Link> */}
-// </div>
