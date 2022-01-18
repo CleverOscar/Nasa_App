@@ -18,7 +18,13 @@ export default function NasaPhoto(props){
     
     }, []);
 
+    const date = <div className='border-2 border-blue-800 px-4 py-2 rounded-lg'>
+        <label > Pick a date to checkout a certain date: </label>
+        <input className='border-2 border-black rounded px-4 w-auto' id="myDate" type="date" />
+    </div>
+
     return(<div className="mx-6">
+        {date}
         <p className="text-center text-2xl my-6 underline md:shadow-none">
           Astronomy Photo Of The Day
         </p>
