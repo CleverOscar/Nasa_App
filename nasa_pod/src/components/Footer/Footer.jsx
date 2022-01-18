@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Footer() {
     return(
-        <div className="border-4 mt-10">
-           <p className="text-center text-2xl mt-6">Contact Information</p>
+        <div className="border-4 border-black rounded-lg mt-10">
+           <p className="text-center text-2xl mt-6 underline">Contact Information</p>
             
-                <ul className="grid grid-cols-3 text-center my-8">
+                <ul className="grid grid-cols-3 text-center my-8 uppercase">
                     <li>
                         <a href="https://twitter.com/CleverOscarDev" target="_blank" rel="noopener noreferrer">
                             Twitter
