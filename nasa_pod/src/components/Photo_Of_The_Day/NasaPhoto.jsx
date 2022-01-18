@@ -48,7 +48,7 @@ export default function NasaPhoto(props){
     )
   }
 
-    return(<div >
+    return(<div className="mt-6" >
         <form onSubmit={handleSubmit}>
           {date}
         </form>
