@@ -35,7 +35,7 @@ export default function NasaPhoto(props){
             </div>
             <div>
               <p className='text-center mb-4 text-gray-500 md:text-xl lg:text-2xl'>Taken By: {nasaData.copyright}</p>
-              <p className='font-semibold text-base border-double border-8 border-black p-4 rounded-lg shadow-2xl '>{nasaData.explanation}</p>
+              <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
             </div>
         </div>
 
