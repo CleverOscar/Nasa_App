@@ -91,14 +91,14 @@ export default function MarsRover(){
         <label className='px-2'>
         Date: 
         </label>
-        <input className="border-2 px-3 w-full text-center" id='myDate' type="date" onChange={getDate}/>
+        <input className="border-2 border-black px-3 w-full text-center" id='myDate' type="date" onChange={getDate}/>
     </div>
     
     const cameraUpdate = <div className="flex flex-row py-2">
                             <label className="px-2">
                                     Camera
                                 </label>
-                                <select className="border-2 w-full text-center text-red-800" id="cameras" onChange={getCameraName}>
+                                <select className="border-2 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
                                 {cameraOption}
                                 </select>
                         </div>
@@ -128,12 +128,12 @@ export default function MarsRover(){
     return(
         <div className=" mt-8 w-10/12 mx-auto">
             {<Manual />}
-            <form className="w-auto flex flex-col my-6 border-4 rounded-xl shadow-lg px-4 py-3" onSubmit={handleSubmit}>
+            <form className="w-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3" onSubmit={handleSubmit}>
                 <div className="mx-auto w-full">
                     {updateDate}
                     {cameraUpdate}
                 </div>
-                <button className="mx-auto border-2 border-blue-500 px-2 mt-4" type="sumbit">Search</button>
+                <button className="mx-auto border-2 border-black px-2 mt-4" type="sumbit">Search</button>
             </form>
             {images}
         </div>
