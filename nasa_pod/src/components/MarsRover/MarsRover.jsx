@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import Manual from './Manual';
 
 export default function MarsRover(){
 
@@ -87,33 +87,21 @@ export default function MarsRover(){
         </option>)
 
     
-    const updateDate = <div>
+    const updateDate = <div className="flex flex-row items-center">
         <label className='px-2'>
         Date: 
         </label>
-        <input id='myDate' type="date" onChange={getDate}/>
+        <input className="border-2 px-3 w-full text-center" id='myDate' type="date" onChange={getDate}/>
     </div>
     
-    const cameraUpdate = <div>
-                            <label className="px-10 mr-6">
+    const cameraUpdate = <div className="flex flex-row py-2">
+                            <label className="px-2">
                                     Camera
                                 </label>
-                                <select className="border w-auto text-center text-red-800" id="cameras" onChange={getCameraName}>
+                                <select className="border-2 w-full text-center text-red-800" id="cameras" onChange={getCameraName}>
                                 {cameraOption}
                                 </select>
                         </div>
-
-    const manual = <ol>
-                        <li>
-                            Step 1: Pick a date either present day or earlier.     
-                        </li>
-                        <li>
-                            Step 2: Pick a camera to view
-                        </li>
-                        <li>
-                            Step 3: Hit the submit button to search database
-                        </li>
-                    </ol>
 
     function getDate(){
         return setYourDate(document.getElementById("myDate").value);
@@ -139,13 +127,13 @@ export default function MarsRover(){
 
     return(
         <div className=" mt-8 w-10/12 mx-auto">
-            {manual}
-            <form className="w-auto flex flex-row my-6" onSubmit={handleSubmit}>
-                <div className="mx-auto">
+            {<Manual />}
+            <form className="w-auto flex flex-col my-6 border-4 rounded-xl shadow-lg px-4 py-3" onSubmit={handleSubmit}>
+                <div className="mx-auto w-full">
                     {updateDate}
                     {cameraUpdate}
                 </div>
-                <button className="mx-auto border-2 border-blue-500 px-4" type="sumbit">Search</button>
+                <button className="mx-auto border-2 border-blue-500 px-2 mt-4" type="sumbit">Search</button>
             </form>
             {images}
         </div>
