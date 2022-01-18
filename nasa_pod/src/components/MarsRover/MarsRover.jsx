@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Manual from './Manual';
+import Pagination from './Pagination';
 
 export default function MarsRover(){
 
@@ -101,6 +102,8 @@ export default function MarsRover(){
                                 <select className="border-2 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
                                 {cameraOption}
                                 </select>
+
+                                <Pagination data={roverImages}/>
                         </div>
 
     function getDate(){
@@ -127,14 +130,16 @@ export default function MarsRover(){
 
     return(
         <div className=" mt-8 w-10/12 mx-auto">
-            {<Manual />}
-            <form className="w-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3" onSubmit={handleSubmit}>
-                <div className="mx-auto w-full">
-                    {updateDate}
-                    {cameraUpdate}
-                </div>
-                <button className="mx-auto border-2 border-black px-2 mt-4" type="sumbit">Search</button>
-            </form>
+            <div className="w-full lg:w-1/2 mx-auto">
+                {<Manual />}
+                <form className="w-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3" onSubmit={handleSubmit}>
+                    <div className="mx-auto w-full">
+                        {updateDate}
+                        {cameraUpdate}
+                    </div>
+                    <button className="mx-auto border-2 border-black px-2 mt-4" type="sumbit">Search</button>
+                </form>
+            </div>
             {images}
         </div>
     )
