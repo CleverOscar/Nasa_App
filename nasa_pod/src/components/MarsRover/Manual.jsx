@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Manual(){
-    return(<ol className="text-base border-4 border-black rounded-xl shadow-lg px-4 py-3">
+    return(<ol className="text-base border-4 border-black rounded-xl shadow-lg px-4 py-3 h-full">
                 <li>
                 Step 1: Pick a date present day or earlier   
                 </li>
