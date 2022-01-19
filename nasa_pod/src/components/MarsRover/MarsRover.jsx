@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Manual from './Manual';
 import Pagination from './Pagination';
+import Images from './Images';
 
 export default function MarsRover(){
 
@@ -72,16 +73,6 @@ export default function MarsRover(){
        )
     },[])
 
-    const images = roverImages.map(item => 
-        <div className="border-4 mt-10" key={item.id}>
-            <p>Rover: {item.rover.name}</p>
-            <p>Camera Name: {item.camera.full_name}</p>
-            <p>Solar Day: {item.sol}</p>
-            <p>Earth Day: {item.earth_date}</p>
-            <img alt={item.name} src={item.img_src} />
-        </div>
-    )
-
     const cameraOption = cameras.map(camera => 
         <option key={camera.id} defaultValue={camera.camera_name}>
             {camera.camera_name}
@@ -140,7 +131,7 @@ export default function MarsRover(){
             </div>
 
             <Pagination data={roverImages}/>
-            {images}
+            {<Images data={roverImages} />}
 
             
         </div>
