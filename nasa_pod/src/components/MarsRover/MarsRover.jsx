@@ -83,16 +83,16 @@ export default function MarsRover(){
         <label className='px-2'>
         Date: 
         </label>
-        <input className="border-2 border-black px-3 w-full text-center" id='myDate' type="date" onChange={getDate}/>
+        <input className="border-2 border-black px-3 w-full text-center" max={new Date().toISOString().split('T')[0]} id='myDate' type="date"  onChange={getDate}/>
     </div>
     
     const cameraUpdate = <div className="flex flex-row py-2">
                             <label className="px-2">
                                     Camera
-                                </label>
-                                <select className="border-2 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
-                                {cameraOption}
-                                </select>
+                            </label>
+                            <select className="border-2 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
+                            {cameraOption}
+                            </select>
                         </div>
 
     function getDate(){
@@ -117,6 +117,7 @@ export default function MarsRover(){
     }
 
 
+
     return(
         <div className="mt-8 w-10/12 mx-auto lg:w-full">
             <div className="w-full mx-auto lg:flex lg:flex-row md:w-8/12 lg:justify-between lg:items-center">
@@ -130,8 +131,8 @@ export default function MarsRover(){
                 </form>
             </div>
 
-            <Pagination data={roverImages}/>
-            {<Images data={roverImages} />}
+            <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
+            {/* {<Images data={roverImages} />} */}
 
             
         </div>
