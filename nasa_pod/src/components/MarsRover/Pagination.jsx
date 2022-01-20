@@ -55,7 +55,7 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
                     </button>
                 ))}
 
-                <button className="border-2 border-black p-2 mt-4">
+                <button className="border-2 border-black p-2 mt-4" onClick={goToNextPage}>
                     next
                 </button>
             </div>
