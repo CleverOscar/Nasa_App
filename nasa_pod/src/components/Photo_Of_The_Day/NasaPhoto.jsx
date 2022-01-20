@@ -38,7 +38,7 @@ export default function NasaPhoto(props){
 
   const imageMedia = <img className="shadow-2xl mx-auto  border-4 border-black rounded-xl lg:w-full" src={nasaData.url} alt={nasaData.media_type} />
 
-  const videoMedia = <iframe className='border-2 border-black h-96 w-full' src={nasaData.url}> </iframe>
+  const videoMedia = <iframe className='border-2 border-black h-96 w-full' title={nasaData.title}  src={nasaData.url}> </iframe>
 
   function handleSubmit(event){
     event.preventDefault();
@@ -71,10 +71,6 @@ export default function NasaPhoto(props){
             <div>
               <p className='text-center mb-4 text-gray-500 md:text-xl lg:text-2xl'>Taken By: {nasaData.copyright}</p>
               <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
-              
-              <video className="w-auto h-auto" autoplay>
-                <source src={nasaData.url} type={nasaData.media_type}/>
-              </video>
             </div>
         </div>
 
