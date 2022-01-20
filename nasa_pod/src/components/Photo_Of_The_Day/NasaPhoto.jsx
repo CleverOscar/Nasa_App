@@ -7,7 +7,7 @@ export default function NasaPhoto(props){
   let [nasaData, setNasaData] = useState([]);
 
   // date
-  let [dateSetup, setDateSetup] = useState(new Date().toISOString().split('T')[0]) 
+  let [dateSetup, setDateSetup] = useState(new Date().toISOString().split('T')[0])
 
   const api = 'JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j';
 
@@ -65,10 +65,15 @@ export default function NasaPhoto(props){
               <p className='text-xl text-center italic text-cyan-500 md:text-center md:text-2xl py-8 lg:hidden'> 
                 Name : {nasaData.title}
               </p>
+              <p className="text-center text-2xl pt-2">Check out the full HD photo <a className="uppercase text-blue-900 underline" href={nasaData.hdurl} target="_blank" rel="noreferrer">here</a></p>
             </div>
             <div>
               <p className='text-center mb-4 text-gray-500 md:text-xl lg:text-2xl'>Taken By: {nasaData.copyright}</p>
               <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
+              
+              <video className="w-auto h-auto" autoplay>
+                <source src={nasaData.url} type={nasaData.media_type}/>
+              </video>
             </div>
         </div>
 
