@@ -43,7 +43,7 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
                 ))}
             </div>
 
-            <div>
+            <div className="flex flex-row justify-between">
                 <button className="border-2 border-black p-2 mt-4" onClick={goToPreviousPage}>
                     prev
                 </button>
@@ -51,9 +51,13 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
                 {getPaginationGroup().map((item, index) => (
                     <button key={index}
                     onClick={changePage}>
-                        <span>{item}</span>
+                        <span className="mx-4">{item}</span>
                     </button>
                 ))}
+
+                <button className="border-2 border-black p-2 mt-4">
+                    next
+                </button>
             </div>
         </div>
     );
