@@ -79,18 +79,18 @@ export default function MarsRover(){
         </option>)
 
     
-    const updateDate = <div className="flex flex-row items-center">
-        <label className='px-2'>
-        Date: 
+    const updateDate = <div className="flex flex-col md:flex-row items-center">
+        <label className='px-2 md:w-1/2 underline'>
+        Date 
         </label>
         <input className="border-2 border-black px-3 w-full text-center" max={new Date().toISOString().split('T')[0]} id='myDate' type="date"  onChange={getDate}/>
     </div>
     
-    const cameraUpdate = <div className="flex flex-row py-2">
-                            <label className="px-2">
+    const cameraUpdate = <div className="flex flex-col md:flex-row py-2">
+                            <label className="mx-auto px-2 w-1/2 underline">
                                     Camera
                             </label>
-                            <select className="border-2 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
+                            <select className=" border-2 px-3 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
                             {cameraOption}
                             </select>
                         </div>
@@ -121,8 +121,7 @@ export default function MarsRover(){
     return(
         <div className="mt-8 w-10/12 mx-auto lg:w-full">
             <div className="w-full mx-auto lg:flex lg:flex-row md:w-8/12 lg:justify-between lg:items-center">
-                {<Manual />}
-                <form className="w-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3 " onSubmit={handleSubmit}>
+                <form className="w-8/12 mx-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3 " onSubmit={handleSubmit}>
                     <div className="mx-auto w-full">
                         {updateDate}
                         {cameraUpdate}
@@ -134,7 +133,7 @@ export default function MarsRover(){
            {roverImages.length > 0 ? (<> 
            <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/></>
            
-           ) : (<p className="text-center text-xl">There are no images</p>)}
+           ) : (<p className="text-center text-xl">Pick a date to search database for images or videos</p>)}
             {/* {<Images data={roverImages} />} */}
 
             
