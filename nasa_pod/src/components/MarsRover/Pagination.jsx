@@ -10,7 +10,6 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
     }
     
     function goToPreviousPage(){
-        console.log('clicked', data)
         setCurrentPage((page) => page - 1);
     }
 
@@ -29,13 +28,14 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
 
     const getPaginationGroup = () => {
         let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
+        
 
         return new Array(pageLimit).fill().map((_, idx) => start * idx + 1);
     };
 
 
     return(
-        <div className="border-2 border-black w-1/2 mx-auto py-4 px-4">
+        <div className="border-2 border-black w-full mx-auto py-4 px-4">
             <div>
                 {getPaginatedData().map((d, idx) => (
                     <RenderComponent key={idx} data={d} />
@@ -43,18 +43,13 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
             </div>
 
             <div className="flex flex-row justify-between">
-                <button className="border-2 border-black p-2 mt-4" onClick={goToPreviousPage}>
+                <button className="border-2 border-black p-2" onClick={goToPreviousPage}>
                     prev
                 </button>
 
-                {getPaginationGroup().map((item, index) => (
-                    <button key={index}
-                    onClick={changePage}>
-                        <span className="mx-4">{item}</span>
-                    </button>
-                ))}
+                {console.log(getPaginationGroup().map((item) => item))}
 
-                <button className="border-2 border-black p-2 mt-4" onClick={goToNextPage}>
+                <button className="border-2 border-black p-2" onClick={goToNextPage}>
                     next
                 </button>
             </div>

@@ -121,7 +121,7 @@ export default function MarsRover(){
     return(
         <div className="mt-8 w-10/12 mx-auto lg:w-full">
             <div className="w-full mx-auto lg:flex lg:flex-row md:w-8/12 lg:justify-between lg:items-center">
-                <form className="w-8/12 mx-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3 " onSubmit={handleSubmit}>
+                <form className="w-10/12 mx-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3 " onSubmit={handleSubmit}>
                     <div className="mx-auto w-full">
                         {updateDate}
                         {cameraUpdate}

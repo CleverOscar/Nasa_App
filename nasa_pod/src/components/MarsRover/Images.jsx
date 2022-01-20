@@ -2,13 +2,21 @@ import React from 'react';
 
 export default function Images(props) {
 
-    console.log(props)
+    const images = <div className=" border-2 border-black my-10" key={props.data.id}>
+        <img className="w-full mx-auto" src={props.data.img_src} alt={props.data.camera.name} />
 
-    console.log(props.data.id)
-
-    const images = <div className="border-2 border-black my-10" key={props.data.id}>
-        <img src={props.data.img_src} alt={props.data.camera.name} />
+        
     </div>
+    
+    return (<>
+        {images}
+    </>)
+}
+
+
+
+
+
 
     // const images = props.data.map(item => 
     //     <div className="border-4 border-black p-6 mt-10 shadow-2xl rounded-lg lg:w-auto lg:mx-auto lg:flex lg:flex-row  lg:items-center" key={item.id}>
@@ -22,8 +30,3 @@ export default function Images(props) {
     //         </div>
     //     </div>
     // )
-    
-    return (<>
-        {images}
-    </>)
-}
