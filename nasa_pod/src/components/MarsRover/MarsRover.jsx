@@ -131,7 +131,10 @@ export default function MarsRover(){
                 </form>
             </div>
 
-            <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
+           {roverImages.length > 0 ? (<> 
+           <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/></>
+           
+           ) : (<p className="text-center text-xl">There are no images</p>)}
             {/* {<Images data={roverImages} />} */}
 
             

@@ -36,7 +36,6 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
 
     return(
         <div className="border-2 border-black w-1/2 mx-auto py-4 px-4">
-            {title}
             <div>
                 {getPaginatedData().map((d, idx) => (
                     <RenderComponent key={idx} data={d} />
