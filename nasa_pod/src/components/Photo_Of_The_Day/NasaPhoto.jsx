@@ -36,11 +36,12 @@ export default function NasaPhoto(props){
     return setDateSetup(document.getElementById("myDate").value)
   }
 
+  const imageMedia = <img className="shadow-2xl mx-auto  border-4 border-black rounded-xl lg:w-full" src={nasaData.url} alt={nasaData.media_type} />
+
+  const videoMedia = <iframe className='border-2 border-black h-96 w-full' src={nasaData.url}> </iframe>
+
   function handleSubmit(event){
     event.preventDefault();
-
-    console.log(dateSetup)
-    console.log(url)
     axios.get(url).then(
       (res) => {
         setNasaData(res.data)
@@ -61,7 +62,7 @@ export default function NasaPhoto(props){
               <p className='hidden lg:block text-2xl py-8 text-center italic text-cyan-500 '> 
                 Name : {nasaData.title}
               </p>
-              <img className="shadow-2xl mx-auto  border-4 border-black rounded-xl lg:w-full" src={nasaData.url} alt={nasaData.media_type} />
+              {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <>Sorry You need to search a date first in order to see something.</>}
               <p className='text-xl text-center italic text-cyan-500 md:text-center md:text-2xl py-8 lg:hidden'> 
                 Name : {nasaData.title}
               </p>
