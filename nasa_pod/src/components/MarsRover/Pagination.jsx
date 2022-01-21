@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 export default function Pagination({data, RenderComponent, title, pageLimit, dataLimit}) {
     const [pages] = useState(Math.round(data.length / dataLimit));
     const [currentPage, setCurrentPage] = useState(1);
-    
 
     function goToNextPage(){
         setCurrentPage((page) => page + 1);
@@ -28,11 +27,8 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
 
     const getPaginationGroup = () => {
         let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-        
-
-        return new Array(pageLimit).fill().map((_, idx) => start * idx + 1);
-    };
-
+        return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
+      };
 
     return(
         <div className="border-2 border-black w-full mx-auto py-4 px-4">
@@ -43,13 +39,22 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
             </div>
 
             <div className="flex flex-row justify-between">
-                <button className="border-2 border-black p-2" onClick={goToPreviousPage}>
+                <button className={`border-2 border-black p-2 ${currentPage === 1 ? 'hidden' : ''} `} onClick={goToPreviousPage}>
                     prev
                 </button>
 
-                {console.log(getPaginationGroup().map((item) => item))}
+                {getPaginationGroup().map((item, index)=>(<button 
+                                                            key={index} 
+                                                            onClick={changePage}
+                                                            className={`${pages >= item ? "font-bold text-2xl border-2 border-black px-3 " : "hidden" } ${currentPage === item ? "text-blue-500" : null} `}
+                                                            > 
+                                                                <span>
+                                                                    {item}                                                                  
+                                                                </span>
+                                                          </button>
+                ))}
 
-                <button className="border-2 border-black p-2" onClick={goToNextPage}>
+                <button className={`border-2 p-2 border-black ${currentPage === pages ? 'hidden' : ''}`} onClick={goToNextPage}>
                     next
                 </button>
             </div>

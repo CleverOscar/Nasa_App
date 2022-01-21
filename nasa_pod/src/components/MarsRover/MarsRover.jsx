@@ -52,7 +52,7 @@ export default function MarsRover(){
     // camera state
     let [cameraState, setCameraState ] = useState('');
 
-    const [pageNumebr, setPageNumber] = useState(1);
+    const [pageNumeber, setPageNumber] = useState(1);
 
     // Key
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
@@ -61,7 +61,7 @@ export default function MarsRover(){
     let [yourDate, setYourDate] = useState(new Date().toISOString().split('T')[0]);
 
     // url 
-    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumebr}&api_key=${api}`;
+    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumeber}&api_key=${api}`;
 
     // sets up data when loaading page up
 
@@ -134,7 +134,6 @@ export default function MarsRover(){
            <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/></>
            
            ) : (<p className="text-center text-xl">Pick a date to search database for images or videos</p>)}
-            {/* {<Images data={roverImages} />} */}
 
             
         </div>
