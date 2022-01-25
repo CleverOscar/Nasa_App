@@ -3,13 +3,13 @@ import React from 'react';
 export default function LandingPage(){
 
     return(
-        <div className='border-4 border-black mx-4 my-8 bg-gray-200 lg:w-1/2 lg:mx-auto'>
+        <div className='border-4 border-black mx-4 border-8 border-double bg-gray-200 lg:w-1/2 lg:mx-auto'>
             <p className='my-6 text-center text-3xl underline'>
                 Nasa API Portal Application
             </p>
 
-            <p className='px-6 pb-6 text-2xl'>
-            A React App that fetches data from NASA's API portal. Displaying photos and videos from Earth, Mars, Stars, Galaxies, and more!
+            <p className='px-6 pb-6 text-base md:text-2xl'>
+            A ReactJS application that fetches data from NASA's Portal API database. Two features are currently available to use at the moment are Photo Of The Day and the Mars Rover view. Make sure to check them out!
             </p>
 
             <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" alt="nasa logo" />
