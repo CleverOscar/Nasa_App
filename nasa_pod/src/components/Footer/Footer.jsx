@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
     return(
         <div className="border-4 border-black rounded-lg mt-10">
-           <p className="text-center text-base underline border-b-4 border-black py-3">Contact Information</p>
+           <p className="text-center text-base underline border-b-4 border-black py-3 md:text-xl">Contact Information</p>
             
                 <ul className='flex flex-row items-center justify-center my-3'>
                     <li className='w-3/12'>
