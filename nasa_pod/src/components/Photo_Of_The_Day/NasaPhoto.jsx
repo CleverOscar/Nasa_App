@@ -23,7 +23,7 @@ export default function NasaPhoto(props){
         console.log(error.message)
       })
     
-    }, []);
+    }, [url]);
     
 
   const date = <div className='border-4 border-black px-4 py-2 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl lg:w-4/12'>
@@ -63,13 +63,13 @@ export default function NasaPhoto(props){
                 Name : {nasaData.title}
               </p>
               {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <>Sorry You need to search a date first in order to see something.</>}
-              <p className='text-xl text-center italic text-cyan-500 md:text-center md:text-2xl py-8 lg:hidden'> 
+              <p className='text-xl text-center italic text-cyan-500 md:text-center md:text-2xl py-5 lg:hidden'> 
                 Name : {nasaData.title}
               </p>
-              <p className="text-center text-2xl pt-2">Check out the full HD photo <a className="uppercase text-blue-900 underline" href={nasaData.hdurl} target="_blank" rel="noreferrer">here</a></p>
+              <p className="text-center  lg:text-xl pb-6">Check out the full HD photo <a className="uppercase italic text-blue-900 underline" href={nasaData.hdurl} target="_blank" rel="noreferrer">here</a></p>
             </div>
             <div>
-              <p className='text-center mb-4 text-gray-500 md:text-xl lg:text-2xl'>Taken By: {nasaData.copyright}</p>
+              <p className='text-center mb-4 text-gray-500 text-xl lg:text-2xl'>Taken By: <span className='underline text-blue-900 italic'>{nasaData.copyright}</span></p>
               <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
             </div>
         </div>

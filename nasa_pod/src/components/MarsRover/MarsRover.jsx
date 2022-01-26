@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import Manual from './Manual';
 import Pagination from './Pagination';
 import Images from './Images';
 
@@ -50,9 +49,9 @@ export default function MarsRover(){
     ];
 
     // camera state
-    let [cameraState, setCameraState ] = useState('');
+    let [cameraState, setCameraState ] = useState();
 
-    const [pageNumeber, setPageNumber] = useState(1);
+    const [pageNumeber] = useState(1);
 
     // Key
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
@@ -71,7 +70,7 @@ export default function MarsRover(){
             setRoverImages(res.data.photos)
            }
        )
-    },[])
+    },[url])
 
     const cameraOption = cameras.map(camera => 
         <option key={camera.id} defaultValue={camera.camera_name}>
@@ -112,10 +111,10 @@ export default function MarsRover(){
     }
     
     function getCameraName(){
+        debugger
         setCameraState(document.getElementById("cameras").value);
         return(console.log(cameraState));
     }
-
 
 
     return(
@@ -128,12 +127,19 @@ export default function MarsRover(){
                     </div>
                     <button className="mx-auto border-2 border-black px-2 mt-4" type="sumbit">Search</button>
                 </form>
+
+
             </div>
 
-           {roverImages.length > 0 ? (<> 
-           <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/></>
+           {roverImages.length > 0 ? (<div> 
+                <p> Rover Name {roverImages[0].rover.name}</p>
+                <p>Rover Launch date: {roverImages[0].rover.launch_date}</p>
+                <p>Landing Date: {roverImages[0].rover.landing_date}</p>
+                <p>Camera currently viewing: {roverImages[0].camera.full_name}</p>
+                <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
+            </div>
            
-           ) : (<p className="text-center text-xl">Pick a date to search database for images or videos</p>)}
+           ) : (<p className="text-center text-xl">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
 
             
         </div>
