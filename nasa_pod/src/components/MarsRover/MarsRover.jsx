@@ -78,7 +78,7 @@ export default function MarsRover(){
         </option>)
 
     
-    const updateDate = <div className="flex flex-col md:flex-row items-center">
+    const updateDate = <div className="flex flex-col items-center md:flex-row py-6">
         <label className='px-2 md:w-1/2 underline'>
         Date 
         </label>
@@ -111,25 +111,24 @@ export default function MarsRover(){
     }
     
     function getCameraName(){
-        debugger
         setCameraState(document.getElementById("cameras").value);
         return(console.log(cameraState));
     }
 
 
     return(
-        <div className="mt-8 w-10/12 mx-auto">
-            <div className="w-full mx-auto lg:flex lg:flex-row md:w-8/12 lg:justify-between lg:items-center">
-                <form className="w-10/12 mx-auto flex flex-col my-6 border-4 border-black rounded-xl shadow-lg px-4 py-3 " onSubmit={handleSubmit}>
+        <div className="w-10/12 mx-auto">
+           
+                <form className="text-base md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
                     <div className="mx-auto w-full">
                         {updateDate}
                         {cameraUpdate}
                     </div>
-                    <button className="mx-auto border-2 border-black px-2 mt-4" type="sumbit">Search</button>
+                    <button className="mx-auto border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
                 </form>
 
 
-            </div>
+           
 
            {roverImages.length > 0 ? (<div> 
                 <p> Rover Name {roverImages[0].rover.name}</p>
@@ -139,7 +138,7 @@ export default function MarsRover(){
                 <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
             </div>
            
-           ) : (<p className="text-center text-xl">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
+           ) : (<p className="text-center text-xl w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
 
             
         </div>
