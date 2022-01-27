@@ -95,12 +95,14 @@ export default function MarsRover(){
                         </div>
 
     const infoCard = <div className='border-4 border-black font-semibold rounded-lg p-4 bg-gray-200 shadow-2xl'>
-                        <p> Rover Name <span className='text-red-800'>{roverImages[0].camera.full_name}</span></p>
-                        <p>Rover Launch date: {roverImages[0].camera.launch_date}</p>
-                        <p>Landing Date: {roverImages[0].camera.landing_date}</p>
-                        <p>Camera currently viewing: {roverImages[0].camera.full_name}</p>
-                        <p className='text-lg'>Days on mars: {roverImages[0].sol}</p>
-                        <p>Earth date: {roverImages[0].earth_date}</p>
+                        <p>Rover Name: <span className='text-red-600 uppercase'>{roverImages[0].rover.name}</span></p>
+                        <p>Rover launch date: <span className='text-blue-600'>{roverImages[0].rover.launch_date}</span></p>
+                        <p>Rover landing date: <span className='text-orange-600'>{roverImages[0].rover.landing_date}</span></p>
+                        <p>Rover status: <span className='text-green-600 uppercase'>{roverImages[0].rover.status}</span></p>
+                        <p>Rover camera view: {roverImages[0].camera.full_name}</p>
+                        <p>Earth Date: <span className='text-green-500'>{roverImages[0].earth_date}</span></p>
+                        <p>Day being on mars: <span className='underline text-red-500'>{roverImages[0].sol}</span></p>
+                        <p>Images: {roverImages.length}</p>
                     </div>
 
     function getDate(){
@@ -136,11 +138,11 @@ export default function MarsRover(){
                     <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
                 </form>
 
-
+                {roverImages.length > 0 ? <div>{infoCard}</div> : null}
            
 
            {roverImages.length > 0 ? (<div> 
-                {infoCard}
+                
                 <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
             </div>
            
