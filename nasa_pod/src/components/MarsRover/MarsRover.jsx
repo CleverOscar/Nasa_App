@@ -138,7 +138,7 @@ export default function MarsRover(){
                 <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
             </div>
            
-           ) : (<p className="text-center text-xl w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
+           ) : (<p className="text-center w-10/12 text-lg md:text-2xl md:w-8/12 lg:w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
 
             
         </div>
