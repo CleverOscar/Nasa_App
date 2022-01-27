@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Pagination from './Pagination';
 import Images from './Images';
+import InfoCard from './views/InfoCard';
 
 export default function MarsRover(){
 
@@ -94,17 +95,6 @@ export default function MarsRover(){
                             </select>
                         </div>
 
-    const infoCard = <div className='mx-auto border-4 border-black font-semibold rounded-lg p-4 bg-gray-200 shadow-2xl md:w-10/12 md:text-2xl lg:w-1/2'>
-                        <p>Rover Name: <span className='text-red-600 uppercase'>{roverImages[0].rover.name}</span></p>
-                        <p>Rover launch date: <span className='text-blue-600'>{roverImages[0].rover.launch_date}</span></p>
-                        <p>Rover landing date: <span className='text-orange-600'>{roverImages[0].rover.landing_date}</span></p>
-                        <p>Rover status: <span className='text-green-600 uppercase'>{roverImages[0].rover.status}</span></p>
-                        <p>Rover camera view: {roverImages[0].camera.full_name}</p>
-                        <p>Earth Date: <span className='text-green-500'>{roverImages[0].earth_date}</span></p>
-                        <p>Day being on mars: <span className='underline text-red-500'>{roverImages[0].sol}</span></p>
-                        <p>Images: {roverImages.length}</p>
-                    </div>
-
     function getDate(){
         return setYourDate(document.getElementById("myDate").value);
     }
@@ -138,7 +128,7 @@ export default function MarsRover(){
                     <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
                 </form>
 
-                {roverImages.length > 0 ? <div>{infoCard}</div> : null}
+                {roverImages.length > 0 ? <InfoCard data={roverImages[0]} /> : null}
            
 
            {roverImages.length > 0 ? (<div> 
