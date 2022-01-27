@@ -94,7 +94,7 @@ export default function MarsRover(){
                             </select>
                         </div>
 
-    const infoCard = <div className='border-4 border-black font-semibold rounded-lg p-4 bg-gray-200 shadow-2xl'>
+    const infoCard = <div className='mx-auto border-4 border-black font-semibold rounded-lg p-4 bg-gray-200 shadow-2xl md:w-10/12 md:text-2xl lg:w-1/2'>
                         <p>Rover Name: <span className='text-red-600 uppercase'>{roverImages[0].rover.name}</span></p>
                         <p>Rover launch date: <span className='text-blue-600'>{roverImages[0].rover.launch_date}</span></p>
                         <p>Rover landing date: <span className='text-orange-600'>{roverImages[0].rover.landing_date}</span></p>
