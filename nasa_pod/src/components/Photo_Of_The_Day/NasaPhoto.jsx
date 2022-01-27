@@ -58,9 +58,7 @@ export default function NasaPhoto(props){
                       <p className='text-center mb-4 text-gray-500 text-xl lg:text-2xl'>Taken By: <span className='underline text-blue-900 italic'>{nasaData.copyright}</span></p>
                       <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
                       </div>
-                      </div>
-  
-  
+                     </div>
 
   const videoMedia =  <div className='mx-6 lg:grid lg:grid-cols-2 gap-10 lg:items-center'>
                           <div>
@@ -82,7 +80,7 @@ export default function NasaPhoto(props){
                           <p className='font-semibold tracking-wide text-base md:leading-7 md:text-lg border-double border-8 border-black p-4 rounded-lg shadow-2xl'>{nasaData.explanation}</p>
                           </div>
                         </div>
-  
+
 
   function handleSubmit(event){
     event.preventDefault();
@@ -94,13 +92,11 @@ export default function NasaPhoto(props){
   }
 
     return(<div className="mt-6" >
-        
           {dateForm}
-        
-        <p className="text-center text-2xl my-6 underline md:shadow-none">
+          <p className="text-center text-2xl my-6 underline md:shadow-none">
           Astronomy Photo Of The Day
-        </p>
-        {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <p className='text-center md:text-2xl pb-4'>Sorry, You need to search a date first in order to see something.</p>}
-    </div>
+          </p>
+          {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <p className='text-center md:text-2xl pb-4'>Sorry, You need to search a date first in order to see something.</p>}
+        </div>
     )
 }
