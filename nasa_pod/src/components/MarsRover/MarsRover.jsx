@@ -94,6 +94,15 @@ export default function MarsRover(){
                             </select>
                         </div>
 
+    const infoCard = <div className='border-4 border-black font-semibold rounded-lg p-4 bg-gray-200 shadow-2xl'>
+                        <p> Rover Name <span className='text-red-800'>{roverImages[0].camera.full_name}</span></p>
+                        <p>Rover Launch date: {roverImages[0].camera.launch_date}</p>
+                        <p>Landing Date: {roverImages[0].camera.landing_date}</p>
+                        <p>Camera currently viewing: {roverImages[0].camera.full_name}</p>
+                        <p className='text-lg'>Days on mars: {roverImages[0].sol}</p>
+                        <p>Earth date: {roverImages[0].earth_date}</p>
+                    </div>
+
     function getDate(){
         return setYourDate(document.getElementById("myDate").value);
     }
@@ -117,24 +126,21 @@ export default function MarsRover(){
 
 
     return(
-        <div className="w-10/12 mx-auto">
+        <div className="w-10/12 mx-auto ">
            
-                <form className="text-base md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
+                <form className="text-base bg-gray-200 w-full md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
                     <div className="mx-auto w-full">
                         {updateDate}
                         {cameraUpdate}
                     </div>
-                    <button className="mx-auto border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
+                    <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
                 </form>
 
 
            
 
            {roverImages.length > 0 ? (<div> 
-                <p> Rover Name {roverImages[0].rover.name}</p>
-                <p>Rover Launch date: {roverImages[0].rover.launch_date}</p>
-                <p>Landing Date: {roverImages[0].rover.landing_date}</p>
-                <p>Camera currently viewing: {roverImages[0].camera.full_name}</p>
+                {infoCard}
                 <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
             </div>
            
