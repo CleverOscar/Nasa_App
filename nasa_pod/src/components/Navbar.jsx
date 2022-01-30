@@ -34,6 +34,9 @@ export default function Navbar() {
                             <Link className="py-3 z-10 lg:px-4 hover:underline" to='/mars'>
                                 Mars Rover Photos
                             </Link>
+                            <Link className="py-3 z-10 lg:px-4 hover:underline" to='/astroids'>
+                                Mars Rover Photos
+                            </Link>
                         </ul>
                     </div>
 
