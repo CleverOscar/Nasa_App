@@ -11,7 +11,7 @@ export default function Navbar() {
         <>
             <nav className="bg-inherit text-white">
                 
-                <div className="p-4 flex flex-wrap items-center">
+                <div className="p-4 md:px-0 flex flex-wrap items-center">
 
                     <div className="text-lg w-full items-center relative flex justify-between lg:w-auto lg:static lg:block">
                         <Link className="uppercase font-bold italic underline" to='/'>Nasa Portal</Link>

@@ -28,7 +28,7 @@ export default function NasaPhoto(props){
     
 
   const dateForm = <form onSubmit={handleSubmit}>
-    <div className='border-4 border-black px-4 py-2 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl lg:w-4/12'>
+    <div className='bg-gray-200/20 border-4 border-black px-4 py-2 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl lg:w-4/12'>
       <label  className='text-xl py-2 text-center'> Pick a date to checkout a certain date: </label>
       <input className='border-2 border-black rounded px-4 w-10/12 mx-auto text-xl' id="myDate" type="date" max={new Date().toISOString().split('T')[0]} onChange={getDate}/>
       <button className="mx-auto border-2 border-black rounded-lg px-4 my-6 text-xl" type="sumbit">Search</button>
@@ -48,7 +48,7 @@ export default function NasaPhoto(props){
     )
   }
 
-    return(<div className="mt-6 bg-gradient-to-t from-[#1d1135] to-[#7649fe]" >
+    return(<div className="mt-6 py-[75px]" >
           {dateForm}
           <Card data={nasaData}/>
           </div>
