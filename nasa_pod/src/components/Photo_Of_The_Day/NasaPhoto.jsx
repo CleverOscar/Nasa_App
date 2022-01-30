@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Card from './views/Card';
 
 export default function NasaPhoto(props){
   
@@ -93,10 +94,11 @@ export default function NasaPhoto(props){
 
     return(<div className="mt-6" >
           {dateForm}
+          <Card data={nasaData}/>
           <p className="text-center text-2xl my-6 underline md:shadow-none">
           Astronomy Photo Of The Day
           </p>
-          {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <p className='text-center md:text-2xl pb-4'>Sorry, You need to search a date first in order to see something.</p>}
+          {/* {nasaData.media_type === "image" ? imageMedia : nasaData.media_type === "video" ? videoMedia : <p className='text-center md:text-2xl pb-4'>Sorry, You need to search a date first in order to see something.</p>} */}
         </div>
     )
 }
