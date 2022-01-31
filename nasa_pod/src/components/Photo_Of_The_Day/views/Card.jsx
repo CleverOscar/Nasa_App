@@ -2,15 +2,11 @@ import React from 'react';
 
 export default function Card({data}){
     
-    const imageMedia = <div className='rounded-xl bg-white border-6 border-black md:px-6 mx-6 lg:grid lg:grid-cols-2 gap-10 lg:items-center'>
+    const imageMedia = <div className='rounded-xl bg-white border-6 border-black mx-6 lg:items-center'>
                             <div>
-                                <p className='hidden lg:block text-2xl py-8 text-center italic text-cyan-500 '> 
-                                    {data.title}
-                                </p>
-
                                 <img className="rounded-tr-xl rounded-tl-xl mx-auto border-black lg:w-full" src={data.url} alt={data.media_type} />
 
-                                <p className='uppercase text-xl font-semibold py-4 text-center italic text-cyan-500 md:text-center md:text-2xl lg:hidden'> 
+                                <p className='uppercase text-xl font-semibold py-4 text-center italic text-cyan-500 md:text-center md:text-2xl'> 
                                     {data.title}
                                 </p>
                             </div>
@@ -20,19 +16,6 @@ export default function Card({data}){
                                 <p className="border-t-4 border-black pt-4 text-center underline text-2xl italic font-semibold">Description</p>
                                 <p className=' font-semibold tracking-wide text-base md:leading-7 md:text-lg p-4 shadow-2xl'> {data.explanation}</p>
                             </div>
-
-                            <div className="boder-2 border-red rounded-b-xl  flex flex-row justify-center bg-gray-500">
-                                <div className='mx-auto py-4 w-3/12 text-center uppercase'>
-                                    Type: {data.media_type}
-                                </div> 
-                                <div className='mx-auto py-4 w-3/12 text-center'>
-                                    HD Photo: <span><a href={data.url} target="_blank"  alt={data.title} rel="noreferrer">LINK</a></span>
-                                </div>
-                                <div className='mx-auto py-4 w-3/12 text-center'>
-                                    Service 
-                                </div>
-                            </div>
-                            
                         </div>
 
 const videoMedia =  <div className='mx-6 lg:grid lg:grid-cols-2 gap-10 lg:items-center'>
