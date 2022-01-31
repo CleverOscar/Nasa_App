@@ -3,7 +3,7 @@ import React from 'react';
 export default function LandingPage(){
 
     return(
-        <div className='border-4 border-black mx-4 border-8 border-double bg-gray-200/20 lg:w-1/2 lg:mx-auto'>
+        <div className='border-4 text-white border-black mx-4 border-8 border-double bg-gray-700/50 lg:w-1/2 lg:mx-auto'>
             <p className='my-6 text-center text-3xl underline'>
                 Nasa API Portal Application
             </p>
