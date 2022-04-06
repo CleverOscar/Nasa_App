@@ -14,18 +14,6 @@ export default function NasaPhoto(props){
 
   let url  = `https://api.nasa.gov/planetary/apod?date=${dateSetup}&api_key=${api}`;
 
-      // fetch nasa api 
-    useEffect(() => {
-      axios.get(url)
-      .then((res) => {
-        setNasaData(res.data)
-      })
-      .catch((error) => {
-        console.log(error.message)
-      })
-    
-    }, [url]);
-    
 
   const dateForm = <form onSubmit={handleSubmit}>
     <div className='bg-gray-700/50 border-4 border-black px-4 py-2 rounded-lg flex flex-col w-10/12 mx-auto shadow-xl md:w-1/2'>
