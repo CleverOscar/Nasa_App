@@ -15,17 +15,18 @@ function App() {
     <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-full'>
       <div className='container mx-auto h-screen'>
 
-      <Navbar />
+        <Navbar />
 
-      <Routes>
-        <Route path="/"  element={<LandingPage />}/>
-        <Route path="/apod" element={<NasaPhoto />} />
-        <Route path="/mars" element={<MarsRover />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/"  element={<LandingPage />}/>
+          <Route path="/apod" element={<NasaPhoto />} />
+          <Route path="/mars" element={<MarsRover />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
 
-      <Footer />
-    </div>
+        
+      </div>
+        <Footer />
     </div>
   );
 }

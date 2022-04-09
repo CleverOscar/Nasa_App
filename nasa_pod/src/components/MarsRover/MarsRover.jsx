@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Pagination from './Pagination';
 import Images from './Images';
@@ -65,13 +65,13 @@ export default function MarsRover(){
 
     // sets up data when loaading page up
 
-    useEffect(() => {
-       axios.get(url).then(
-           (res)=>{
-            setRoverImages(res.data.photos)
-           }
-       )
-    },[url])
+    // useEffect(() => {
+    //    axios.get(url).then(
+    //        (res)=>{
+    //         setRoverImages(res.data.photos)
+    //        }
+    //    )
+    // },[url])
 
     const cameraOption = cameras.map(camera => 
         <option key={camera.id} defaultValue={camera.camera_name}>
