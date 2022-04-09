@@ -11,7 +11,8 @@ function Card({data}){
                                 <p>{data.date}</p>
                                 <p>Taken By: {data.copyright}</p>
                             </div>
-                        <p></p>
+                            
+                        <p className="text-base p-3">{data.explanation}</p>
                     </div>
 
      
