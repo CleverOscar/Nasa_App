@@ -28,10 +28,10 @@ export default function NasaPhoto(){
       .catch(err => {console.log(err)})
   }
 
-    return(<div className="mt-6 w-fit mx-auto" >
+    return(<div className="mt-6 w-3/4 mx-auto flex flex-col" >
           {/* {dateForm} */}
 
-          <button className='text-xl bg-white' onClick={getData}> Fetch Data </button>
+          <button className='text-xl bg-white my-4 border-4 border-red-900 w-1/3 mx-auto' onClick={getData}> Fetch Data </button>
           <Card data={nasaData}/>  
           </div>
     )
