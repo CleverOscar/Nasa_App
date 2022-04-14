@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import OptionsTab from './views/OptionsTab';
-import Card from './views/Card';
+
 
 
 export default function NasaPhoto(){
@@ -21,15 +21,6 @@ export default function NasaPhoto(){
   // nasa api url
   let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
-  // fetch data functoin
-  function getData(e){
-    console.log("Clicked")
-    e.preventDefault();
- 
-    axios.get(url)
-      .then(res => {setNasaData(res.data)})
-      .catch(err => {console.log(err)})
-  }
 
     return(<div className="mt-6 w-11/12 mx-auto flex flex-col" >
             {/* {dateForm} */}
