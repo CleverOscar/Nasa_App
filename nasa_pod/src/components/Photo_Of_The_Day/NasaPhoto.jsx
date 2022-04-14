@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import OptionsTab from './views/OptionsTab';
 import Card from './views/Card';
+
 
 export default function NasaPhoto(){
   var today = new Date();
@@ -33,10 +35,14 @@ export default function NasaPhoto(){
             {/* {dateForm} */}
 
             {/* button to fetch data */}
-            <button className='text-xl bg-white my-4 outline outline-4 bg-blue-400/50 text-white outline-blue-600 w-1/3 md:w-1/4 mx-auto px-2' onClick={getData}> Photo Of The Day </button>
+            {/* <button className='text-xl bg-white my-4 outline outline-4 bg-blue-400/50 text-white outline-blue-600 w-1/3 md:w-1/4 mx-auto px-2' onClick={getData}> Photo Of The Day </button> */}
 
             {/* display fetched data */}
-            <Card data={nasaData}/> 
+            {/* <Card data={nasaData}/>  */}
+
+
+           <OptionsTab />
+
 
           </div>
     )
