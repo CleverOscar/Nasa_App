@@ -12,7 +12,12 @@ function Card({data}){
                                 {data.copyright === '' ? <p>Taken By: {data.copyright}</p> :  <p>No Author</p> }
                             </div>
                             
-                        <p className="text-base md:text-xl md:tracking-wider p-3 bg-gray-500/25">{data.explanation}</p>
+                        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{data.explanation}</p>
+
+                        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
+                            <a className="uppercase text-blue-600" href={data.hdurl} target="_blank" rel="noreferrer"> here</a>
+                        </p>
+                        
                     </div>
 
      
