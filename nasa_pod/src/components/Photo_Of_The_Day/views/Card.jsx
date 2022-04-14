@@ -3,7 +3,7 @@ import React from 'react';
 function Card({data}){
 
 
-    const photo = <div className='w-11/12 mx-auto flex flex-col'>
+    const photo = <div className='w-full mx-auto flex flex-col'>
                         <p className="text-2xl text-center my-4 font-[roboto]">{data.title}</p>
                         <img src={data.url} alt=""/>
                         
@@ -18,7 +18,7 @@ function Card({data}){
      
     return (
         <div className='text-white'>
-            {Object.keys(data).length > 0 ? <>{photo}</> : <>Loading...</>}
+            {Object.keys(data).length > 0 ? <>{photo}</> : <p className="text-center text-base">Click the fetch button to see a photo!</p>}
         </div>
     )
 }
