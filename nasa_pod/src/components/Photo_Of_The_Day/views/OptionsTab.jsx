@@ -1,6 +1,8 @@
 import React from 'react'
 import 'tw-elements';
 
+import {Link, Routes, Route} from 'react-router-dom'
+
 import PhotoOfTheDay from './PhotoOfTheDay';
 import RandomPhoto from './Random_photo';
 import DatePicker from './DatePicker';
@@ -20,7 +22,7 @@ export default function OptionsTab() {
         mb-4
         " id="tabs-tabJustify" role="tablist">
             <li className="nav-item flex-grow text-center" role="presentation">
-                <a href="#tabs-homeJustify" className="
+                <Link to="photo-of-the-day" href="#tabs-homeJustify" className="
                 nav-link
                 w-full
                 block
@@ -34,12 +36,15 @@ export default function OptionsTab() {
                 
                 hover:border-transparent hover:bg-gray-100
                 focus:border-transparent
-                active
-                " id="tabs-home-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-homeJustify" role="tab"
-                aria-controls="tabs-homeJustify" aria-selected="true">Photo Of The Day</a>
+                " id="tabs-home-tabJustify" role="tab"
+                aria-controls="tabs-homeJustify" aria-selected="true">
+                    
+                        Photo-Of-The-Day
+                    
+                </Link>
             </li>
             <li className="nav-item flex-grow text-center" role="presentation">
-                <a href="#tabs-profileJustify" className="
+                <Link to="random" href="#tabs-profileJustify" className="
                 nav-link
                 w-full
                 block
@@ -53,11 +58,11 @@ export default function OptionsTab() {
                 
                 hover:border-transparent hover:bg-gray-100
                 focus:border-transparent
-                " id="tabs-profile-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-profileJustify" role="tab"
-                aria-controls="tabs-profileJustify" aria-selected="false">Random Image</a>
+                " id="tabs-profile-tabJustify"  role="tab"
+                aria-controls="tabs-profileJustify" aria-selected="false"> Random Image</Link>
             </li>
             <li className="nav-item flex-grow text-center" role="presentation">
-                <a href="#tabs-messagesJustify" className="
+                <Link to="date-picker" href="#tabs-messagesJustify" className="
                 nav-link
                 w-full
                 block
@@ -71,24 +76,26 @@ export default function OptionsTab() {
                 
                 hover:border-transparent hover:bg-gray-100
                 focus:border-transparent
-                " id="tabs-messages-tabJustify" data-bs-toggle="pill" data-bs-target="#tabs-messagesJustify" role="tab"
-                aria-controls="tabs-messagesJustify" aria-selected="false">Date Picker</a>
+                " id="tabs-messages-tabJustify"  role="tab"
+                aria-controls="tabs-messagesJustify" aria-selected="false">Date Picker</Link>
             </li>
         </ul>
 
 
-        <div className="tab-content text-white" id="tabs-tabContentJustify">
-        <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
-            aria-labelledby="tabs-home-tabJustify">
-            <PhotoOfTheDay />
-        </div>
-        <div className="tab-pane fade" id="tabs-profileJustify" role="tabpanel" aria-labelledby="tabs-profile-tabJustify">
-            <RandomPhoto />
-        </div>
-        <div className="tab-pane fade" id="tabs-messagesJustify" role="tabpanel" aria-labelledby="tabs-profile-tabJustify">
-            <DatePicker />
-        </div>
-        </div>
+
+                <div className="tab-content text-white" id="tabs-tabContentJustify">
+                    <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
+                    aria-labelledby="tabs-home-tabJustify">
+                        <Routes>
+
+                        <Route path='photo-of-the-day' element={<PhotoOfTheDay />} />
+                        <Route path='random' element={<RandomPhoto />} /> 
+                        <Route path='date-picker' element={<DatePicker />} />
+                        </Routes>
+
+                    </div>
+                </div>
+
 
 
     </div>

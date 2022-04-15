@@ -19,7 +19,7 @@ function App() {
 
         <Routes>
           <Route path="/"  element={<LandingPage />}/>
-          <Route path="/apod" element={<NasaPhoto />} />
+          <Route path="/apod/*" element={<NasaPhoto />} />
           <Route path="/mars" element={<MarsRover />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
