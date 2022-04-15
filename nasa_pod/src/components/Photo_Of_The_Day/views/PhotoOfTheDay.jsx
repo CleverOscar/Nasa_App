@@ -20,35 +20,35 @@ function PhotoOfTheDay(){
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
 
-    // const photo = <div className='w-full mx-auto flex flex-col'>
-    //                     <p className="text-2xl text-center my-4 font-[roboto]">{data.title}</p>
-    //                     <img src={data.url} alt=""/>
+    const photo = <div className='w-full mx-auto flex flex-col'>
+                        <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+                        <img src={nasaData.url} alt=""/>
                         
-    //                         <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
-    //                             <p>{data.date}</p>
-    //                             {data.copyright === '' ? <p>Taken By: {data.copyright}</p> :  <p>No Author</p> }
-    //                         </div>
+                            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                                <p>{nasaData.date}</p>
+                                {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
+                            </div>
                             
-    //                     <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{data.explanation}</p>
+                        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
 
-    //                     <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-    //                         <a className="uppercase text-blue-600" href={data.hdurl} target="_blank" rel="noreferrer"> here</a>
-    //                     </p>
+                        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
+                            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+                        </p>
                         
-    //                 </div>
+                    </div>
 
     function getData(e) {
         e.preventDefault();
 
         console.log("Clicked the fetch button")
 
-        axios.get(url).then((response) => console.log(response.data)).catch(err => err.message)
+        axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
 
      
     return (
-        <div className='text-white'>
+        <div className='text-white flex flex-col'>
 
             <button className=' 
                 text-xl 
@@ -67,7 +67,8 @@ function PhotoOfTheDay(){
                 onClick={getData}
 
              > Photo Of The Day </button>
-            PhotoOfTheDay component 
+
+            {nasaData.length === 0 ? <p className="text-center text-xl">No Data</p> : photo}
         </div>
     )
 }

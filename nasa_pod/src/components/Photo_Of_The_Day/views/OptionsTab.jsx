@@ -87,10 +87,9 @@ export default function OptionsTab() {
                     <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
                     aria-labelledby="tabs-home-tabJustify">
                         <Routes>
-
-                        <Route path='photo-of-the-day' element={<PhotoOfTheDay />} />
-                        <Route path='random' element={<RandomPhoto />} /> 
-                        <Route path='date-picker' element={<DatePicker />} />
+                            <Route path='photo-of-the-day' element={<PhotoOfTheDay />} />
+                            <Route path='random' element={<RandomPhoto />} /> 
+                            <Route path='date-picker' element={<DatePicker />} />
                         </Routes>
 
                     </div>
