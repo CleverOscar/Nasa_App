@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import NasaPhoto from './components/Photo_Of_The_Day/NasaPhoto';
@@ -12,7 +11,7 @@ import {Routes, Route} from 'react-router-dom';
 function App() {
 
   return (
-    <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-full'>
+    <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-cover h-screen'>
       <div className='container mx-auto h-fit'>
 
         <Navbar />

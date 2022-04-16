@@ -18,21 +18,21 @@ export default function RandomPhoto() {
     }
 
     const randomImage = <div className='w-full mx-auto flex flex-col'>
-    <p className="text-2xl text-center my-4 font-[roboto]">{randomPhoto.title}</p>
-    <img src={randomPhoto.url} alt=""/>
-    
-        <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
-            <p>{randomPhoto.date}</p>
-            {randomPhoto.copyright === '' ? <p>Taken By: {randomPhoto.copyright}</p> :  <p>No Author</p> }
-        </div>
-        
-    <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{randomPhoto.explanation}</p>
+                            <p className="text-2xl text-center my-4 font-[roboto]">{randomPhoto.title}</p>
+                            <img src={randomPhoto.url} alt=""/>
+                            
+                                <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                                    <p>{randomPhoto.date}</p>
+                                    {randomPhoto.copyright === '' ? <p>Taken By: {randomPhoto.copyright}</p> :  <p>No Author</p> }
+                                </div>
+                                
+                            <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{randomPhoto.explanation}</p>
 
-    <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-        <a className="uppercase text-blue-600" href={randomPhoto.hdurl} target="_blank" rel="noreferrer"> here</a>
-    </p>
-    
-</div>
+                            <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
+                                <a className="uppercase text-blue-600" href={randomPhoto.hdurl} target="_blank" rel="noreferrer"> here</a>
+                            </p>
+                            
+                        </div>
 
     return(
         <div className='flex flex-col'>
