@@ -22,7 +22,7 @@ function PhotoOfTheDay(){
 
     const photo = <div className='w-full mx-auto flex flex-col'>
                         <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
-                        <img src={nasaData.url} alt=""/>
+                        <img className='mx-auto w-full' src={nasaData.url} alt=""/>
                         
                             <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
                                 <p>{nasaData.date}</p>
