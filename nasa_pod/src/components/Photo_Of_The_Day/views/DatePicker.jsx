@@ -6,8 +6,12 @@ export default function DatePicker(){
 
             <form>
                 <label>
-                    Please Pick A Date
+                    Please Pick A Date: 
+
+                    <input type="date" name=""/>
                 </label>
+
+                <p><button>submit</button></p>
             </form>
 
         </div>
