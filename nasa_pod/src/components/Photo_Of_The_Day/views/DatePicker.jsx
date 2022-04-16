@@ -3,7 +3,13 @@ import React from 'react';
 export default function DatePicker(){
     return(
         <div>
-            Date Picker
+
+            <form>
+                <label>
+                    Please Pick A Date
+                </label>
+            </form>
+
         </div>
 
     )
