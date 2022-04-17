@@ -6,6 +6,12 @@ import InfoCard from './views/InfoCard';
 
 export default function MarsRover(){
 
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var todaysDate = yyyy + '-' + mm + '-' + dd;
+
     // Images State
     const [roverImages, setRoverImages] = useState([]);
 
@@ -50,7 +56,7 @@ export default function MarsRover(){
     ];
 
     // camera state
-    let [cameraState, setCameraState ] = useState();
+    let [cameraState, setCameraState ] = useState('');
 
     const [pageNumeber] = useState(1);
 
@@ -58,85 +64,59 @@ export default function MarsRover(){
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
     // Date
-    let [yourDate, setYourDate] = useState(new Date().toISOString().split('T')[0]);
+    let [yourDate, setYourDate] = useState(todaysDate);
 
     // url 
     let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumeber}&api_key=${api}`;
-
-    // sets up data when loaading page up
-
-    // useEffect(() => {
-    //    axios.get(url).then(
-    //        (res)=>{
-    //         setRoverImages(res.data.photos)
-    //        }
-    //    )
-    // },[url])
-
-    const cameraOption = cameras.map(camera => 
-        <option key={camera.id} defaultValue={camera.camera_name}>
-            {camera.camera_name}
-        </option>)
-
     
-    const updateDate = <div className="flex flex-col items-center md:flex-row py-6">
-        <label className='px-2 md:w-1/2 underline'>
-        Date 
-        </label>
-        <input className="border-2 border-black px-3 w-full text-center" max={new Date().toISOString().split('T')[0]} id='myDate' type="date"  onChange={getDate}/>
-    </div>
-    
-    const cameraUpdate = <div className="flex flex-col md:flex-row py-2">
-                            <label className="mx-auto px-2 w-1/2 underline">
-                                    Camera
-                            </label>
-                            <select className=" border-2 px-3 border-black w-full text-center text-red-900 uppercase" id="cameras" onChange={getCameraName}>
-                            {cameraOption}
-                            </select>
-                        </div>
 
-    function getDate(){
-        return setYourDate(document.getElementById("myDate").value);
+    function getDate(e){
+        e.preventDefault();
+        setYourDate(e.target.value)
     }
 
-    function handleSubmit(event){
-        event.preventDefault();
-        
-        axios.get(url).then(
-            (res)=>{
-             setRoverImages(res.data.photos)
-            }
-        )
-
-        return console.log("Submitted")
+    function getCamera(e){
+        e.preventDefault();
+       setCameraState(e.target.value)
     }
-    
-    function getCameraName(){
-        setCameraState(document.getElementById("cameras").value);
-        return(console.log(cameraState));
+
+    function handleSubmit(e){
+        e.preventDefault();
+        axios.get(url).then(res => setRoverImages(res.data.photos)).catch(err => console.log(err.message))
+        console.log(url)
     }
 
 
     return(
         <div className="w-10/12 mx-auto ">
            
-                <form className="text-base bg-gray-200 w-full md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
-                    <div className="mx-auto w-full">
-                        {updateDate}
-                        {cameraUpdate}
-                    </div>
-                    <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
-                </form>
-
-                {roverImages.length > 0 ? <InfoCard data={roverImages[0]} /> : null}
-           
-
-           {roverImages.length > 0 ? (<div> 
+            <form className="text-base bg-gray-200 w-full md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
                 
-                <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/>
-            </div>
+                <label className='px-2 underline'>
+                    Date    
+                    <input className="border-2 border-black px-3 w-full text-center" max={new Date().toISOString().split('T')[0]} id='myDate' type="date"  onChange={getDate}/>
+                </label>
+                
+                <label htmlFor="cameras">
+                   Choose A Camera 
+                   <select id="cameras" value={cameraState} onChange={getCamera}>
+                          {cameras.map(camera => (<option key={camera.id}>{camera.camera_name}</option>))}
+                   </select>
+                </label>
+
+
+                <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
+
+                
+            </form>
+
+            {roverImages.length > 0 ? <InfoCard data={roverImages[0]} /> : null}
            
-           ) : (<p className="text-center w-10/12 text-lg md:text-2xl md:w-8/12 lg:w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
+
+           {roverImages.length > 0 ?
+            (<div> <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/> </div>) :
+
+            (<p className="text-center w-10/12 text-lg md:text-2xl md:w-8/12 lg:w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
 
             
         </div>
