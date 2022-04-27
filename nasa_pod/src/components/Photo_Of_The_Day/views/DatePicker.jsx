@@ -56,18 +56,20 @@ export default function DatePicker(){
     return(
         <div>
 
-            <form className='bg-black flex flex-row justify-around' onSubmit={getPhoto}>
-                <label className='text-lg '>
+            <form className='bg-black flex flex-col mt-4' onSubmit={getPhoto}>
+                <label className='text-lg flex flex-row justify-around py-2'>
                     Please Pick A Date: 
 
-                    <input className='ml-4 text-black' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+                    <input className='text-black' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
                 </label>
 
-                <p><button>submit</button></p>
+                
+                <button className="w-1/2 mx-auto my-2 bg-gray-600">submit</button>
+                
             </form>
 
 
-            {nasaData.length === 0 ? <p className="text-center text-lg md:text-xl">No Photo For This Date</p> : photo}
+            {nasaData.length === 0 ? <p className="text-center p-2 my-4 text-2xl border-4 border-black bg-gray-800/70">Please pick a date on the calendar and then hit the search button for a result!</p> : photo}
 
         </div>
 
