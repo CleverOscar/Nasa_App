@@ -37,6 +37,8 @@ function PhotoOfTheDay(){
                         
                     </div>
 
+                    
+
     function getData(e) {
         e.preventDefault();
 
@@ -45,6 +47,23 @@ function PhotoOfTheDay(){
         axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
+
+
+    const photoCard = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md'>
+                        <img className='mx-auto w-full' src={nasaData.url} alt=""/>
+                        <p className="text-4xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+                            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                                <p>{nasaData.date}</p>
+                                {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
+                            </div>
+                            
+                        <p className="text-lg md:text-xl md:tracking-widest p-3">{nasaData.explanation}</p>
+
+                        <p className="text-center my-3 text-lg md:text-xl">HD Photo  
+                            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+                        </p>
+                        
+                    </div>
 
      
     return (
@@ -59,7 +78,7 @@ function PhotoOfTheDay(){
                 bg-blue-400/70 
                 text-white 
                 outline-blue-600 
-                w-1/3 
+                w-1/2 
                 md:w-1/4 
                 mx-auto 
                 px-2
@@ -71,7 +90,7 @@ function PhotoOfTheDay(){
 
              > Search for photo  </button>
 
-            {nasaData.length === 0 ? <p className="text-center p-2 text-3xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photo}
+            {nasaData.length === 0 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photoCard}
         </div>
     )
 }
