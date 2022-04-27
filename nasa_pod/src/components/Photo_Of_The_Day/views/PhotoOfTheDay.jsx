@@ -62,13 +62,16 @@ function PhotoOfTheDay(){
                 w-1/3 
                 md:w-1/4 
                 mx-auto 
-                px-2' 
+                px-2
+                rounded
+                
+                ' 
             
                 onClick={getData}
 
              > Photo Of The Day </button>
 
-            {nasaData.length === 0 ? <p className="text-center text-xl">No Data</p> : photo}
+            {nasaData.length === 0 ? <p className="text-center text-3xl">Please click on the search button to fetch a photo</p> : photo}
         </div>
     )
 }
