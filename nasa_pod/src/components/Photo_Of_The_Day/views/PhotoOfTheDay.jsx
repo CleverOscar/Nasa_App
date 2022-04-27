@@ -56,7 +56,7 @@ function PhotoOfTheDay(){
                 my-4 
                 outline 
                 outline-4 
-                bg-blue-400/50 
+                bg-blue-400/70 
                 text-white 
                 outline-blue-600 
                 w-1/3 
@@ -69,9 +69,9 @@ function PhotoOfTheDay(){
             
                 onClick={getData}
 
-             > Photo Of The Day </button>
+             > Search for photo  </button>
 
-            {nasaData.length === 0 ? <p className="text-center text-3xl">Please click on the search button to fetch a photo</p> : photo}
+            {nasaData.length === 0 ? <p className="text-center p-2 text-3xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photo}
         </div>
     )
 }
