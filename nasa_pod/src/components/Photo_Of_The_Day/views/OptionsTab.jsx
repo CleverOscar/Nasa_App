@@ -19,7 +19,6 @@ export default function OptionsTab() {
         list-none
         border-b-0
         pl-0
-        mb-4
         " id="tabs-tabJustify" role="tablist">
             <li className="nav-item flex-grow text-center" role="presentation">
                 <Link to="photo-of-the-day" href="#tabs-homeJustify" className="
