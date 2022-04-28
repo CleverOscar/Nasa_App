@@ -19,30 +19,31 @@ function PhotoOfTheDay(){
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
+    const photo = <div className='w-full mx-auto flex flex-row'>
+                        
+                    <div className='w-full float-left bg-gray-700/50'>
 
-    const photo = <div className='w-full mx-auto flex flex-col'>
-                        
-                    <img className='mx-auto w-1/2' src={nasaData.url} alt=""/>
+                        <img className='float-left w-8/12 p-2' src={nasaData.url} alt=""/>
 
-                    <p className="text-4xl text-center my-4 font-[roboto]">{nasaData.title}</p>
-                            
-                    <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
-                        
-                        <p>{nasaData.date}</p>
-                        
-                        {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
+                        <p className="text-4xl text-center pt-2 font-[roboto] font-black">{nasaData.title}</p>
+
+                        <div className="text-xl py-2 flex flex-row justify-around font-[chakara]">
+                                    
+                                    <p>{nasaData.date}</p>
+                                    
+                                    {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>Unknown Owner</p> }
+            
+                        </div>
+
+                        <p className="text-xl md:tracking-widest clear-right p-2">{nasaData.explanation}</p>
+
+                        <p className="text-center my-3 text-lg md:text-xl">HD Photo  
+                            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+                        </p>   
 
                     </div>
-                            
-                    <p className="text-lg md:text-xl md:tracking-widest p-3">{nasaData.explanation}</p>
 
-                    <p className="text-center my-3 text-lg md:text-xl">HD Photo  
-                        <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
-                    </p>   
-
-                </div>
-
-                    
+                  </div>       
 
     function getData(e) {
         e.preventDefault();
@@ -53,10 +54,9 @@ function PhotoOfTheDay(){
 
     }
 
-
     const photoCardMobile = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md'>
                         <img className='mx-auto w-full' src={nasaData.url} alt=""/>
-                        <p className="text-4xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+                        <p className="text-4xl text-center my-4 font-[roboto] font-black">{nasaData.title}</p>
                             <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
                                 <p>{nasaData.date}</p>
                                 {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
@@ -68,8 +68,7 @@ function PhotoOfTheDay(){
                             <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
                         </p>
                         
-                    </div>
-
+                            </div>
      
     return (
         <div className='text-white flex flex-col'>
@@ -95,11 +94,11 @@ function PhotoOfTheDay(){
 
              > Search for photo  </button>
 
-            <div className="md:hidden">
+            <div className="lg:hidden">
                 {nasaData.length === 0 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photoCardMobile}
             </div>
 
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
                 {nasaData.length === 0 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photo}
             </div>
         </div>
