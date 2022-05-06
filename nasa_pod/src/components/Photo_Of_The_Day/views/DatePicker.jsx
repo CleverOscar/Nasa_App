@@ -84,14 +84,14 @@ export default function DatePicker(){
         <div>
 
             <form className='bg-black flex flex-col mt-4' onSubmit={getPhoto}>
-                <label className='text-lg flex flex-row justify-around py-2'>
+                <label className='text-lg flex flex-row justify-around py-2 text-2xl'>
                     Please Pick A Date: 
 
-                    <input className='text-black' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+                    <input className='text-black w-1/3 text-center ' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
                 </label>
 
                 
-                <button className="w-1/2 mx-auto my-2 bg-gray-600">submit</button>
+                <button className="w-1/4 mx-auto my-8 px-3 py-2 bg-gray-600">submit</button>
                 
             </form>
 

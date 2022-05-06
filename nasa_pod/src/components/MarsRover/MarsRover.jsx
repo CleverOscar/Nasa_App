@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import Pagination from './Pagination';
-import Images from './Images';
+import Pagination from './views/Pagination';
+import Images from './views/Images';
 import InfoCard from './views/InfoCard';
 
 export default function MarsRover(){
@@ -56,7 +56,7 @@ export default function MarsRover(){
     ];
 
     // camera state
-    let [cameraState, setCameraState ] = useState('');
+    let [cameraState, setCameraState ] = useState(cameras[0].camera_name);
 
     const [pageNumeber] = useState(1);
 
@@ -72,12 +72,14 @@ export default function MarsRover(){
 
     function getDate(e){
         e.preventDefault();
+        console.log(e.target.value)
         setYourDate(e.target.value)
     }
 
     function getCamera(e){
         e.preventDefault();
-       setCameraState(e.target.value)
+        console.log(e.target.value)
+        setCameraState(e.target.value)
     }
 
     function handleSubmit(e){
@@ -88,25 +90,24 @@ export default function MarsRover(){
 
 
     return(
-        <div className="w-10/12 mx-auto ">
+        <div className="w-10/12 mx-auto flex flex-col min-h-screen justify-around">
            
-            <form className="text-base bg-gray-200 w-full md:text-xl border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
+            <form className="text-base bg-gray-200 w-full border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:text-xl md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
                 
-                <label className='px-2 underline'>
+                <label className=' flex flex-row justify-between  my-2'>
                     Date    
-                    <input className="border-2 border-black px-3 w-full text-center" max={new Date().toISOString().split('T')[0]} id='myDate' type="date"  onChange={getDate}/>
+                    <input className="border-2 border-black w-auto text-center" max={todaysDate} id='myDate' type="date"  onChange={getDate}/>
                 </label>
                 
-                <label htmlFor="cameras">
-                   Choose A Camera 
-                   <select id="cameras" value={cameraState} onChange={getCamera}>
+                <label htmlFor="cameras" className='my-2 w-full flex flex-row justify-between'>
+                   <p>Camera Option</p>
+                   <select id="cameras" className='w-1/3 text-xl' value={cameraState} onChange={getCamera}>
                           {cameras.map(camera => (<option key={camera.id}>{camera.camera_name}</option>))}
                    </select>
                 </label>
 
 
-                <button className="mx-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
-
+                <button className="ml-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
                 
             </form>
 

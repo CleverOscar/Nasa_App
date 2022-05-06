@@ -33,6 +33,7 @@ export default function RandomPhoto() {
                             </p>
                             
                         </div>
+                        
 
     return(
         <div className='flex flex-col'>
