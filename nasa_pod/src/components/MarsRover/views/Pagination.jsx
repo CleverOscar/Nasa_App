@@ -31,7 +31,7 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
       };
 
     return(
-        <div className="mt-8 border-2 border-black w-full mx-auto py-4 px-4">
+        <div className="mt-8 border-2 border-black w-full mx-auto py-4 px-4 text-white">
             <div>
                 {getPaginatedData().map((d, idx) => (
                     <RenderComponent key={idx} data={d} />
@@ -43,15 +43,15 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
                     prev
                 </button>
 
-                {getPaginationGroup().map((item, index)=>(<button 
-                                                            key={index} 
-                                                            onClick={changePage}
-                                                            className={`${pages >= item ? "font-bold text-2xl border-2 border-black px-3 " : "hidden" } ${currentPage === item ? "text-blue-500" : null} `}
-                                                            > 
-                                                                <span>
-                                                                    {item}                                                                  
-                                                                </span>
-                                                          </button>
+                {getPaginationGroup().map((item, index)=>(
+                <button 
+                    key={index} 
+                    onClick={changePage}
+                    className={`${pages >= item ? "font-bold text-2xl text-white border-2 border-white px-3 " : "hidden" } ${currentPage === item ? "text-blue-500" : null} `}> 
+                    <span>
+                        {item}                                                                  
+                    </span>
+                </button>
                 ))}
 
                 <button className={`border-2 p-2 border-black ${currentPage === pages ? 'hidden' : ''}`} onClick={goToNextPage}>
