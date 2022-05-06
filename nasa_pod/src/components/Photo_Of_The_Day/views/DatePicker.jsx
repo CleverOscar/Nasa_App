@@ -37,21 +37,48 @@ export default function DatePicker(){
     }
 
     const photo = <div className='w-full mx-auto flex flex-col'>
-    <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
-    <img className='mx-auto w-full' src={nasaData.url} alt=""/>
-    
-        <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
-            <p>{nasaData.date}</p>
-            {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
-        </div>
+        <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+        <img className='mx-auto w-full' src={nasaData.url} alt=""/>
         
-    <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
+            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                <p>{nasaData.date}</p>
+                {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
+            </div>
+            
+        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
 
-    <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-        <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
-    </p>
+        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
+            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+        </p>
     
-</div>
+    </div>
+
+    const video = <div className='w-full mx-auto flex flex-col'>
+        
+
+        <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+        
+            <iframe className="h-96" src={nasaData.url} />
+             
+
+            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                <p>{nasaData.date}</p>
+                {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
+            </div>
+            
+        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
+
+        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
+            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+        </p> 
+    </div>
+
+    const media = <div>
+        {nasaData.media_type === 'image' ? photo : video}
+    </div>
+
+
+    
 
     return(
         <div>
@@ -69,7 +96,7 @@ export default function DatePicker(){
             </form>
 
 
-            {nasaData.length === 0 ? <p className="text-center p-2 my-4 text-2xl border-4 border-black bg-gray-800/70">Please pick a date on the calendar and then hit the search button for a result!</p> : photo}
+            {nasaData.length === 0 ? <p className="text-center p-2 my-4 text-2xl border-4 border-black bg-gray-800/70">Please pick a date on the calendar and then hit the search button for a result!</p> : media}
 
         </div>
 
