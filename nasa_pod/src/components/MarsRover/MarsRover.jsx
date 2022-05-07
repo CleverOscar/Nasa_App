@@ -3,6 +3,7 @@ import axios from 'axios';
 import Pagination from './views/Pagination';
 import Images from './views/Images';
 import InfoCard from './views/InfoCard';
+import RoverCarousel from './views/Carousel';
 
 export default function MarsRover(){
 
@@ -114,11 +115,13 @@ export default function MarsRover(){
             {roverImages.length > 0 ? <InfoCard data={roverImages[0]} /> : null}
            
 
-           {roverImages.length > 0 ?
+            <RoverCarousel data={roverImages} />
+           {/* {roverImages.length > 0 ?
             (<div> <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/> </div>) :
 
-            (<p className="text-center w-10/12 text-lg md:text-2xl md:w-8/12 lg:w-1/2 mx-auto my-10">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)}
+            (<p className="text-center w-10/12 text-lg md:text-2xl md:w-8/12 lg:w-1/2 mx-auto">Pick a date to search database for images or video. If nothing loads after hitting search then that means there are no photos for that date yet or none at all for that date.</p>)} */}
 
+            
             
         </div>
     )

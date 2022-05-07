@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import ErrorPage from './components/ErrorPage';
 
 import {Routes, Route} from 'react-router-dom';
+import RoverCarousel from './components/MarsRover/views/Carousel';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/"  element={<LandingPage />}/>
           <Route path="/apod/*" element={<NasaPhoto />} />
           <Route path="/mars" element={<MarsRover />} />
+          <Route path="/carousel" element={<RoverCarousel />} /> 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
 
