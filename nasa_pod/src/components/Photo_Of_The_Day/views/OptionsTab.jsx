@@ -1,5 +1,5 @@
 import React from 'react'
-import 'tw-elements';
+
 
 import {Link, Routes, Route} from 'react-router-dom'
 
@@ -19,9 +19,10 @@ export default function OptionsTab() {
         list-none
         border-b-0
         pl-0
-        
-        " id="tabs-tabJustify" role="tablist">
-            <li className="nav-item flex-grow text-center " role="presentation">
+        " 
+        id="tabs-tabJustify" 
+        role="tablist">
+            <li className="nav-item flex-grow text-center" role="presentation">
                 <Link to="photo-of-the-day" href="#tabs-homeJustify" className="
                 text-white
                 w-full

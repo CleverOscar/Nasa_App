@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {Link, Routes, Route} from 'react-router-dom'
+import Curiosity from './Rovers/Curiosity';
+import Opportunity from './Rovers/Opportunity';
+import Spirit from './Rovers/Spirit';
 import Pagination from './views/Pagination';
 import Images from './views/Images';
 import InfoCard from './views/InfoCard';
@@ -91,9 +95,102 @@ export default function MarsRover(){
 
 
     return(
-        <div className="w-10/12 mx-auto flex flex-col min-h-screen justify-around">
+        <div className="w-10/12 mx-auto flex flex-col min-h-screen">
+
+            <div>
+        <ul className="
+        bg-gray-800/50
+        nav nav-tabs nav-justified
+        flex flex-col
+        md:flex-row
+        flex-wrap
+        list-none
+        border-b-0
+        pl-0
+        " 
+        id="tabs-tabJustify" 
+        role="tablist">
+            <li className="nav-item flex-grow text-center" role="presentation">
+                <Link to="curiosity" href="#tabs-homeJustify" className="
+                text-white
+                w-full
+                block
+                font-medium
+                text-xs
+                leading-tight
+                uppercase
+                border-x-0 border-t-0 border-b-2 border-transparent
+                px-6
+                py-3
+                
+                
+                hover:border-transparent hover:bg-gray-100
+                focus:bg-gray-900
+                " id="tabs-home-tabJustify" role="tab"
+                aria-controls="tabs-homeJustify" aria-selected="true">
+                    
+                        Curiosity
+                    
+                </Link>
+            </li>
+            <li className="nav-item flex-grow text-center" role="presentation">
+                <Link to="opportunity" href="#tabs-profileJustify" className="
+                text-white
+                w-full
+                block
+                font-medium
+                text-xs
+                leading-tight
+                uppercase
+                border-x-0 border-t-0 border-b-2 border-transparent
+                px-6
+                py-3
+                
+                hover:border-transparent hover:bg-gray-100
+                focus:bg-gray-900
+                " id="tabs-profile-tabJustify"  role="tab"
+                aria-controls="tabs-profileJustify" aria-selected="false">Opportunity</Link>
+            </li>
+            <li className="nav-item flex-grow text-center" role="presentation">
+                <Link to="spirit" href="#tabs-messagesJustify" className="
+                text-white
+                w-full
+                block
+                font-medium
+                text-xs
+                leading-tight
+                uppercase
+                border-x-0 border-t-0 border-b-2 border-transparent
+                px-6
+                py-3
+                
+                hover:border-transparent hover:bg-gray-100
+                focus:bg-gray-900
+                " id="tabs-messages-tabJustify"  role="tab"
+                aria-controls="tabs-messagesJustify" aria-selected="false">Spirit</Link>
+            </li>
+        </ul>
+
+
+
+                <div className="tab-content text-white" id="tabs-tabContentJustify">
+                    <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
+                    aria-labelledby="tabs-home-tabJustify">
+                        <Routes>
+                            <Route path='curiosity' element={<Curiosity />} />
+                            <Route path='opportunity' element={<Opportunity />} /> 
+                            <Route path='spirit' element={<Spirit />} />
+                        </Routes>
+
+                    </div>
+                </div>
+¡
+
+
+    </div>
+            
            
-            <form className="text-base bg-gray-200 w-full border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:text-xl md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
+            {/* <form className="text-base bg-gray-200 w-full border-4 border-black px-4 py-2 my-6 rounded-lg flex flex-col md:text-xl md:w-10/12 mx-auto shadow-xl lg:w-4/12" onSubmit={handleSubmit}>
                 
                 <label className=' flex flex-row justify-between  my-2'>
                     Date    
@@ -115,7 +212,7 @@ export default function MarsRover(){
             {roverImages.length > 0 ? <InfoCard data={roverImages[0]} /> : null}
            
 
-            <RoverCarousel data={roverImages} />
+            <RoverCarousel data={roverImages} /> */}
            {/* {roverImages.length > 0 ?
             (<div> <Pagination data={roverImages} title={"pagination"} pageLimit={5} dataLimit={10} RenderComponent={Images}/> </div>) :
 
