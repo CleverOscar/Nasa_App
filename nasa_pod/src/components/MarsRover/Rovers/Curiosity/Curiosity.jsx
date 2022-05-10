@@ -17,6 +17,7 @@ export default function Curiosity(props) {
             6: 'mardi',
             7: 'navcam'
         },
+        cameraState: '',
     });
     
     return(

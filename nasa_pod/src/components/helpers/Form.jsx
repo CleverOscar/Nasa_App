@@ -1,26 +1,6 @@
-import React, {useState} from 'react';
-
-// function getDate(e){
-//     e.preventDefault();
-//     console.log(e.target.value)
-//     setYourDate(e.target.value)
-// }
-
-// function getCamera(e){
-//     e.preventDefault();
-//     console.log(e.target.value)
-//     setCameraState(e.target.value)
-// }
-
-// function handleSubmit(e){
-//     e.preventDefault();
-//     axios.get(url).then(res => setRoverImages(res.data.photos)).catch(err => console.log(err.message))
-//     console.log(url)
-// }
-
+import React from 'react';
 
 export default function Form(props) {
-
     
     function getDate(e){
         e.preventDefault();
@@ -29,10 +9,21 @@ export default function Form(props) {
         console.log(props)
     }
 
+    function getCamera(e){
+        e.preventDefault();
+        props.setData({...props.data, cameraState: e.target.value})
+        console.log(e.target.value)
+        console.log(props)
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         console.log(props)
     }
+
+    const cams = Object.values(props.data.camera).map(cam => <option value={cam}> {cam}</option>)
+
+
 
     return(
         <div className=''>
@@ -45,8 +36,8 @@ export default function Form(props) {
                 
                 <label htmlFor="cameras" className='bg-gray-900/90'>
                    <p>Camera Option</p>
-                   <select id="cameras" className=' text-black' >
-                          <option value="all">Please Choose A Camera View</option>
+                   <select id="cameras" className=' text-black' onChange={getCamera} >
+                         {cams}
                    </select>
                 </label>
 
