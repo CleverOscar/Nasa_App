@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {Link, Routes, Route} from 'react-router-dom'
-import Curiosity from './Rovers/Curiosity';
+import Curiosity from './Rovers/Curiosity/Curiosity';
 import Opportunity from './Rovers/Opportunity';
 import Spirit from './Rovers/Spirit';
 import Pagination from './views/Pagination';
@@ -20,48 +20,8 @@ export default function MarsRover(){
     // Images State
     const [roverImages, setRoverImages] = useState([]);
 
-    // camera names
-    const cameras = [
-        {
-            id: 1,
-            camera_name: "fhaz"
-        },
-        {
-            id: 2,
-            camera_name: "rhaz"
-        },
-        {
-            id: 3,
-            camera_name: "mast"
-        },
-        {
-            id: 4,
-            camera_name: "chemcam"
-        },
-        {
-            id: 5,
-            camera_name: "mahli"
-        },
-        {
-            id: 6,
-            camera_name: "mardi"
-        },
-        {
-            id: 7,
-            camera_name: "navcam"
-        },
-        {
-            id: 8,
-            camera_name: "pancam"
-        },
-        {
-            id: 9,
-            camera_name: "minites"
-        },
-    ];
-
     // camera state
-    let [cameraState, setCameraState ] = useState(cameras[0].camera_name);
+    let [cameraState, setCameraState ] = useState('');
 
     const [pageNumeber] = useState(1);
 
@@ -75,27 +35,9 @@ export default function MarsRover(){
     let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumeber}&api_key=${api}`;
     
 
-    function getDate(e){
-        e.preventDefault();
-        console.log(e.target.value)
-        setYourDate(e.target.value)
-    }
-
-    function getCamera(e){
-        e.preventDefault();
-        console.log(e.target.value)
-        setCameraState(e.target.value)
-    }
-
-    function handleSubmit(e){
-        e.preventDefault();
-        axios.get(url).then(res => setRoverImages(res.data.photos)).catch(err => console.log(err.message))
-        console.log(url)
-    }
-
 
     return(
-        <div className="w-10/12 mx-auto flex flex-col min-h-screen">
+        <div className="w-11/12 mx-auto mb-auto flex flex-col">
 
             <div>
         <ul className="
@@ -184,9 +126,6 @@ export default function MarsRover(){
 
                     </div>
                 </div>
-¡
-
-
     </div>
             
            
