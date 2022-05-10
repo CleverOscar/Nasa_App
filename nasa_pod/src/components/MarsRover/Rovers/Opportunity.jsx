@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Form from '../../helpers/Form';
-import {Carousel} from 'react-responsive-carousel';
+import RoverCarousel from '../views/Carousel';
 import todaysDate from '../../helpers/date';
 
 export default function Opportunity() {
@@ -23,13 +23,13 @@ export default function Opportunity() {
 
             {/* form and photos view here */}
 
-            <div className='flex flexr-row  justify-around bg-gray-800/40'>
+            <div className='flex flexr-row  justify-around bg-gray-800/80'>
                 <div>
                     <Form data={data}/>
                 </div>
 
                 <div>
-                    <Carousel />
+                    <RoverCarousel data={data}/>
                 </div>
             </div>
         </div>

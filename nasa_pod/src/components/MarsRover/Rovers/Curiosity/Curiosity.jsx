@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Form from '../../../helpers/Form';
-import {Carousel} from 'react-responsive-carousel';
+import RoverCarousel from '../../views/Carousel';
 import todaysDate from '../../../helpers/date';
 
 export default function Curiosity(props) {
@@ -32,7 +32,7 @@ export default function Curiosity(props) {
                 </div>
 
                 <div>
-                    <Carousel />
+                    <RoverCarousel data={data}/>
                 </div>
             </div>
 

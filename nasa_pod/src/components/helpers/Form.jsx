@@ -21,23 +21,23 @@ import React, {useState} from 'react';
 export default function Form(props) {
 
     return(
-        <div>
-            <form className="text-black"  >
+        <div className=''>
+            <form className="flex flex-col text-lg">
                 
-                <label className=' flex flex-row justify-between  my-2'>
-                    Date    
-                    <input className="border-2 border-black w-auto text-center"  id='myDate' type="date" />
+                <label className='bg-gray-50/50'>
+                    <p>Date</p>
+                    <input className="w-full text-black "  id='myDate' type="date" />
                 </label>
                 
-                <label htmlFor="cameras" className='my-2 w-full flex flex-row justify-between'>
+                <label htmlFor="cameras" className='bg-gray-900/90'>
                    <p>Camera Option</p>
-                   <select id="cameras" className='w-1/3 text-xl' >
-                          <option value="all">All</option>
+                   <select id="cameras" className=' text-black' >
+                          <option value="all">Please Choose A Camera View</option>
                    </select>
                 </label>
 
 
-                <button className="ml-auto bg-white border-2 border-black px-2 mt-4 rounded-md" type="sumbit">Search</button>
+                <button className=" " type="sumbit">Search</button>
                 
             </form>
         </div>
