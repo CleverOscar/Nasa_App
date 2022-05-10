@@ -8,6 +8,15 @@ export default function Curiosity(props) {
     const [data, setDate] = useState({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",
         date: todaysDate,
+        camera: {
+            1: 'fhaz',
+            2: 'rhaz',
+            3: 'mast',
+            4: 'chemcam',
+            5: 'mahli',
+            6: 'mardi',
+            7: 'navcam'
+        },
     });
     
     return(

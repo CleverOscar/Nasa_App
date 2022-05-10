@@ -1,32 +1,5 @@
 import React, {useState} from 'react';
 
-// camera names
-const cameras = [{
-    curiosity: {
-        fhaz: 'Front Hazard Avoidance Camera',
-        rhaz: 'Rear Hazard Avoidance Camera',
-        mast: 'Mast Camera',
-        chem: 'Chemistry and Camera Complex',
-        mahli: 'Mars Hand Lens Imager',
-        mardi: 'Mars Descent Imager',
-        navcam: 'Navigation Camera',
-    },
-    opportunity: {
-        fhaz: 'Front Hazard Avoidance Camera',
-        rhaz: 'Rear Hazard Avoidance Camera',
-        nav: 'Navigation Camera', 
-        pan: 'Panoramic Camera',
-        mini: 'Miniature Thermal Camera',
-    },
-    spirit: { 
-        fhaz: 'Front Hazard Avoidance Camera',
-        rhaz: 'Rear Hazard Avoidance Camera',
-        nav: 'Navigation Camera',
-        pan: 'Panoramic Camera',
-        mini: 'Miniature Thermal Camera',
-    },
-}];
-
 // function getDate(e){
 //     e.preventDefault();
 //     console.log(e.target.value)
@@ -59,7 +32,7 @@ export default function Form(props) {
                 <label htmlFor="cameras" className='my-2 w-full flex flex-row justify-between'>
                    <p>Camera Option</p>
                    <select id="cameras" className='w-1/3 text-xl' >
-                          {cameras.map(camera => (<option key={camera.id}>{camera.camera_name}</option>))}
+                          <option value="all">All</option>
                    </select>
                 </label>
 
