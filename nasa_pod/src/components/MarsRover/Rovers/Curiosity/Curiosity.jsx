@@ -5,7 +5,7 @@ import todaysDate from '../../../helpers/date';
 
 export default function Curiosity(props) {
 
-    const [data, setDate] = useState({
+    const [data, setData] = useState({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",
         date: todaysDate,
         camera: {
@@ -27,7 +27,7 @@ export default function Curiosity(props) {
 
             <div className='flex flexr-row  justify-around bg-gray-800/40'>
                 <div>
-                    <Form data={data} />
+                    <Form data={data} setData={setData}/>
                         
                 </div>
 

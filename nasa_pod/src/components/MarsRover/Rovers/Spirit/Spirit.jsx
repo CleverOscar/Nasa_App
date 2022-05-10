@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import Form from '../../helpers/Form';
-import RoverCarousel from '../views/Carousel';
-import todaysDate from '../../helpers/date';
+import Form from '../../../helpers/Form';
+import RoverCarousel from '../../views/Carousel';
+import todaysDate from '../../../helpers/date';
 
 export default function Spirit(){
 
-    const [data, setDate] = useState({
+    const [data, setData] = useState({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos",
         date: todaysDate,
         camera: {
@@ -25,11 +25,11 @@ export default function Spirit(){
 
             <div className='flex flexr-row  justify-around bg-gray-800/40'>
                 <div>
-                    <Form data={data}/>
+                    <Form data={data} setData={setData}/>
                 </div>
 
                 <div>
-                    <RoverCarousel data={data}/>
+                    <RoverCarousel data={data} />
                 </div>
             </div>
         </div>

@@ -3,8 +3,8 @@ import axios from 'axios';
 
 import {Link, Routes, Route} from 'react-router-dom'
 import Curiosity from './Rovers/Curiosity/Curiosity';
-import Opportunity from './Rovers/Opportunity';
-import Spirit from './Rovers/Spirit';
+import Opportunity from './Rovers/Opportunity/Opportunity';
+import Spirit from './Rovers/Spirit/Spirit';
 
 import Pagination from './views/Pagination';
 import Images from './views/Images';

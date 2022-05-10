@@ -18,15 +18,29 @@ import React, {useState} from 'react';
 //     console.log(url)
 // }
 
+
 export default function Form(props) {
+
+    
+    function getDate(e){
+        e.preventDefault();
+        props.setData({...props.data, date: e.target.value})
+        console.log(e.target.value)
+        console.log(props)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(props)
+    }
 
     return(
         <div className=''>
-            <form className="flex flex-col text-lg">
+            <form className="flex flex-col text-lg" onSubmit={handleSubmit}>
                 
                 <label className='bg-gray-50/50'>
                     <p>Date</p>
-                    <input className="w-full text-black "  id='myDate' type="date" />
+                    <input className="w-full text-black "  id='myDate' type="date" onChange={getDate}/>
                 </label>
                 
                 <label htmlFor="cameras" className='bg-gray-900/90'>
