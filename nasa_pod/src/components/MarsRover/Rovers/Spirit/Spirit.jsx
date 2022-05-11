@@ -15,6 +15,8 @@ export default function Spirit(){
             4: 'pancam',
             5: 'minites'
         },
+        cameraState: '',
+        api: "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
     });
     
     return(

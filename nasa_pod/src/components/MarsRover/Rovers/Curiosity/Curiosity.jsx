@@ -6,7 +6,7 @@ import todaysDate from '../../../helpers/date';
 export default function Curiosity(props) {
 
     const [data, setData] = useState({
-        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",
+        url: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos`,
         date: todaysDate,
         camera: {
             1: 'fhaz',
@@ -18,6 +18,7 @@ export default function Curiosity(props) {
             7: 'navcam'
         },
         cameraState: '',
+        api: "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
     });
     
     return(
@@ -26,13 +27,13 @@ export default function Curiosity(props) {
 
             {/* form and photos view here */}
 
-            <div className='flex flexr-row  justify-around bg-gray-800/40'>
-                <div>
-                    <Form data={data} setData={setData}/>
+            <div className='flex flexr-row justify-around bg-gray-800/40'>
+                <div className='bg-white w-1/3'>
+                    <Form data={data} setData={setData} />
                         
                 </div>
 
-                <div>
+                <div className='bg-white w-1/3'>
                     <RoverCarousel data={data}/>
                 </div>
             </div>
