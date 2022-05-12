@@ -17,7 +17,7 @@ export default function Opportunity() {
             5: 'minites'
         },
         cameraState: '',
-        api: "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j",
+        api: process.env.REACT_APP_NASA_POD_API,  
         roverImages: []
     });
 

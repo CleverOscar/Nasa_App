@@ -19,11 +19,11 @@ export default function Curiosity(props) {
             7: 'navcam'
         },
         cameraState: '',
-        api: process.env.REACT_NASA_API , 
+        api: process.env.REACT_APP_NASA_POD_API,  
         roverImages: []
     });
 
-    
+    console.log(process.env)
     
     return(
         <div>
