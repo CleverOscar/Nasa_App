@@ -19,9 +19,11 @@ export default function Curiosity(props) {
             7: 'navcam'
         },
         cameraState: '',
-        api: "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j", 
+        api: process.env.REACT_NASA_API , 
         roverImages: []
     });
+
+    
     
     return(
         <div>
@@ -30,7 +32,7 @@ export default function Curiosity(props) {
 
                 <p>If you can't find any images, try changing the camera.</p>
 
-                <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip</span> <span className='uppercase text-red-500 font-bold'>Curiosity</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2012 - present </span></p>
+                <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Curiosity</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2012 - present </span></p>
              </div>
             {/* form and photos view here */}
 

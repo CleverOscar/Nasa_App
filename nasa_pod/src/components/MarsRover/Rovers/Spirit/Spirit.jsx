@@ -28,7 +28,7 @@ export default function Spirit(){
 
                 <p>If you can't find any images, try changing the camera.</p>
 
-                <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip</span> <span className='uppercase text-red-500 font-bold'>Spirit</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2004 - 2010 </span></p>
+                <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Spirit</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2004 - 2010 </span></p>
              </div>
 
             {/* form and photos view here */}
