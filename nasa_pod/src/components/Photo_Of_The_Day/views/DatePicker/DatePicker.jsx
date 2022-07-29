@@ -26,7 +26,6 @@ export default function DatePicker(){
     function dateValue(e) {
         e.preventDefault();
         setDate(e.target.value)
-        console.log(date)
     }
 
     function getPhoto(e){

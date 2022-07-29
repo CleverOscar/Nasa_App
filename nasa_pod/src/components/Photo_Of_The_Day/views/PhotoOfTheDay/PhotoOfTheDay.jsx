@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 
+
+
 function PhotoOfTheDay(){
 
     var today = new Date();
@@ -10,7 +12,8 @@ function PhotoOfTheDay(){
     var todaysDate = yyyy + '-' + mm + '-' + dd;
 
     // api key
-    const api = 'JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j';
+    const api = process.env.REACT_APP_API_KEY;
+
 
     // init empty array for Nasa Data
     let [nasaData, setNasaData] = useState([]);
@@ -43,13 +46,14 @@ function PhotoOfTheDay(){
 
                     </div>
 
-                  </div>       
+                  </div>  
+    
+    const clickButton = <p className="text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> 
+                            Please click on the search button to see what today's photo of the day is! 
+                        </p>
 
     function getData(e) {
         e.preventDefault();
-
-        console.log("Clicked the fetch button")
-
         axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
@@ -73,19 +77,30 @@ function PhotoOfTheDay(){
     return (
         <div className='text-white flex flex-col'>
 
-            <button className=' 
+           
+
+            <div className="lg:hidden my-10">
+                {nasaData.length === 0 ? clickButton : photoCardMobile}
+            </div>
+
+            <div className="hidden lg:block my-10">
+                {   nasaData.length === 0 ? clickButton : photo}
+            </div>
+
+             <button className=' 
                 text-xl 
-                bg-white 
-                my-4 
+                bg-white  
                 outline 
                 outline-4 
                 bg-blue-400/70 
-                text-white 
+                text-white
+                font-light 
                 outline-blue-600 
                 w-1/2 
+                hover:bg-blue-800/70
                 md:w-1/4 
                 mx-auto 
-                px-2
+                p-2
                 rounded
                 
                 ' 
@@ -93,16 +108,9 @@ function PhotoOfTheDay(){
                 onClick={getData}
 
              > Search for photo  </button>
-
-            <div className="lg:hidden">
-                {nasaData.length === 0 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photoCardMobile}
-            </div>
-
-            <div className="hidden lg:block">
-                {nasaData.length === 0 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70">Please click on the search button to see what today's photo of the day is! </p> : photo}
-            </div>
         </div>
     )
 }
+
 
 export default PhotoOfTheDay;

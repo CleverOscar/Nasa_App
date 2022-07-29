@@ -1,5 +1,6 @@
 import React from 'react';
-import OptionsTab from './views/OptionsTab';
+import OptionsTab from './views/OptionsTab/OptionsTab';
+
 
 
 

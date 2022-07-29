@@ -27,7 +27,7 @@ export default function Form(props) {
         fetchData();
     }
 
-    const cams = Object.values(props.data.camera).map(cam => <option value={cam}> {cam}</option>)
+    const cams = Object.values(props.data.camera).map(cam => <option key={props.data.id} value={cam}> {cam}</option>)
 
 
     return(

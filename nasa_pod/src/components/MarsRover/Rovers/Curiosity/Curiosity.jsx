@@ -22,8 +22,6 @@ export default function Curiosity(props) {
         api: process.env.REACT_APP_NASA_POD_API,  
         roverImages: []
     });
-
-    console.log(process.env)
     
     return(
         <div>
