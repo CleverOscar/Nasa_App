@@ -18,7 +18,7 @@ export default function DatePicker(){
     const [nasaData, setNasaData] = useState([]);
 
     // api key
-    const api = 'JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j';
+    const api = process.env.REACT_APP_API_KEY;
     
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`

@@ -6,7 +6,7 @@ export default function RandomPhoto() {
     const [randomPhoto, setRandomPhoto] = useState([]);
 
     // api key
-    const api = 'JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j';
+    const api = process.env.REACT_APP_API_KEY;
 
     let url = `https://api.nasa.gov/planetary/apod?count=1&api_key=${api}`
 
