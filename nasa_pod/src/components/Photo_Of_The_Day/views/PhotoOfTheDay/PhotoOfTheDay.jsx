@@ -107,7 +107,7 @@ function PhotoOfTheDay(){
             
                 onClick={getData}
 
-             > Search for photo  </button>
+             > Search photo  </button>
         </div>
     )
 }

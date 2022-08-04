@@ -18,7 +18,7 @@ export default function DatePicker(){
     const [nasaData, setNasaData] = useState([]);
 
     // api key
-    const api = process.env.REACT_APP_API_KEY;
+    const api = process.env.REACT_APP_API_KEY; 
     
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
@@ -72,7 +72,7 @@ export default function DatePicker(){
         </p> 
     </div>
 
-    const media = <div>
+    const media = <div className="my-10">
         {nasaData.media_type === 'image' ? photo : video}
     </div>
 
@@ -82,21 +82,32 @@ export default function DatePicker(){
     return(
         <div>
 
-            <form className='bg-black flex flex-col mt-4' onSubmit={getPhoto}>
-                <label className='text-lg flex flex-row justify-around py-2 text-2xl'>
-                    Please Pick A Date: 
 
-                    <input className='text-black w-1/3 text-center ' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+            {nasaData.length === 0 ? <p className=" text-text-left p-4 my-10 text-lg border-4 border-black bg-gray-900/60 font-light lg:text-2xl lg:text-center">
+                                        Please pick a date on the calendar and then hit the search button for a result!
+                                    </p> 
+                                    
+                                    : 
+                                     media
+            }
+
+            <form className='bg-gray-900/60 flex flex-col mt-4 border-black border-4 p-4' onSubmit={getPhoto}>
+
+                <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 font-light'>
+                    <span className="text-xl lg:text-2xl lg:mx-auto">
+                        Please Pick A Date:
+                    </span> 
+
+                    <input className='text-black w-full text-center text-xl md:w-1/2' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
                 </label>
 
                 
-                <button className="w-1/4 mx-auto my-8 px-3 py-2 bg-gray-600">submit</button>
+                <button className="w-1/3 mx-auto my-8 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl md:mx-0 md:ml-auto">submit</button>
                 
             </form>
 
 
-            {nasaData.length === 0 ? <p className="text-center p-2 my-4 text-2xl border-4 border-black bg-gray-800/70">Please pick a date on the calendar and then hit the search button for a result!</p> : media}
-
+ 
         </div>
 
     )

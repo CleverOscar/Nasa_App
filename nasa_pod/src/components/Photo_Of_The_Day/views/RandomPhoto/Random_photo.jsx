@@ -36,24 +36,27 @@ export default function RandomPhoto() {
                         
 
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col '>
+            {randomPhoto.length > -1 ? <p className="my-10 text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> : randomImage}
+
             <button onClick={fetchData} className=' 
-                text-xl 
-                bg-white 
-                my-4 
+                 text-xl 
+                bg-white  
                 outline 
                 outline-4 
                 bg-blue-400/70 
-                text-white 
+                text-white
+                font-light 
                 outline-blue-600 
                 w-1/2 
+                hover:bg-blue-800/70
                 md:w-1/4 
                 mx-auto 
-                px-2
+                p-2
                 rounded
                 ' > Search Random Photo </button>
 
-            {randomPhoto.length > -1 ? <p className="text-center p-2 text-2xl border-4 border-black bg-gray-800/70"> Please click on the search button to see a random photo! </p> : randomImage}
+            
 
             
         </div>
