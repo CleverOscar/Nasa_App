@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 
 import {Link, Routes, Route} from 'react-router-dom'
 import Curiosity from './Rovers/Curiosity/Curiosity';
@@ -42,6 +41,7 @@ export default function MarsRover(){
 
                 <ul className="
                 bg-gray-800/50
+                font-code
                 nav nav-tabs nav-justified
                 flex flex-col
                 md:flex-row
@@ -49,6 +49,8 @@ export default function MarsRover(){
                 list-none
                 border-b-0
                 pl-0
+                
+                md:text-xl
                 " 
                 id="tabs-tabJustify" 
                 role="tablist">
@@ -57,8 +59,8 @@ export default function MarsRover(){
                         text-white
                         w-full
                         block
-                        font-medium
-                        text-xs
+                        
+                        
                         leading-tight
                         uppercase
                         border-x-0 border-t-0 border-b-2 border-transparent
@@ -80,8 +82,8 @@ export default function MarsRover(){
                         text-white
                         w-full
                         block
-                        font-medium
-                        text-xs
+                        
+                        
                         leading-tight
                         uppercase
                         border-x-0 border-t-0 border-b-2 border-transparent
@@ -98,8 +100,8 @@ export default function MarsRover(){
                         text-white
                         w-full
                         block
-                        font-medium
-                        text-xs
+                        
+                        
                         leading-tight
                         uppercase
                         border-x-0 border-t-0 border-b-2 border-transparent

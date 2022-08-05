@@ -7,17 +7,18 @@ export default function Opportunity() {
 
     const [data, setData] = useState({
         rover: 'opportunity',
-        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos",
+        url: `https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos`,
         date: todaysDate,
         camera: {
             1: 'fhaz',
             2: 'rhaz',
-            3: 'navcam',
-            4: 'pancam',
-            5: 'minites'
+            3: 'mast',
+            4: 'chemcam',
+            5: 'mahli',
+            6: 'mardi',
+            7: 'navcam'
         },
-        cameraState: '',
-        api: process.env.REACT_APP_NASA_POD_API,  
+        cameraState: '',  
         roverImages: []
     });
 

@@ -35,11 +35,11 @@ export default function DatePicker(){
 
     }
 
-    const photo = <div className='w-full mx-auto flex flex-col'>
-        <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+    const photo = <div className='w-full mx-auto flex flex-col font-code'>
+        <p className="text-2xl text-center my-4 ">{nasaData.title}</p>
         <img className='mx-auto w-full' src={nasaData.url} alt=""/>
         
-            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+            <div className="text-xl p-2 flex flex-row justify-around ">
                 <p>{nasaData.date}</p>
                 {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
             </div>
@@ -47,20 +47,20 @@ export default function DatePicker(){
         <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
 
         <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+            <a className="uppercase text-blue-600 hover:text-blue-400" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
         </p>
     
     </div>
 
-    const video = <div className='w-full mx-auto flex flex-col'>
+    const video = <div className='w-full mx-auto flex flex-col font-code'>
         
 
-        <p className="text-2xl text-center my-4 font-[roboto]">{nasaData.title}</p>
+        <p className="text-2xl text-center my-4 ">{nasaData.title}</p>
         
-            <iframe className="h-96" src={nasaData.url} />
+            <iframe title={nasaData.title} className="h-96" src={nasaData.url} />
              
 
-            <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+            <div className="text-xl p-2 flex flex-row justify-around ">
                 <p>{nasaData.date}</p>
                 {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
             </div>
@@ -83,7 +83,7 @@ export default function DatePicker(){
         <div>
 
 
-            {nasaData.length === 0 ? <p className=" text-text-left p-4 my-10 text-lg border-4 border-black bg-gray-900/60 font-light lg:text-2xl lg:text-center">
+            {nasaData.length === 0 ? <p className=" text-text-left font-code p-4 my-10 text-lg border-4 border-black bg-gray-900/60 font-light lg:text-xl lg:text-center">
                                         Please pick a date on the calendar and then hit the search button for a result!
                                     </p> 
                                     
@@ -91,7 +91,7 @@ export default function DatePicker(){
                                      media
             }
 
-            <form className='bg-gray-900/60 flex flex-col mt-4 border-black border-4 p-4' onSubmit={getPhoto}>
+            <form className='bg-gray-900/60 flex flex-col mt-4 border-black border-4 p-4 font-code' onSubmit={getPhoto}>
 
                 <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 font-light'>
                     <span className="text-xl lg:text-2xl lg:mx-auto">

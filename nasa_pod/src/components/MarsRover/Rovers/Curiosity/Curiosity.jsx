@@ -18,11 +18,10 @@ export default function Curiosity(props) {
             6: 'mardi',
             7: 'navcam'
         },
-        cameraState: '',
-        api: process.env.REACT_APP_NASA_POD_API,  
+        cameraState: '',  
         roverImages: []
     });
-    
+     
     return(
         <div>
             <div className='p-4 my-10 bg-gray-800/80'>

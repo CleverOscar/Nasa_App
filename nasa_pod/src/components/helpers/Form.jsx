@@ -2,6 +2,14 @@ import React from 'react';
 import axios from 'axios';
 
 export default function Form(props) {
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var todaysDate = yyyy + '-' + mm + '-' + dd;
+
+    let api = process.env.REACT_APP_API_KEY
     
     function getDate(e){
         e.preventDefault();
@@ -20,8 +28,9 @@ export default function Form(props) {
     }
 
     function updateUrl(){
-        return props.setData({...props.data, url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${props.data.rover}/photos?earth_date=${props.data.date}&camera=${props.data.cameraState}&api_key=${props.data.api}`})
+        return props.setData({...props.data, url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${props.data.rover}/photos?earth_date=${props.data.date}&camera=${`fhaz`}&api_key=${api}`})
     }
+
     function handleSubmit(e){
         e.preventDefault();
         fetchData();
@@ -36,12 +45,12 @@ export default function Form(props) {
                 
                 <label className='flex flex-row gap-6'>
                     <p>Date</p>
-                    <input className="w-full text-black text-center"  id='myDate' type="date" onChange={getDate}/>
+                    <input className="w-full text-black text-center"   id='myDate' type="date" max={todaysDate} onChange={getDate}/>
                 </label>
                 
                 <label htmlFor="cameras" className='flex flex-row justify-between'>
                    <p>Camera Option</p>
-                   <select id="cameras" className='text-black text-center' onChange={getCamera} >
+                   <select id="cameras" required className='text-black text-center'  onChange={getCamera} >
                          {cams}
                    </select>
                 </label>

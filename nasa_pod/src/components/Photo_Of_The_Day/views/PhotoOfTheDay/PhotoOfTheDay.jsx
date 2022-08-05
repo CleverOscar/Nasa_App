@@ -22,15 +22,15 @@ function PhotoOfTheDay(){
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
-    const photo = <div className='w-full mx-auto flex flex-row'>
+    const photo = <div className='w-full mx-auto flex flex-row font-code'>
                         
                     <div className='w-full float-left bg-gray-700/50'>
 
                         <img className='float-left w-8/12 p-2' src={nasaData.url} alt=""/>
 
-                        <p className="text-4xl text-center pt-2 font-[roboto] font-black">{nasaData.title}</p>
+                        <p className="text-4xl text-center pt-2  font-black">{nasaData.title}</p>
 
-                        <div className="text-xl py-2 flex flex-row justify-around font-[chakara]">
+                        <div className="text-xl py-2 flex flex-row justify-around ">
                                     
                                     <p>{nasaData.date}</p>
                                     
@@ -41,14 +41,14 @@ function PhotoOfTheDay(){
                         <p className="text-xl md:tracking-widest clear-right p-2">{nasaData.explanation}</p>
 
                         <p className="text-center my-3 text-lg md:text-xl">HD Photo  
-                            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+                            <a className="uppercase text-blue-600 hover:text-blue-400" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
                         </p>   
 
                     </div>
 
                   </div>  
     
-    const clickButton = <p className="text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> 
+    const clickButton = <p className="text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto font-code"> 
                             Please click on the search button to see what today's photo of the day is! 
                         </p>
 

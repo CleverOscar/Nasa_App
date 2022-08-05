@@ -17,11 +17,11 @@ export default function RandomPhoto() {
         axios.get(url).then(res => setRandomPhoto(res.data[0])).catch(err => err.message)
     }
 
-    const randomImage = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md'>
+    const randomImage = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md my-10 font-code'>
                             <img src={randomPhoto.url} alt=""/>
-                            <p className="text-2xl text-center my-4 font-[roboto]">{randomPhoto.title}</p>
+                            <p className="text-2xl text-center my-4 ">{randomPhoto.title}</p>
                             
-                                <div className="text-xl p-2 flex flex-row justify-around font-[chakara]">
+                                <div className="text-xl p-2 flex flex-row justify-around ">
                                     <p>{randomPhoto.date}</p>
                                     {randomPhoto.copyright === '' ? <p>Taken By: {randomPhoto.copyright}</p> :  <p>No Author</p> }
                                 </div>
@@ -37,7 +37,7 @@ export default function RandomPhoto() {
 
     return(
         <div className='flex flex-col '>
-            {randomPhoto.length > -1 ? <p className="my-10 text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> : randomImage}
+            {randomPhoto.length > -1 ? <p className="my-10 font-code text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> : randomImage}
 
             <button onClick={fetchData} className=' 
                  text-xl 

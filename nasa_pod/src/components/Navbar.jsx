@@ -9,21 +9,21 @@ export default function Navbar() {
 
     return(
         <>
-            <nav className="bg-inherit text-white">
+            <nav className="bg-inherit text-lg text-white font-code lg:text-xl">
                 
                 <div className="p-4 flex flex-wrap items-center">
 
-                    <div className="text-lg w-full items-center relative flex justify-between lg:w-auto lg:static lg:block">
-                        <Link className="uppercase font-bold italic underline" to='/'>Nasa Portal</Link>
+                    <div className=" w-full items-center relative flex justify-between lg:w-auto lg:static lg:block">
+                        <Link className="uppercase  italic underline" to='/'>Nasa Portal</Link>
 
-                        <button className="bg-gray-800 cursor-pointer text-lg border-2 border-black px-3 py-2 rounded lg:hidden" type="button" onClick={()=>{setNavbarOpen(!navbarOpen)}}>
+                        <button className="bg-gray-800 cursor-pointer border-2 border-black px-3 py-2 rounded lg:hidden" type="button" onClick={()=>{setNavbarOpen(!navbarOpen)}}>
                             Menu
                         </button>
 
                     </div>
 
 
-                    <div className={`ml-auto font-semibold lg:flex flex-row` + (navbarOpen ? ` flex` : ` hidden`) }>
+                    <div className={`ml-auto  lg:flex flex-row` + (navbarOpen ? ` flex` : ` hidden`) }>
                         <ul className="flex flex-col lg:flex-row list none ml-auto uppercase text-right">
                             <Link className="py-3 z-10 lg:px-4 hover:underline"  to="/">
                                 Home

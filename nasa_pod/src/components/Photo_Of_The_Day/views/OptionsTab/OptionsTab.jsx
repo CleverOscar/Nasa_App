@@ -11,13 +11,15 @@ export default function OptionsTab() {
     return(
     <div>
         <ul className="
+        text-lg
+        lg:text-xl
         border-2
         shadow-sm
         shadow-white
         rounded-lg
         text-white
         uppercase
-        font-semibold
+        font-code
         bg-gray-800/30
         flex flex-col
         md:flex-row
@@ -35,8 +37,8 @@ export default function OptionsTab() {
                 w-full
                 block
                 
-                text-xs
-                md:text-base
+                
+                
                 leading-tight
                 
                 border-x-0 border-t-0 border-b-2 border-transparent
@@ -59,8 +61,8 @@ export default function OptionsTab() {
                 w-full
                 block
                 
-                text-xs
-                md:text-base
+                
+                
                 leading-tight
                 
                 border-x-0 border-t-0 border-b-2 border-transparent
@@ -77,8 +79,8 @@ export default function OptionsTab() {
                 w-full
                 block
                 
-                text-xs
-                md:text-base
+                
+                
                 leading-tight
                 
                 border-x-0 border-t-0 border-b-2 border-transparent

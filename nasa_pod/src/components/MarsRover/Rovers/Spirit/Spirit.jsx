@@ -5,21 +5,22 @@ import todaysDate from '../../../helpers/date';
 
 export default function Spirit(){
 
-    const [data, setData] = useState({
-        rover: 'spirit',
-        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos",
-        date: todaysDate,
-        camera: {
-            1: 'fhaz',
-            2: 'rhaz',
-            3: 'navcam',
-            4: 'pancam',
-            5: 'minites'
-        },
-        cameraState: '',
-        api: process.env.REACT_APP_NASA_POD_API,  
-        roverImages: []
-    });
+   const [data, setData] = useState({
+       rover: 'spirit',
+       url: `https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos`,
+       date: todaysDate,
+       camera: {
+           1: 'fhaz',
+           2: 'rhaz',
+           3: 'mast',
+           4: 'chemcam',
+           5: 'mahli',
+           6: 'mardi',
+           7: 'navcam'
+       },
+       cameraState: '',
+       roverImages: []
+   });
     
     return(
         <div>
