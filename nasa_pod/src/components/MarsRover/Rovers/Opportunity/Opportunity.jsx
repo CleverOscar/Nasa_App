@@ -23,23 +23,23 @@ export default function Opportunity() {
 
     return(
         <div>
-             <div className='text-center my-10 bg-gray-800/50'>
-                <p className='text-2xl my-2'> Opportunity Rover </p>
+             <div className='p-4 my-10 bg-gray-800/80'>
+                <p className='text-3xl text-center font-roboto'> Opportunity Rover </p>
 
-                <p>If you can't find any images, try changing the camera.</p>
+                <p className="font-roboto bg-red-900/40 p-2 my-2">If you can't find any images, try changing the camera.</p>
 
                 <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Spirit</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2004 - 2018 </span></p>
              </div>
 
             {/* form and photos view here */}
 
-            <div className='flex flexr-row justify-around bg-gray-800/40'>
-                <div className=' w-1/3'>
+            <div className='flex flex-col justify-around bg-gray-800/80 p-4'>
+                <div className=' w-auto'>
                     <Form data={data} setData={setData} />
                         
                 </div>
 
-                <div className='w-1/3'>
+                <div className='w-auto'>
                     <RoverCarousel data={data}/>
                 </div>
             </div>
