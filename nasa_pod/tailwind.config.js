@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'chakara': ['Chakra Petch', 'sans - serif'],
-        'roboto': ['Roboto', 'sans-serif']
+        'roboto': ['Roboto', 'sans-serif'],
+        'code': ['Source Code Pro', 'monospace'],
       }
     },
   },

@@ -7,7 +7,7 @@ export default function RoverCarousel(props){
     return(
         <div className=' '>
             <Carousel >
-                {props.data.roverImages.length > 0 ? props.data.roverImages.map(image => <img src={image.img_src} />) : <p>No images found</p>}
+                {props.data.roverImages.length > 0 ? props.data.roverImages.map(image => <img src={image.img_src} />) : <p className="my-10"> No images found </p>}
             </Carousel>
         </div>
     )

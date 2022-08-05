@@ -31,23 +31,36 @@ export default function Form(props) {
 
 
     return(
-        <div className=''>
-            <form className="flex flex-col text-lg" onSubmit={handleSubmit}>
+        <div className='border-2 border-white mb-10 p-2 text-xl font-code'>
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 
-                <label className='bg-gray-50/50'>
+                <label className='flex flex-row gap-6'>
                     <p>Date</p>
-                    <input className="w-full text-black "  id='myDate' type="date" onChange={getDate}/>
+                    <input className="w-full text-black text-center"  id='myDate' type="date" onChange={getDate}/>
                 </label>
                 
-                <label htmlFor="cameras" className='bg-gray-900/90'>
+                <label htmlFor="cameras" className='flex flex-row justify-between'>
                    <p>Camera Option</p>
-                   <select id="cameras" className=' text-black' onChange={getCamera} >
+                   <select id="cameras" className='text-black text-center' onChange={getCamera} >
                          {cams}
                    </select>
                 </label>
 
 
-                <button onClick={updateUrl} className=" " type="sumbit">Search</button>
+                <button onClick={updateUrl} className=" text-xl 
+                bg-white  
+                outline 
+                outline-4 
+                bg-blue-400/70 
+                text-white
+                font-light 
+                outline-blue-600 
+                w-1/2 
+                hover:bg-blue-800/70
+                md:w-1/4 
+                mx-auto 
+                p-2
+                rounded" type="sumbit">Search</button>
                 
             </form>
         </div>
