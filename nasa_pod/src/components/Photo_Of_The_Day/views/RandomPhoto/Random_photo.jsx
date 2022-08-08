@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function RandomPhoto() {
 
     const [randomPhoto, setRandomPhoto] = useState([]);
+    const [fiveImages, setFiveImages] = useState(false);
 
     // api key
     const api = process.env.REACT_APP_API_KEY;
@@ -16,6 +17,17 @@ export default function RandomPhoto() {
 
         axios.get(url).then(res => setRandomPhoto(res.data[0])).catch(err => err.message)
     }
+
+
+    const moreImages = <div>
+       <form>
+            <label>
+                Five Images 
+            </label>
+            <input type="checkbox" value={fiveImages} onClick={() => { setFiveImages(!fiveImages); console.log("clicked") }}  />
+       </form>
+    </div>
+
 
     const randomImage = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md my-10 font-code'>
                             <img src={randomPhoto.url} alt=""/>
@@ -37,10 +49,17 @@ export default function RandomPhoto() {
 
     return(
         <div className='flex flex-col '>
-            {randomPhoto.length > -1 ? <p className="my-10 font-code text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> : randomImage}
+
+            {moreImages}
+
+            {
+                randomPhoto.length > -1 
+                    ? <p className="my-10 font-code text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> 
+                    : randomImage
+            }
 
             <button onClick={fetchData} className=' 
-                 text-xl 
+                text-xl 
                 bg-white  
                 outline 
                 outline-4 
@@ -53,8 +72,9 @@ export default function RandomPhoto() {
                 md:w-1/4 
                 mx-auto 
                 p-2
-                rounded
-                ' > Search Random Photo </button>
+                rounded' > 
+            Search Random Photo 
+            </button>
 
             
 
