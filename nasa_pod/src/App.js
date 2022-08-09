@@ -1,10 +1,11 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './Views/Navbar/Navbar';
 import LandingPage from './components/LandingPage';
 import NasaPhoto from './components/Photo_Of_The_Day/NasaPhoto';
 import MarsRover from './components/MarsRover/MarsRover';
-import Footer from './components/Footer/Footer';
+import Footer from './Views/Footer/Footer';
 import ErrorPage from './components/ErrorPage';
+import About from './Views/About/About';
 
 import {Routes, Route} from 'react-router-dom';
 import RoverCarousel from './components/MarsRover/views/Carousel';
@@ -21,7 +22,8 @@ function App() {
           <Route path="/"  element={<LandingPage />}/>
           <Route path="/apod/*" element={<NasaPhoto />} />
           <Route path="/mars/*" element={<MarsRover />} />
-          <Route path="/carousel" element={<RoverCarousel />} /> 
+          <Route path="/carousel" element={<RoverCarousel />} />
+          <Route path="/about" element={<About />} /> 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
 

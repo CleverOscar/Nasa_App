@@ -4,7 +4,6 @@ import axios from 'axios';
 export default function RandomPhoto() {
 
     const [randomPhoto, setRandomPhoto] = useState([]);
-    const [fiveImages, setFiveImages] = useState(false);
 
     // api key
     const api = process.env.REACT_APP_API_KEY;
@@ -19,14 +18,7 @@ export default function RandomPhoto() {
     }
 
 
-    const moreImages = <div>
-       <form>
-            <label>
-                Five Images 
-            </label>
-            <input type="checkbox" value={fiveImages} onClick={() => { setFiveImages(!fiveImages); console.log("clicked") }}  />
-       </form>
-    </div>
+
 
 
     const randomImage = <div className='w-full mx-auto flex flex-col bg-gray-700/50 border-4 border-white rounded-md my-10 font-code'>
@@ -50,13 +42,15 @@ export default function RandomPhoto() {
     return(
         <div className='flex flex-col '>
 
-            {moreImages}
 
-            {
+
+           
+
+            {/* {
                 randomPhoto.length > -1 
                     ? <p className="my-10 font-code text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> 
                     : randomImage
-            }
+            } */}
 
             <button onClick={fetchData} className=' 
                 text-xl 
