@@ -26,30 +26,32 @@ function PhotoOfTheDay(){
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
-    // photo component
-    const photo = <div className='w-full mx-auto flex flex-row font-code'>
-                        
-                    <div className='w-full float-left bg-gray-700/50'>
+    // large screen photo component
+    const photo = <div className='bg-gray-900/80 border-4 border-gray-900 rounded-md p-4 flex'>
 
-                        <img className='float-left w-8/12 p-2' src={nasaData.url} alt=""/>
+                        <img className='float-left max-w-2xl border-gray-700 border-4 rounded-lg' src={nasaData.url} alt=""/>
 
-                        <p className="text-4xl text-center pt-2  font-black">{nasaData.title}</p>
+                        <div className="ml-4 font-code" >
+                            <p className="text-3xl text-center uppercase ">{nasaData.title}</p>
 
-                        <div className="text-xl py-2 flex flex-row justify-around ">
-                                    
-                                    <p>{nasaData.date}</p>
-                                    
-                                    {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>Unknown Owner</p> }
-            
-                        </div>
+                            <div className="text-2xl py-4">
+                                        
+                                        <p>{nasaData.date}</p>
+                                        
+                                        {nasaData.copyright === '' ?  <p>Unknown Owner</p> : <p>Taken By: {nasaData.copyright}</p> }
+                
+                            </div>
 
-                        <p className="text-xl md:tracking-widest clear-right p-2">{nasaData.explanation}</p>
+                            <p className="text-lg md:text-xl md:tracking-widest ">{nasaData.explanation}</p>
 
-                        <p className="text-center my-3 text-lg md:text-xl">HD Photo  
-                            <a className="uppercase text-blue-600 hover:text-blue-400" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
-                        </p>   
+                            <p className=" text-center uppercase mt-4 text-lg">HD Photo  
+                                <a className="text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+                            </p>  
+                        </div> 
                     </div>
-                  </div>  
+                        
+                    
+                 
     
     // Notify the user to hit the button to search for an image 
     const clickButton = <p className="text-left md:text-center w-auto font-light p-2 text-2xl border-4 border-black bg-gray-900/70 md:w-1/2 mx-auto font-code "> 
