@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './Views/Navbar/Navbar';
-import LandingPage from './components/LandingPage';
-import NasaPhoto from './components/Photo_Of_The_Day/NasaPhoto';
+import LandingPage from './Views/LandingPage/LandingPage';
+import NasaPhoto from './Views/Photo_Of_The_Day/NasaPhoto'
 import MarsRover from './components/MarsRover/MarsRover';
 import Footer from './Views/Footer/Footer';
-import ErrorPage from './components/ErrorPage';
+import ErrorPage from './Views/Error/ErrorPage';
 import About from './Views/About/About';
 
 import {Routes, Route} from 'react-router-dom';

@@ -20,7 +20,7 @@ export default function OptionsTab() {
         text-white
         uppercase
         font-code
-        bg-gray-800/30
+        bg-gray-800/80
         flex flex-col
         md:flex-row
         
