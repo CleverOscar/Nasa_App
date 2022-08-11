@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios'
+import Photo from '../../../SubViews/Photo';
 
 export default function DatePicker(){
 
@@ -35,22 +36,6 @@ export default function DatePicker(){
 
     }
 
-    const photo = <div className='w-full mx-auto flex flex-col font-code'>
-        <p className="text-2xl text-center my-4 ">{nasaData.title}</p>
-        <img className='mx-auto w-full' src={nasaData.url} alt=""/>
-        
-            <div className="text-xl p-2 flex flex-row justify-around ">
-                <p>{nasaData.date}</p>
-                {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
-            </div>
-            
-        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
-
-        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-            <a className="uppercase text-blue-600 hover:text-blue-400" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
-        </p>
-    
-    </div>
 
     const video = <div className='w-full mx-auto flex flex-col font-code'>
         
@@ -73,7 +58,7 @@ export default function DatePicker(){
     </div>
 
     const media = <div className="my-10">
-        {nasaData.media_type === 'image' ? photo : video}
+        {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video}
     </div>
 
 
@@ -85,11 +70,7 @@ export default function DatePicker(){
 
             {nasaData.length === 0 ? <p className=" text-text-left font-code p-4 my-10 text-lg border-4 border-black bg-gray-900/60 font-light lg:text-xl lg:text-center">
                                         Please pick a date on the calendar and then hit the search button for a result!
-                                    </p> 
-                                    
-                                    : 
-                                     media
-            }
+                                    </p>  : media}
 
             <form className='bg-gray-900/60 flex flex-col mt-4 border-black border-4 p-4 font-code' onSubmit={getPhoto}>
 
