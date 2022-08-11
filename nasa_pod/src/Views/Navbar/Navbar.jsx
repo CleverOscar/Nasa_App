@@ -37,7 +37,6 @@ export default function Navbar() {
                             <Link className="py-3 z-10 lg:px-4 hover:underline" to='/about'>
                                 About
                             </Link>
-                        
                             
                         </ul>
                     </div>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, lazy} from 'react';
 import axios from 'axios'
-
+import Photo from '../../../SubViews/Photo';
 
 
 function PhotoOfTheDay(){
@@ -25,33 +25,6 @@ function PhotoOfTheDay(){
 
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
-
-    // large screen photo component
-    const photo = <div className='bg-gray-900/80 w-full border-4 border-gray-900 rounded-md p-4'>
-
-                        <img className='float-left w-1/2 border-gray-700 border-4 rounded-lg mr-4' src={nasaData.url} alt=""/>
-
-                        <div className=" font-code w-full" >
-                            <p className="text-3xl text-center uppercase ">{nasaData.title}</p>
-
-                            <div className="text-2xl py-4">
-                                        
-                                        <p>{nasaData.date}</p>
-                                        
-                                        {nasaData.copyright === '' ?  <p>Unknown Owner</p> : <p>Taken By: {nasaData.copyright}</p> }
-                
-                            </div>
-
-                            <p className="text-lg md:tracking-widest ">{nasaData.explanation}</p>
-
-                            <p className=" text-center uppercase mt-4 text-lg">HD Photo  
-                                <a className="text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
-                            </p>  
-                        </div> 
-                    </div>
-                        
-                    
-                 
     
     // Notify the user to hit the button to search for an image 
     const clickButton = <p className="text-left md:text-center w-auto font-light p-2 text-2xl border-4 border-black bg-gray-900/70 md:w-1/2 mx-auto font-code "> 
@@ -99,7 +72,7 @@ function PhotoOfTheDay(){
             </div>
 
             <div className="hidden md:block my-10">
-                {   nasaData.length === 0 ? clickButton : photo}
+                {   nasaData.length === 0 ? clickButton : <Photo data={nasaData} />}
             </div>
 
              <button className=' 
@@ -123,6 +96,7 @@ function PhotoOfTheDay(){
                 onClick={getData}
 
              > Search photo  </button>
+             
         </div>
     )
 }
