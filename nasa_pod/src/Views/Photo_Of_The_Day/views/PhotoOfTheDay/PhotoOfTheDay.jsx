@@ -27,11 +27,11 @@ function PhotoOfTheDay(){
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
     // large screen photo component
-    const photo = <div className='bg-gray-900/80 border-4 border-gray-900 rounded-md p-4 flex'>
+    const photo = <div className='bg-gray-900/80 w-full border-4 border-gray-900 rounded-md p-4'>
 
-                        <img className='float-left max-w-2xl border-gray-700 border-4 rounded-lg' src={nasaData.url} alt=""/>
+                        <img className='float-left w-1/2 border-gray-700 border-4 rounded-lg mr-4' src={nasaData.url} alt=""/>
 
-                        <div className="ml-4 font-code" >
+                        <div className=" font-code w-full" >
                             <p className="text-3xl text-center uppercase ">{nasaData.title}</p>
 
                             <div className="text-2xl py-4">
@@ -42,7 +42,7 @@ function PhotoOfTheDay(){
                 
                             </div>
 
-                            <p className="text-lg md:text-xl md:tracking-widest ">{nasaData.explanation}</p>
+                            <p className="text-lg md:tracking-widest ">{nasaData.explanation}</p>
 
                             <p className=" text-center uppercase mt-4 text-lg">HD Photo  
                                 <a className="text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
@@ -94,11 +94,11 @@ function PhotoOfTheDay(){
 
            
 
-            <div className="lg:hidden my-10">
+            <div className="md:hidden my-10">
                 {nasaData.length === 0 ? clickButton : photoCardMobile}
             </div>
 
-            <div className="hidden lg:block my-10">
+            <div className="hidden md:block my-10">
                 {   nasaData.length === 0 ? clickButton : photo}
             </div>
 

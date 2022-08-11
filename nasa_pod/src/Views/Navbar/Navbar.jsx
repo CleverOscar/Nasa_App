@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-
-
+import AudioComponent from '../Audio/Audio';
 
 export default function Navbar() {
 
@@ -38,6 +37,8 @@ export default function Navbar() {
                             <Link className="py-3 z-10 lg:px-4 hover:underline" to='/about'>
                                 About
                             </Link>
+                        
+                            
                         </ul>
                     </div>
 
