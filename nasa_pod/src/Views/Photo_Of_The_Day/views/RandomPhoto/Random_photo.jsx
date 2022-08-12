@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Photo from '../../../SubViews/Photo';
+import ClickInfo from '../../../SubViews/ClickInfo';
 
 export default function RandomPhoto() {
 
@@ -27,12 +28,12 @@ export default function RandomPhoto() {
 
             {
                 randomPhoto.length > -1 
-                    ? <p className="my-10 font-code text-center font-light p-2 text-2xl border-4 border-black bg-gray-900/70 w-1/2 mx-auto"> Please click on the search button to see a random photo! </p> 
+                    ? <ClickInfo />
                     : <Photo data={randomPhoto} />
             }
 
             <button onClick={fetchData} className='
-                my-10 
+                mb-10
                 text-xl 
                 bg-white  
                 outline 

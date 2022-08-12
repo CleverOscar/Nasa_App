@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 import Photo from '../../../SubViews/Photo';
+import ClickInfo from '../../../SubViews/ClickInfo';
 
 export default function DatePicker(){
 
@@ -68,11 +69,9 @@ export default function DatePicker(){
         <div>
 
 
-            {nasaData.length === 0 ? <p className=" text-text-left font-code p-4 my-10 text-lg border-4 border-black bg-gray-900/60 font-light lg:text-xl lg:text-center">
-                                        Please pick a date on the calendar and then hit the search button for a result!
-                                    </p>  : media}
+            {nasaData.length === 0 ? <ClickInfo />  : media}
 
-            <form className='bg-gray-900/60 flex flex-col mt-4 border-black border-4 p-4 font-code' onSubmit={getPhoto}>
+            <form className='bg-gray-900/60 flex flex-col my-10 border-black border-4 p-4 font-code' onSubmit={getPhoto}>
 
                 <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 font-light'>
                     <span className="text-xl lg:text-2xl lg:mx-auto">
@@ -83,7 +82,7 @@ export default function DatePicker(){
                 </label>
 
                 
-                <button className="w-1/3 mx-auto my-8 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl md:mx-0 md:ml-auto">submit</button>
+                <button className="w-1/3 mx-auto mt-10 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl md:mx-0 md:ml-auto">submit</button>
                 
             </form>
 

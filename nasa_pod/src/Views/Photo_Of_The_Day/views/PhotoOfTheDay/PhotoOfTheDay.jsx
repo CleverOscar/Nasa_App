@@ -1,6 +1,8 @@
 import React, {useState, lazy} from 'react';
 import axios from 'axios'
 import Photo from '../../../SubViews/Photo';
+import ClickInfo from '../../../SubViews/ClickInfo';
+import MobilePhoto from '../../../SubViews/MobilePhoto';
 
 
 function PhotoOfTheDay(){
@@ -26,11 +28,6 @@ function PhotoOfTheDay(){
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
     
-    // Notify the user to hit the button to search for an image 
-    const clickButton = <p className="text-left md:text-center w-auto font-light p-2 text-2xl border-4 border-black bg-gray-900/70 md:w-1/2 mx-auto font-code "> 
-                            Please click on the search button to see what today's photo of the day is! 
-                        </p>
-
     
     // event listener function 
     // when the user clicks on the button we want to get todays data
@@ -39,40 +36,16 @@ function PhotoOfTheDay(){
         axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
-
-    const photoCardMobile = <div className='w-full mx-auto flex flex-col bg-gray-900/80 border-4 border-gray-900 rounded-md p-4 font-code'>
-
-                                <img className='mx-auto w-full border-gray-700 border-4 rounded-lg' src={nasaData.url} alt=""/>
-
-                                <p className="text-4xl text-center text-gray-300 my-4">{nasaData.title}</p>
-
-                                    <div className="flex flex-col mb-4">
-
-                                        <p className="text-2xl mb-4">{nasaData.date}</p>
-
-                                        {nasaData.copyright === '' ?  <p>No Author</p> : <p className="text-lg">Taken By: {nasaData.copyright}</p> }
-
-                                    </div>
-                                    
-                                <p className="text-lg md:text-xl md:tracking-widest ">{nasaData.explanation}</p>
-
-                                <p className="text-center uppercase mt-4 text-lg md:text-xl">
-                                    HD Photo <a className=" text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here </a>
-                                </p>
-
-                            </div>
      
     return (
         <div className='text-white flex flex-col'>
 
-           
-
-            <div className="md:hidden my-10">
-                {nasaData.length === 0 ? clickButton : photoCardMobile}
+            <div className="md:hidden">
+                {nasaData.length === 0 ? <ClickInfo /> : <MobilePhoto data={nasaData} />}
             </div>
 
-            <div className="hidden md:block my-10">
-                {   nasaData.length === 0 ? clickButton : <Photo data={nasaData} />}
+            <div className="hidden md:block">
+                {   nasaData.length === 0 ? <ClickInfo /> : <Photo data={nasaData} />}
             </div>
 
              <button className=' 
