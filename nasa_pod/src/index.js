@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import NasaApp from './NasaApp';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
 import 'tw-elements';
@@ -12,7 +12,7 @@ import 'tw-elements';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App/>
+      <NasaApp/>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

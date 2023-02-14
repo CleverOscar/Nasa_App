@@ -64,7 +64,6 @@ function PhotoOfTheDay(){
                 mx-auto 
                 p-2
                 rounded
-                
                 ' 
             
                 onClick={getData}

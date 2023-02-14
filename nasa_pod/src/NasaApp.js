@@ -10,7 +10,7 @@ import About from './Views/About/About';
 import {Routes, Route} from 'react-router-dom';
 import RoverCarousel from './components/MarsRover/views/Carousel';
 
-function App() {
+function NasaApp() {
 
   return (
     <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-cover h-fit min-h-screen'>
@@ -34,5 +34,5 @@ function App() {
   );
 }
 
-export default App;
+export default NasaApp;
  

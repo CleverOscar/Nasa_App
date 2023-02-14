@@ -1,5 +1,5 @@
 {
-  "name": "nasa_pod",
+  "name": "nasa_app",
   "version": "1.2.2",
   "private": true,
   "dependencies": {

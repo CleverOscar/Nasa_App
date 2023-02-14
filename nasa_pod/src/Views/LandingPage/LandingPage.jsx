@@ -9,7 +9,9 @@ export default function LandingPage(){
             </p>
 
             <p className='px-6 pb-6 text-base md:text-2xl font-roboto'>
-            A ReactJS application that fetches data from NASA 's Portal API database, two features currently available to use at the moment are Photo Of The Day and the Mars Rover view. Make sure to check them out! 
+            A ReactJS application that fetches data from NASA 's Portal API database, 
+            two features currently available to use at the moment are Photo Of The Day and the Mars Rover view. 
+            Make sure to check them out! 
             </p>
 
             <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" alt="nasa logo" />
