@@ -27,7 +27,7 @@ export default function MarsRover(){
     const api = "JbPskfAcVPpxN602YevCVKqXG7dh7VZ7Yb8qkM2j"
 
     // Date
-    let [yourDate, setYourDate] = useState(todaysDate);
+    let [yourDate] = useState(todaysDate);
 
     // url 
     let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumeber}&api_key=${api}`;

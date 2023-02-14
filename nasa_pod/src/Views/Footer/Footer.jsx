@@ -1,14 +1,20 @@
 import React from 'react';
 import 'tw-elements';
 
+
 export default function Footer() {
+
+    var year = new Date().getFullYear()
+
+    var linkStyle =  'rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1'
+
     return(
         <div>
             <footer className="text-center bg-gray-900/30 text-white">
                 <div className="container px-6 pt-6">
                     <div className="flex justify-center ">
 
-                        <a href="https://twitter.com/CleverOscarDev" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                        <a href="https://twitter.com/CleverOscarDev" type="button" className={linkStyle}>
                             <svg aria-hidden="true"
                             focusable="false"
                             data-prefix="fab"
@@ -25,7 +31,7 @@ export default function Footer() {
                             </svg>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/clever-oscar/" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                        <a href="https://www.linkedin.com/in/clever-oscar/" type="button" className={linkStyle}>
                             <svg aria-hidden="true"
                             focusable="false"
                             data-prefix="fab"
@@ -42,7 +48,7 @@ export default function Footer() {
                             </svg>
                         </a>
 
-                        <a href="https://github.com/CleverOscar" type="button" className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                        <a href="https://github.com/CleverOscar" type="button" className={linkStyle}>
                             <svg aria-hidden="true"
                             focusable="false"
                             data-prefix="fab"
@@ -62,7 +68,7 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center p-4" >
-                    © 2022 Copyright:
+                    © {year} Copyright:
                     <a className="text-blue-300" href="https://cleveroscar.dev/"> CleverOscar</a>
                 </div>
             </footer>

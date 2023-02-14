@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import AudioComponent from '../Audio/Audio';
 
 export default function Navbar() {
 

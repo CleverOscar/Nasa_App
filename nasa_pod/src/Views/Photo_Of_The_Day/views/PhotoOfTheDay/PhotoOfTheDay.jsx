@@ -1,4 +1,4 @@
-import React, {useState, lazy} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios'
 import Photo from '../../../SubViews/Photo';
 import ClickInfo from '../../../SubViews/ClickInfo';
@@ -19,21 +19,22 @@ function PhotoOfTheDay(){
     }
 
     // api key
-    const api = process.env.REACT_APP_API_KEY;
+    let api = process.env.REACT_APP_API_KEY;
 
     // init empty array for Nasa Data 
     let [nasaData, setNasaData] = useState([]);
     let [date] = useState(today);
 
     // nasa api url
-    let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
+    let url = "https://api.nasa.gov/planetary/apod";
     
     
     // event listener function 
     // when the user clicks on the button we want to get todays data
     function getData(e) {
         e.preventDefault();
-        axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
+        console.log("Button Clicked")
+        axios.get(url + `?date=${date}` + `&api_key=${api}`).then( (response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
      
