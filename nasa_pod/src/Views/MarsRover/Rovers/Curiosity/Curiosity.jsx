@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Form from '../../../../helpers/Form';
 import RoverCarousel from '../../views/Carousel';
 import todaysDate from '../../../../helpers/date'
+import Pagination from '../../../../helpers/Pagination';
 
 export default function Curiosity(props) {
 
@@ -45,6 +46,10 @@ export default function Curiosity(props) {
                 <div className='w-auto'>
                     <RoverCarousel data={data}/>
                 </div>
+            </div>
+
+            <div className='my-10 mx-auto text-center '>
+                { data.length > 0 ? <Pagination  data={data} pageLimit={5} dataLimit={9} /> : <></>}
             </div>
 
         </div>

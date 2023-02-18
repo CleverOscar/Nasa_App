@@ -5,11 +5,6 @@ import Curiosity from './Rovers/Curiosity/Curiosity';
 import Opportunity from './Rovers/Opportunity/Opportunity';
 import Spirit from './Rovers/Spirit/Spirit';
 
-// import Pagination from './views/Pagination';
-// import Images from './views/Images';
-// import InfoCard from './views/InfoCard';
-// import RoverCarousel from './views/Carousel';
-
 export default function MarsRover(){
 
     var today = new Date();
@@ -29,8 +24,6 @@ export default function MarsRover(){
     // Date
     let [yourDate] = useState(todaysDate);
 
-    // url 
-    let  url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${yourDate}&page=${pageNumeber}&api_key=${api}`;
     
 
 

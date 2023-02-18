@@ -58,7 +58,7 @@ export default function DatePicker(){
         </p> 
     </div>
 
-    const media = <div className="my-10">
+    const media = <div>
         {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video}
     </div>
 
@@ -71,18 +71,18 @@ export default function DatePicker(){
 
             {nasaData.length === 0 ? <ClickInfo />  : media}
 
-            <form className='bg-gray-900/60 flex flex-col my-10 border-black border-4 p-4 font-code' onSubmit={getPhoto}>
+            <form className='bg-gray-900/60 flex flex-col my-10 border-black border-4 p-4 font-code mx-auto' onSubmit={getPhoto}>
 
-                <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 font-light'>
-                    <span className="text-xl lg:text-2xl lg:mx-auto">
+                <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 '>
+                    <span className=" text-center text-xl lg:text-2xl lg:mx-auto">
                         Please Pick A Date:
                     </span> 
 
-                    <input className='text-black w-full text-center text-xl md:w-1/2' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+                    <input className='text-black w-full text-center text-2xl md:w-1/2 font-bold' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
                 </label>
 
                 
-                <button className="w-1/3 mx-auto mt-10 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl md:mx-0 md:ml-auto">submit</button>
+                <button className="font-bold w-1/3 mx-auto mt-10 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl  ">submit</button>
                 
             </form>
 
