@@ -31,16 +31,16 @@ export default function Curiosity(props) {
                     <p className='text-3xl font-roboto'> 
                         Curiosity Rover 
                     </p>
-                    <p className="font-roboto bg-red-900/40 my-2">If you can't find any images, there might not be any on that date or changing the camera</p>
-                    <p className="">Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Curiosity</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2012 - present </span></p>
+                    <p className="font-roboto bg-red-900/40 py-2 my-2">If you can't find any images, there might not be any on that date or changing the camera</p>
+                    <p className=""><span className='uppercase text-red-500 font-bold'>Curiosity</span> was active from <span className='text-blue-400 font-bold'> 2012 - present </span></p>
                 </div>
 
 
-                <div className='w-auto lg:w-full '>
+                <div className='w-full '>
                     <Form data={data} setData={setData} />
                 </div>
 
-                
+                 
             </div>
 
     

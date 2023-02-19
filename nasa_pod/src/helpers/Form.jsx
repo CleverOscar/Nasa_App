@@ -45,12 +45,12 @@ export default function Form(props) {
                 
                 <label className='flex flex-row gap-6'>
                     <p>Date</p>
-                    <input className="w-full text-black text-center"   id='myDate' type="date" max={todaysDate} onChange={getDate}/>
+                    <input className="w-full text-black text-center font-bold"   id='myDate' type="date" max={todaysDate} onChange={getDate}/>
                 </label>
                 
                 <label htmlFor="cameras" className='flex flex-row justify-between'>
                    <p>Camera Option</p>
-                   <select id="cameras" required className='text-black text-center'  onChange={getCamera} >
+                   <select id="cameras" required className='text-black text-center font-bold'  onChange={getCamera} >
                          {cams}
                    </select>
                 </label>

@@ -23,27 +23,30 @@ export default function Spirit(){
    });
     
     return(
-        <div>
-            <div className='p-4 my-10 bg-gray-800/80'>
+        <div className='my-10'>
 
-                <p className='text-3xl text-center font-roboto'> Spirit Rover </p>
+             <div className='flex flex-col lg:flex-row w-full gap-10 items-center bg-gray-800/80 p-4'>
+                <div className='w-full text-center'>
 
-                <p className="font-roboto bg-red-900/40 p-2 my-2">If you can't find any images, there might not be any on that date or changing the camera</p>
+                    <p className='text-3xl font-roboto'> Spirit Rover </p>
 
-                <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Spirit</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2004 - 2010 </span></p>
-             </div>
+                    <p className="font-roboto bg-red-900/40 p-2 my-2">If you can't find any images, there might not be any on that date or changing the camera</p>
 
-            {/* form and photos view here */}
+                    <p><span className='uppercase text-red-500 font-bold'>Spirit</span> was active from <span className='text-blue-400 font-bold'> 2004 - 2010 </span></p>
+                </div>
 
-            <div className='flex flex-col justify-around bg-gray-800/80 p-4'>
-                <div className=' w-auto'>
+
+            
+                <div className='w-full '>
                     <Form data={data} setData={setData} />
                         
                 </div>
 
-                <div className='w-auto'>
-                    <RoverCarousel data={data}/>
-                </div>
+                
+            </div>
+
+            <div className='w-auto'>
+                <RoverCarousel data={data}/>
             </div>
         </div>
     )
