@@ -28,7 +28,7 @@ export default function MarsRover(){
 
 
     return(
-        <div className="w-11/12 mx-auto mb-auto flex flex-col">
+        <div className="w-full mx-auto mb-auto flex flex-col px-2 md:px-0">
 
             <div>
 

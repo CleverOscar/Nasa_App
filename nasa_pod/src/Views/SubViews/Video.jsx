@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function Video(){
+export default function Video({nasaData}){
     return(
         <div className='w-full mx-auto flex flex-col font-code'>
             

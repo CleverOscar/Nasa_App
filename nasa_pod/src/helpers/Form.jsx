@@ -40,7 +40,7 @@ export default function Form(props) {
 
 
     return(
-        <div className='border-2 border-white mb-10 p-2 text-xl font-code'>
+        <div className=' text-xl font-code '>
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 
                 <label className='flex flex-row gap-6'>
@@ -66,7 +66,7 @@ export default function Form(props) {
                 outline-blue-600 
                 w-1/2 
                 hover:bg-blue-800/70
-                md:w-1/4 
+                md:w-full 
                 mx-auto 
                 p-2
                 rounded" type="sumbit">Search</button>

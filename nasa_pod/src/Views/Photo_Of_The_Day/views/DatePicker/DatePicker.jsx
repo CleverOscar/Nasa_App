@@ -74,7 +74,7 @@ export default function DatePicker(){
             <form className='bg-gray-900/60 flex flex-col my-10 border-black border-4 p-4 font-code mx-auto' onSubmit={getPhoto}>
 
                 <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 '>
-                    <span className=" text-center text-xl lg:text-2xl lg:mx-auto">
+                    <span className=" text-center text-xl lg:text-2xl lg:mx-auto underline">
                         Please Pick A Date:
                     </span> 
 

@@ -27,7 +27,7 @@ export default function Opportunity() {
              <div className='p-4 my-10 bg-gray-800/80'>
                 <p className='text-3xl text-center font-roboto'> Opportunity Rover </p>
 
-                <p className="font-roboto bg-red-900/40 p-2 my-2">If you can't find any images, try changing the camera.</p>
+                <p className="font-roboto bg-red-900/40 p-2 my-2">If you can't find any images, there might not be any on that date or changing the camera</p>
 
                 <p>Also a <span className='uppercase text-yellow-300 font-bold'>tip, </span> <span className='uppercase text-red-500 font-bold'>Spirit</span> was <span className='text-green-400 uppercase font-bold'>active</span> from <span className='text-blue-400 font-bold'> 2004 - 2018 </span></p>
              </div>

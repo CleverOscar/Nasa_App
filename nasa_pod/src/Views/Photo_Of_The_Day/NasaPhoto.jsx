@@ -8,7 +8,7 @@ export default function NasaPhoto(){
 
 
 
-    return(<div className="mb-auto w-11/12 mx-auto flex flex-col" >
+    return(<div className="mb-auto w-full mx-auto flex flex-col px-2 md:px-0" >
            <OptionsTab/>
           </div>
     )
