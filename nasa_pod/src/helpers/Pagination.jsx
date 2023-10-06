@@ -35,6 +35,29 @@ export default function Pagination({data, RenderComponent, pageLimit, dataLimit}
     return(
         <div>
             Pages
+
+            <button
+                onClick={goToPreviousPage}
+                className={`prev ${currentPage <= 1 ? 'hidden' : ''}`}>
+                prev
+            </button>
+
+            {getPaginationGroup().map((item, index) => (
+                <button
+                key={index}
+                onClick={changePage}
+                className={` paginationItem ${currentPage === item ? ' px-3 py-2 bg-gray-500/30 rounded-full' : null}`}
+                            >
+                    <span>{item}</span>
+                </button>
+            ))}
+
+            <button
+                onClick={goToNextPage}
+                className={`next ${currentPage >= pages ? 'hidden' : ''}`}>
+                next
+            </button>
+
         </div>
     )
 }

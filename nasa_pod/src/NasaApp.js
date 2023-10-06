@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './Views/Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import LandingPage from './Views/LandingPage/LandingPage';
 import NasaPhoto from './Views/Photo_Of_The_Day/NasaPhoto'
 import MarsRover from './Views/MarsRover/MarsRover'
-import Footer from './Views/Footer/Footer';
+import Footer from './Components/Footer/Footer';
 import ErrorPage from './Views/Error/ErrorPage';
 import About from './Views/About/About';
 
@@ -14,18 +14,21 @@ function NasaApp() {
 
   return (
     <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-full h-fit min-h-screen '>
-      < div className = 'container mx-auto flex flex-col min-h-screen justify-between' >
+      < div className = 'flex flex-col min-h-screen justify-between' >
 
         <Navbar />
 
-        <Routes>
-          <Route path="/"  element={<LandingPage />}/>
-          <Route path="/apod/*" element={<NasaPhoto />} />
-          <Route path="/mars/*" element={<MarsRover />} />
-          <Route path="/carousel" element={<RoverCarousel />} />
-          <Route path="/about" element={<About />} /> 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <div className='container mx-auto my-10'>
+          <Routes>
+            <Route path="/"  element={<LandingPage />}/>
+            <Route path="/apod/*" element={<NasaPhoto />} />
+            <Route path="/mars/*" element={<MarsRover />} />
+            <Route path="/carousel" element={<RoverCarousel />} />
+            <Route path="/about" element={<About />} /> 
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
+
 
         
         <Footer />

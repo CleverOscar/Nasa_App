@@ -3,18 +3,16 @@ import React from 'react';
 export default function LandingPage(){
 
     return(
-        <div className='border-4 my-10 text-white border-black mx-4 border-8 border-double bg-gray-700/80 lg:w-1/2 lg:mx-auto'>
-            <p className='my-6 text-center text-3xl underline font-code'>
+        <div className='border-4  p-8 text-white border-black border-8 border-double bg-gray-700/80 lg:w-1/2 lg:mx-auto'>
+            <p className='mb-8 text-center text-3xl underline font-code'>
                 Nasa API Portal Application
             </p>
 
-            <p className='px-6 pb-6 text-base md:text-2xl font-roboto'>
-            A ReactJS application that fetches data from NASA 's Portal API database, 
-            two features currently available to use at the moment are Photo Of The Day and the Mars Rover view. 
-            Make sure to check them out! 
+            <p className=' text-base md:text-2xl'>
+            Explore a captivating ReactJS application that seamlessly retrieves data from NASA's extensive Portal API database. Immerse yourself in two intriguing features, namely, the 'Photo of the Day' and an immersive Mars Rover view. Don't miss the chance to experience these fascinating cosmic snapshots!
             </p>
 
-            <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" alt="nasa logo" />
+            <img className='w-1/2 mx-auto' src="https://gpm.nasa.gov/sites/default/files/document_files/NASA-Logo-Large.png" alt="nasa logo" />
         </div>
     )
 }

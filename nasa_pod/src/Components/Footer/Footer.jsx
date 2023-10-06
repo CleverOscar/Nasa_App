@@ -10,9 +10,9 @@ export default function Footer() {
 
     return(
         <div>
-            <footer className="text-center bg-gray-900/30 text-white">
-                <div className="container px-6 pt-6">
-                    <div className="flex justify-center ">
+            <footer className="text-center py-10 bg-gray-900/30 text-white">
+                <div className="">
+                    <div className="">
 
                         <a href="https://twitter.com/CleverOscarDev" type="button" className={linkStyle}>
                             <svg aria-hidden="true"
@@ -67,7 +67,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="text-center p-4" >
+                <div className="text-center" >
                     © {year} Copyright:
                     <a className="text-blue-300" href="https://cleveroscar.dev/"> CleverOscar</a>
                 </div>

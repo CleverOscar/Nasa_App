@@ -49,6 +49,9 @@ export default function Curiosity(props) {
                 <RoverCarousel data={data}/>
             </div>
 
+
+            <Pagination data={data} pageLimit={5} dataLimit={5}/>
+
         </div>
     )
 }

@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+    colour pallet 
+
+    #000000
+    #3D0000
+    #950101
+    #FF0000
+
+*/
+
+.black-space {
+    color: #000000
+}
+
+.space-dark-red {
+    color:#3D0000
+}
+
+.space-blood-red {
+    color: #950101
+}
+
+.space-red {
+    color:#FF0000
+}
