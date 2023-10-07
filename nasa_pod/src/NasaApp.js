@@ -13,7 +13,7 @@ import RoverCarousel from './Views/MarsRover/views/Carousel';
 function NasaApp() {
 
   return (
-    <div className='app-background h-fit min-h-screen'>
+    <div className='app-background h-fit min-h-screen font-code'>
       < div className = 'flex flex-col min-h-screen justify-between' >
 
         <Navbar />
@@ -21,7 +21,7 @@ function NasaApp() {
         <div className='container mx-auto mb-auto '>
           <Routes>
             <Route path="/"  element={<LandingPage />}/>
-            <Route path="/apod/*" element={<NasaPhoto />} />>
+            <Route path="/apod/*" element={<NasaPhoto />} />
             <Route path="/mars/*" element={<MarsRover />} />
             <Route path="/carousel" element={<RoverCarousel />} />
             <Route path="/about" element={<About />} /> 

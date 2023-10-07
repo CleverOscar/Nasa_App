@@ -68,7 +68,6 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center" >
-                    © {year} Copyright:
                     <a className="text-blue-300" href="https://cleveroscar.dev/"> CleverOscar</a>
                 </div>
             </footer>

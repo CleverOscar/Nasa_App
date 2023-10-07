@@ -35,21 +35,12 @@ export default function MarsRover(){
                 <ul className="
                     text-lg
                     lg:text-xl
-                    border-2
-                    shadow-sm
-                    shadow-white
-                    rounded-lg
-                    text-white
+                    dark-palette
                     uppercase
-                    font-code
-                    bg-gray-800/80
                     flex flex-col
                     md:flex-row
-                    
                     flex-wrap
                     list-none
-                    
-                    pl-0
                 " 
                 id="tabs-tabJustify" 
                 role="tablist"

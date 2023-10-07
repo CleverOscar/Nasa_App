@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 import Photo from '../../../SubViews/Photo';
-import ClickInfo from '../../../SubViews/ClickInfo';
 import MobilePhoto from '../../../SubViews/MobilePhoto';
-
+import { Info } from '../../../Micro_Components/Info';
 
 function PhotoOfTheDay(){
 
@@ -42,28 +41,24 @@ function PhotoOfTheDay(){
         <div className='text-white flex flex-col'>
 
             <div className="md:hidden">
-                {nasaData.length === 0 ? <ClickInfo /> : <MobilePhoto data={nasaData} />}
+                {nasaData.length === 0 ? <Info /> : <MobilePhoto data={nasaData} />}
             </div>
 
             <div className="hidden md:block">
-                {   nasaData.length === 0 ? <ClickInfo /> : <Photo data={nasaData} />}
+                {   nasaData.length === 0 ? <Info /> : <Photo data={nasaData} />}
             </div>
 
-             <button className=' 
+             <button className='
+                mt-12 
                 text-xl 
-                bg-white  
-                outline 
-                outline-4 
-                bg-blue-400/70 
-                text-white
-                font-light 
+                dark-palette
                 outline-blue-600 
                 w-1/2 
                 hover:bg-blue-800/70
                 md:w-1/4 
                 mx-auto 
                 p-2
-                rounded
+                
                 ' 
             
                 onClick={getData}

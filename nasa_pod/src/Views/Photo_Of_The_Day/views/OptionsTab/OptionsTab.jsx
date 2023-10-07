@@ -8,8 +8,8 @@ import DatePicker from '../DatePicker/DatePicker';
 
 export default function OptionsTab() {
 
-    var unOrderList = "text-lg lg:text-xl border-2 shadow-sm shadow-white rounded-lg text-white uppercase  bg-gray-800/80 flex flex-col md:flex-row flex-wrap list-none pl-0" 
-    var link = "w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:bg-gray-700/40 focus:bg-gray-900/80"
+    var unOrderList = "uppercase text-lg dark-palette flex flex-col flex-wrap list-none pl-0 md:flex-row lg:text-xl" 
+    var link = "w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:rounded-lg hover:bg-gray-700/40 focus:bg-gray-900/80"
 
     return(
     <div>
@@ -53,24 +53,19 @@ export default function OptionsTab() {
 
         </ul>
 
+        {/* Views to routes */}
 
+        <div className="tab-content text-white" id="tabs-tabContentJustify">
+            <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
+            aria-labelledby="tabs-home-tabJustify">
+                <Routes>
+                    <Route path='photo-of-the-day' element={<PhotoOfTheDay />} />
+                    <Route path='random' element={<RandomPhoto />} /> 
+                    <Route path='date-picker' element={<DatePicker />} />
+                </Routes>
 
-                {/* Views to routes */}
-
-                <div className="tab-content text-white" id="tabs-tabContentJustify">
-                    <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"
-                    aria-labelledby="tabs-home-tabJustify">
-                        <Routes>
-                            <Route path='photo-of-the-day' element={<PhotoOfTheDay />} />
-                            <Route path='random' element={<RandomPhoto />} /> 
-                            <Route path='date-picker' element={<DatePicker />} />
-                        </Routes>
-
-                    </div>
-                </div>
-
-
-
+            </div>
+        </div>
     </div>
     )
 }

@@ -12,7 +12,7 @@ export default function LandingPage(){
             Explore a captivating ReactJS application that seamlessly retrieves data from NASA's extensive Portal API database. Immerse yourself in two intriguing features, namely, the 'Photo of the Day' and an immersive Mars Rover view. Don't miss the chance to experience these fascinating cosmic snapshots!
             </p>
 
-            <img className='w-1/2 mx-auto' src="https://gpm.nasa.gov/sites/default/files/document_files/NASA-Logo-Large.png" alt="nasa logo" />
+            <img className='w-1/2 mx-auto  mt-6' src="https://gpm.nasa.gov/sites/default/files/document_files/NASA-Logo-Large.png" alt="nasa logo" />
         </div>
     )
 }

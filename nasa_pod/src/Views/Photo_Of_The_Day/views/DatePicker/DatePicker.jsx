@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 import Photo from '../../../SubViews/Photo';
-import ClickInfo from '../../../SubViews/ClickInfo';
+import { Info } from '../../../Micro_Components/Info';
+
 
 export default function DatePicker(){
 
@@ -69,9 +70,9 @@ export default function DatePicker(){
         <div>
 
 
-            {nasaData.length === 0 ? <ClickInfo />  : media}
+            {nasaData.length === 0 ? <Info /> : media}
 
-            <form className='bg-gray-900/60 flex flex-col my-10 border-black border-4 p-4 font-code mx-auto' onSubmit={getPhoto}>
+            <form className=' flex flex-col my-10  p-4 mx-auto dark-palette' onSubmit={getPhoto}>
 
                 <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 '>
                     <span className=" text-center text-xl lg:text-2xl lg:mx-auto underline">
