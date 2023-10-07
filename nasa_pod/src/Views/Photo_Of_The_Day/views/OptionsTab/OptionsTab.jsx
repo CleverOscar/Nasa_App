@@ -8,14 +8,17 @@ import DatePicker from '../DatePicker/DatePicker';
 
 export default function OptionsTab() {
 
-    var unOrderList = "text-lg lg:text-xl border-2 shadow-sm shadow-white rounded-lg text-white uppercase font-code bg-gray-800/80 flex flex-col md:flex-row flex-wrap list-none pl-0" 
-    var link = "w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:bg-gray-700 focus:bg-gray-900"
+    var unOrderList = "text-lg lg:text-xl border-2 shadow-sm shadow-white rounded-lg text-white uppercase  bg-gray-800/80 flex flex-col md:flex-row flex-wrap list-none pl-0" 
+    var link = "w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:bg-gray-700/40 focus:bg-gray-900/80"
 
     return(
     <div>
+
+        {/* Tab bar */}
         <ul className={unOrderList}
-        id="tabs-tabJustify" 
-        role="tablist">
+            id="tabs-tabJustify" 
+            role="tablist">
+            
             <li className="nav-item flex-grow text-center" role="presentation">
                 <Link   to="photo-of-the-day" href="#tabs-homeJustify" 
                         className={link} 
@@ -25,6 +28,7 @@ export default function OptionsTab() {
                         aria-selected="true">Photo-Of-The-Day
                 </Link>
             </li>
+            
             <li className="nav-item flex-grow text-center" role="presentation">
                 <Link   to="random" 
                         href="#tabs-profileJustify"   
@@ -35,6 +39,7 @@ export default function OptionsTab() {
                         aria-selected="false">Random Image
                         </Link>
             </li>
+            
             <li className="nav-item flex-grow text-center" role="presentation">
                 <Link   to="date-picker" 
                         href="#tabs-messagesJustify" 
@@ -45,9 +50,12 @@ export default function OptionsTab() {
                         aria-selected="false">Date Picker
                 </Link>
             </li>
+
         </ul>
 
 
+
+                {/* Views to routes */}
 
                 <div className="tab-content text-white" id="tabs-tabContentJustify">
                     <div className="tab-pane fade show active" id="tabs-homeJustify" role="tabpanel"

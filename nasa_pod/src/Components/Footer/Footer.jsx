@@ -10,7 +10,7 @@ export default function Footer() {
 
     return(
         <div>
-            <footer className="text-center py-10 bg-gray-900/30 text-white">
+            <footer className="text-center py-10 text-white mt-12">
                 <div className="">
                     <div className="">
 

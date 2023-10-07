@@ -13,24 +13,21 @@ import RoverCarousel from './Views/MarsRover/views/Carousel';
 function NasaApp() {
 
   return (
-    <div className='bg-[url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")] bg-full h-fit min-h-screen '>
+    <div className='app-background h-fit min-h-screen'>
       < div className = 'flex flex-col min-h-screen justify-between' >
 
         <Navbar />
 
-        <div className='container mx-auto my-10'>
+        <div className='container mx-auto mb-auto '>
           <Routes>
             <Route path="/"  element={<LandingPage />}/>
-            <Route path="/apod/*" element={<NasaPhoto />} />
+            <Route path="/apod/*" element={<NasaPhoto />} />>
             <Route path="/mars/*" element={<MarsRover />} />
             <Route path="/carousel" element={<RoverCarousel />} />
             <Route path="/about" element={<About />} /> 
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
-
-
-        
         <Footer />
       </div>
     </div>

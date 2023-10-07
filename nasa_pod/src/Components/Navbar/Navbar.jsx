@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return(
         <>
-            <nav className="bg-inherit text-lg text-white lg:text-xl">
+            <nav className=" text-lg text-white lg:text-xl mb-12">
                 
                 <div className="p-4 flex flex-wrap items-center">
 
