@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function MobilePhoto ({data}){
     return(
-        <div className='w-full mx-auto flex flex-col bg-gray-900/80 border-4 border-gray-900 rounded-md p-4 font-code my-10'>
+        <div className='w-full mx-auto flex flex-col dark-palette rounded-md p-4 font-code my-10'>
 
-            <img className='mx-auto w-full border-gray-700 border-4 rounded-lg' src={data.url} alt=""/>
+            <img className='mx-auto w-full dark-palette' src={data.url} alt=""/>
 
             <p className="text-4xl text-center text-gray-300 my-4">{data.title}</p>
 

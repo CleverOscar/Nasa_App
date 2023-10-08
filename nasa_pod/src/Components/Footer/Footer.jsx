@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center" >
-                    <a className="text-blue-300" href="https://cleveroscar.dev/"> CleverOscar</a>
+                    <a className="text-blue-300 font-bold" href="https://cleveroscar.dev/"> CleverOscar</a>
                 </div>
             </footer>
         </div>

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios'
-import Photo from '../../../SubViews/Photo';
-import MobilePhoto from '../../../SubViews/MobilePhoto';
+import MobilePhoto from '../../../Micro_Components/MobilePhoto';
 import { Info } from '../../../Micro_Components/Info';
 
 function PhotoOfTheDay(){
@@ -40,13 +39,13 @@ function PhotoOfTheDay(){
     return (
         <div className='text-white flex flex-col'>
 
-            <div className="md:hidden">
+            <div>
                 {nasaData.length === 0 ? <Info /> : <MobilePhoto data={nasaData} />}
             </div>
 
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
                 {   nasaData.length === 0 ? <Info /> : <Photo data={nasaData} />}
-            </div>
+            </div> */}
 
              <button className='
                 mt-12 

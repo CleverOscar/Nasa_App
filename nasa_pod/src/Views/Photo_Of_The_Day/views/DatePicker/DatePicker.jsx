@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'
-import Photo from '../../../SubViews/Photo';
 import { Info } from '../../../Micro_Components/Info';
+import MobilePhoto from '../../../Micro_Components/MobilePhoto';
 
 
 export default function DatePicker(){
@@ -60,7 +60,7 @@ export default function DatePicker(){
     </div>
 
     const media = <div>
-        {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video}
+        {nasaData.media_type === 'image' ? <MobilePhoto data={nasaData} /> : video}
     </div>
 
 
