@@ -6,7 +6,7 @@ export default function Footer() {
 
     var year = new Date().getFullYear()
 
-    var linkStyle =  'rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1'
+    var linkStyle =  'rounded-full text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1'
 
     return(
         <div>
