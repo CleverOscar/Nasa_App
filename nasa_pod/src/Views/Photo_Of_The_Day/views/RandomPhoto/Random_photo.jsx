@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { Info } from '../../../Micro_Components/Info';
-import MobilePhoto from '../../../Micro_Components/MobilePhoto';
+import Photo from '../../../Micro_Components/Photo';
 
 export default function RandomPhoto() {
 
@@ -29,7 +29,7 @@ export default function RandomPhoto() {
             {
                 randomPhoto.length > -1 
                     ? <Info />
-                    : <MobilePhoto data={randomPhoto} />
+                    : <Photo data={randomPhoto} />
             }
 
             <button onClick={fetchData} className='

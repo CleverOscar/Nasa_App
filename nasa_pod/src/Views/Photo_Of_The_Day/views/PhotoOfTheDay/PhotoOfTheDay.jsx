@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'
-import MobilePhoto from '../../../Micro_Components/MobilePhoto';
 import { Info } from '../../../Micro_Components/Info';
+import Photo from '../../../Micro_Components/Photo';
 
 function PhotoOfTheDay(){
 
@@ -40,7 +40,7 @@ function PhotoOfTheDay(){
         <div className='text-white flex flex-col'>
 
             <div>
-                {nasaData.length === 0 ? <Info /> : <MobilePhoto data={nasaData} />}
+                {nasaData.length === 0 ? <Info /> : <Photo data={nasaData} />}
             </div>
 
             {/* <div className="hidden md:block">

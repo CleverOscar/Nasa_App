@@ -25,7 +25,7 @@ export default function Navbar() {
                 <div className="p-4 flex flex-wrap items-center">
 
                     <div className=" w-full items-center relative flex justify-between lg:w-auto lg:static lg:block">
-                        <Link className="uppercase italic " to='/'>Nasa Portal</Link>
+                        <Link className="uppercase italic dark-palette p-2" to='/'>Nasa Portal</Link>
 
                         <button className=" px-3 py-2 dark-palette lg:hidden" type="button" onClick={()=>{setNavbarOpen(!navbarOpen)}}>
                             Menu

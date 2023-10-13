@@ -8,7 +8,7 @@ import DatePicker from '../DatePicker/DatePicker';
 
 export default function OptionsTab() {
 
-    var unOrderList = "uppercase text-lg dark-palette flex flex-col flex-wrap list-none pl-0 md:flex-row lg:text-xl" 
+    var unOrderList = "uppercase dark-palette flex flex-col flex-wrap list-none pl-0 md:flex-row md:mx-2 text-xl" 
     var link = "w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:rounded-lg hover:bg-gray-700/40 focus:bg-gray-900/80"
 
     return(
