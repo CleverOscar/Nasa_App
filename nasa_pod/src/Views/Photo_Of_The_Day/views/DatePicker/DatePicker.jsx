@@ -1,24 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import { Info } from '../../../Micro_Components/Info';
-import MobilePhoto from '../../../Micro_Components/MobilePhoto';
+import Photo from '../../../Micro_Components/Photo';
+import Loading from '../../../../Components/Loading/Loading';
 
 
 export default function DatePicker(){
 
 
+    // Current date 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     var todaysDate = yyyy + '-' + mm + '-' + dd;
 
-
+    // Max Date Pick
     const [maxDate] = useState(todaysDate)
 
+    // Current Date
     const [date, setDate] = useState('');
 
+    // Data state
     const [nasaData, setNasaData] = useState([]);
+
+    //loading effect
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(()=>{
+            setLoading(false);
+        },3000)
+    }, [])
 
     // api key
     const api = process.env.REACT_APP_API_KEY; 
@@ -26,20 +39,22 @@ export default function DatePicker(){
     // nasa api url
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`
 
+
+    // Getting users date
     function dateValue(e) {
         e.preventDefault();
         setDate(e.target.value)
     }
-
+    // Fetch Photo
     function getPhoto(e){
         e.preventDefault()
         
-        axios.get(url).then( (response) => setNasaData(response.data) ).catch( err => err.message )
+        axios.get(url).then((response) => setNasaData(response.data) ).catch( err => err.message )
 
     }
 
 
-    const video = <div className='w-full mx-auto flex flex-col font-code'>
+    const video = <div className='w-full mx-auto flex flex-col font-code dark-palette mt-12'>
         
 
         <p className="text-2xl text-center my-4 ">{nasaData.title}</p>
@@ -51,16 +66,18 @@ export default function DatePicker(){
                 <p>{nasaData.date}</p>
                 {nasaData.copyright === '' ? <p>Taken By: {nasaData.copyright}</p> :  <p>No Author</p> }
             </div>
-            
-        <p className="text-lg md:text-xl md:tracking-widest p-3 bg-gray-500/25">{nasaData.explanation}</p>
+        
+        <p className="text-lg md:text-xl md:tracking-widest p-3 ">{nasaData.explanation}</p>
 
-        <p className="text-center mt-3 text-lg md:text-xl">HD Photo  
-            <a className="uppercase text-blue-600" href={nasaData.hdurl} target="_blank" rel="noreferrer"> here</a>
+        <p className="text-center mb-4 text-lg md:text-xl">Video Source:  
+            <a className="uppercase text-blue-600" href={nasaData.url} target="_blank" rel="noreferrer"> here</a>
         </p> 
     </div>
 
+    
+    // media element displaying either the photo or the video element
     const media = <div>
-        {nasaData.media_type === 'image' ? <MobilePhoto data={nasaData} /> : video}
+        { loading ? (<Loading/>) : (<div> {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video } </div>) }
     </div>
 
 
@@ -72,18 +89,20 @@ export default function DatePicker(){
 
             {nasaData.length === 0 ? <Info /> : media}
 
-            <form className=' flex flex-col my-10  p-4 mx-auto dark-palette' onSubmit={getPhoto}>
+            <form className='max-w-2xl flex flex-col my-10 p-4 mx-auto dark-palette text-xl' onSubmit={getPhoto}>
 
-                <label className='flex flex-col md:flex-row gap-4 justify-around lg:justify-between py-2 '>
-                    <span className=" text-center text-xl lg:text-2xl lg:mx-auto underline">
+                <label className='flex flex-col md:flex-row gap-2 justify-around lg:justify-between py-2 '>
+
+                    <span className="self-center">
                         Please Pick A Date:
                     </span> 
 
-                    <input className='text-black w-full text-center text-2xl md:w-1/2 font-bold' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+                    <input className='dark-palette p-2' type="date" name="photo-date" onChange={dateValue} max={maxDate}/>
+
                 </label>
 
                 
-                <button className="font-bold w-1/3 mx-auto mt-10 px-3 py-2 bg-gray-600 text-lg hover:bg-gray-800 rounded-md md:text-xl  ">submit</button>
+                <button className=" w-1/3 mx-auto mt-10 px-3 py-2 dark-palette hover:bg-gray-800 rounded-md ">submit</button>
                 
             </form>
 

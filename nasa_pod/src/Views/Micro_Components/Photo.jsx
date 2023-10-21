@@ -1,29 +1,27 @@
 import React from 'react';
 
-export default function Photo({data}) {
-
+export default function Photo ({data}){
     return(
-        <div className='my-10 bg-blue-900/30 border-2 border-black p-2 font-code lg:flex lg:flex-row lg:justify-between '>
+        <div className='max-h-full mx-auto flex flex-col dark-palette rounded-md p-4 font-code my-10 '>
 
-                <img className='border-2 border-black lg:w-1/2 lg:mx-2' src={data.url} alt=""/>
+            <img className='mx-auto dark-palette' src={data.url} alt=""/>
 
-                <div className="my-2 bg-gray-900/90 p-2 border-2 border-black lg:w-1/2 lg:mx-2 lg:my-0 " >
+            <p className="text-4xl text-center text-gray-300 my-4">{data.title}</p>
 
-                    <p className="text-center text-2xl">{data.title}</p>
+                <div className="flex flex-col mb-4">
 
-                    <div className="font-bold text-center">
-                        <p>{data.date}</p>
-                        
-                        {data.copyright === null ?  <p> Unknown Owner </p> : <p>Taken By: {data.copyright} </p> }
-        
-                    </div>
+                    <p className="text-2xl mb-4">{data.date}</p>
 
-                    <p className="text-lg font lg:text-2xl">{data.explanation}</p>
+                    {data.copyright === '' ?  <p>No Author</p> : <p className="text-lg">Taken By: {data.copyright}</p> }
 
-                    <p className="mt-2 text-lg text-center">HD Photo  
-                        <a className="text-blue-800" href={data.hdurl} target="_blank" rel="noreferrer"> here</a>
-                    </p>  
-                </div>   
+                </div>
+                
+            <p className="text-lg md:text-xl md:tracking-widest">{data.explanation}</p>
+
+            <p className="text-center uppercase mt-4 text-lg md:text-xl">
+                HD Photo <a className=" text-blue-600" href={data.hdurl} target="_blank" rel="noreferrer"> here </a>
+            </p>
+
         </div>
     )
-}   
+}

@@ -13,7 +13,7 @@ import RoverCarousel from './Views/MarsRover/views/Carousel';
 function NasaApp() {
 
   return (
-    <div className='app-background h-fit min-h-screen font-code'>
+    <div className='app-background h-fit min-h-screen font-code font-semibold'>
       < div className = 'flex flex-col min-h-screen justify-between' >
 
         <Navbar />
