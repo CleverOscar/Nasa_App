@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import { Info } from '../../../Micro_Components/Info';
 import Photo from '../../../Micro_Components/Photo';
+import Loading from '../../../../Components/Loading/Loading';
 
 
 export default function DatePicker(){
@@ -22,6 +23,15 @@ export default function DatePicker(){
 
     // Data state
     const [nasaData, setNasaData] = useState([]);
+
+    //loading effect
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(()=>{
+            setLoading(false);
+        },3000)
+    }, [])
 
     // api key
     const api = process.env.REACT_APP_API_KEY; 
@@ -67,7 +77,7 @@ export default function DatePicker(){
     
     // media element displaying either the photo or the video element
     const media = <div>
-        {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video }
+        { loading ? (<Loading/>) : (<div> {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video } </div>) }
     </div>
 
 

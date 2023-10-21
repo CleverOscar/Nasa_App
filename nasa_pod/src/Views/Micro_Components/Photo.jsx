@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Photo ({data}){
     return(
-        <div className='max-w-3xl max-h-full mx-auto flex flex-col dark-palette rounded-md p-4 font-code my-10'>
+        <div className='max-h-full mx-auto flex flex-col dark-palette rounded-md p-4 font-code my-10 '>
 
-            <img className='mx-auto w-full dark-palette' src={data.url} alt=""/>
+            <img className='mx-auto dark-palette' src={data.url} alt=""/>
 
             <p className="text-4xl text-center text-gray-300 my-4">{data.title}</p>
 
@@ -16,7 +16,7 @@ export default function Photo ({data}){
 
                 </div>
                 
-            <p className="text-lg md:text-xl md:tracking-widest ">{data.explanation}</p>
+            <p className="text-lg md:text-xl md:tracking-widest">{data.explanation}</p>
 
             <p className="text-center uppercase mt-4 text-lg md:text-xl">
                 HD Photo <a className=" text-blue-600" href={data.hdurl} target="_blank" rel="noreferrer"> here </a>

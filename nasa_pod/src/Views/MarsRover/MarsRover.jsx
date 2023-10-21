@@ -24,45 +24,17 @@ export default function MarsRover(){
     // Date
     let [yourDate] = useState(todaysDate);
 
-    
-
-
     return(
         <div className="w-full mx-auto mb-auto flex flex-col px-2 md:px-0">
 
             <div>
-
-                <ul className="
-                    text-lg
-                    lg:text-xl
-                    dark-palette
-                    uppercase
-                    flex flex-col
-                    md:flex-row
-                    flex-wrap
-                    list-none
-                " 
+                <ul className=" text-lg lg:text-xl dark-palette uppercase flex flex-col md:flex-row flex-wrap list-none " 
                 id="tabs-tabJustify" 
                 role="tablist"
                 >
                     <li className="nav-item flex-grow text-center" role="presentation">
-                        <Link to="curiosity" href="#tabs-homeJustify" className="
-                
-                w-full
-                block
-                
-                
-                
-                leading-tight
-                
-                border-x-0 border-t-0 border-b-2 border-transparent
-                px-6
-                py-3
-                
-                
-                hover:border-transparent hover:bg-gray-700
-                focus:bg-gray-900
-                " id="tabs-home-tabJustify" role="tab"
+                        <Link to="curiosity" href="#tabs-homeJustify" className=" w-full block leading-tight border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 hover:border-transparent hover:bg-gray-70 focus:bg-gray-900 " 
+                        id="tabs-home-tabJustify" role="tab"
                         aria-controls="tabs-homeJustify" aria-selected="true">
                             
                                 Curiosity
