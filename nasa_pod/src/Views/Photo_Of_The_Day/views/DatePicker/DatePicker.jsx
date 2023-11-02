@@ -25,13 +25,7 @@ export default function DatePicker(){
     const [nasaData, setNasaData] = useState([]);
 
     //loading effect
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(()=>{
-            setLoading(false);
-        },3000)
-    }, [])
+    const [loading, setLoading] = useState(false);
 
     // api key
     const api = process.env.REACT_APP_API_KEY; 
@@ -49,7 +43,10 @@ export default function DatePicker(){
     function getPhoto(e){
         e.preventDefault()
         
-        axios.get(url).then((response) => setNasaData(response.data) ).catch( err => err.message )
+        setLoading(true);
+        setTimeout(()=> {
+            axios.get(url).then((response) => { setLoading(false); setNasaData(response.data)} ).catch( err => err.message )
+        }, 2000)
 
     }
 
@@ -77,19 +74,17 @@ export default function DatePicker(){
     
     // media element displaying either the photo or the video element
     const media = <div>
-        { loading ? (<Loading/>) : (<div> {nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video } </div>) }
+        {  nasaData.media_type === 'image' ? <Photo data={nasaData} /> : video }
     </div>
-
-
     
 
     return(
         <div>
 
 
-            {nasaData.length === 0 ? <Info /> : media}
+            { loading ? <p className='text-2xl text-center my-20 dark-palette w-3/12 p-4 mx-auto '>Loading...</p> : nasaData.length === 0 ? <Info /> : media }
 
-            <form className='max-w-2xl flex flex-col my-10 p-4 mx-auto dark-palette text-xl' onSubmit={getPhoto}>
+            <form className='max-w-md flex flex-col my-10 p-4 mx-auto dark-palette text-xl' onSubmit={getPhoto}>
 
                 <label className='flex flex-col md:flex-row gap-2 justify-around lg:justify-between py-2 '>
 
